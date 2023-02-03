@@ -53,7 +53,7 @@ func printHello(hello: (String) -> Void, age: Int, firstName: String) {
     hello(firstName)
     print("age is \(age)")
 }
-printHello(hello: greet,age: 20,firstName: "meetraj")
+printHello(hello: greet, age: 20, firstName: "meetraj")
 
 //--------------------------------------------------Closures--------------------------------------------------
 let getName: (String) -> (String) = { (name) in
@@ -70,54 +70,155 @@ functionWithClosureParameter {
     print("from closure")
 }
 //auto closures
-func writeToFile(write: Bool, getData: @autoclosure() -> String) {
+func writeToFile(write: Bool, getData: (String) -> String) {
     if(write) {
-        print(getData())
+        print(getData("abc"))
         print("Writing Data")
     } else {
         print("Not writing")
     }
 }
-writeToFile(write: true, getData: "file-data")
+writeToFile(write: true, getData: { str in
+    return str
+})
 //capture list
-var str = "Hello, World!"
+var str = Student("Meetraj", 1)
 var myClosure = { [str] in
     print (str)
 }
-str = "next"
+str = Student("Harsh", 2)
 let inc = myClosure
 inc()
 
-//--------------------------------------------------Enumeration--------------------------------------------------
-enum CompassPoint {
-    case north
+////--------------------------------------------------Enumeration--------------------------------------------------
+//Enum with function
+enum CompassPoint: String {
+    case north = "north"
     case south
     case east
     case west
-    
-    func functionFromEnum(){
-        print("from enum \(self)")
+
+    func getCurrentDirection() {
+        print("current direction is: \(self)")
     }
 }
 var direction = CompassPoint.north
 direction = .east
-switch direction {
-case .north:
-    print("Lots of planets have a north")
-case .south:
-    print("Watch out for penguins")
-case .east:
-    print("Where the sun rises")
-case .west:
-    print("Where the skies are blue")
+direction.getCurrentDirection()
+
+//Case-Iterable And rawValue
+enum ColorName: Int, CaseIterable {
+    case black = 1, silver, gray, white, maroon, red, purple, fuchsia, green,
+    lime, olive, yellow, navy, blue, teal, aqua
+}
+var color = ColorName.black
+print(color.rawValue)
+color = .blue
+print(color.rawValue)
+color = ColorName(rawValue: 3)!
+print(color)
+
+for color in ColorName.allCases {
+    print("\(color)")
 }
 
-enum ColorName: String, CaseIterable {
-    case black, silver, gray, white, maroon, red, purple, fuchsia, green,
-      lime, olive, yellow, navy, blue, teal, aqua
+//Associated Values
+enum ColorCode {
+    case rgb(red: Int, green: Int, blue: Int)
 }
-let color = ColorName.black
-print(color)
-for color in ColorName.allCases {
-  print("\(color)")
+let rgbColor = ColorCode.rgb(red: 100, green: 0, blue: 0)
+print("rgb color code is : \(rgbColor)")
+
+
+//recursive enum
+indirect enum recursiveEnum {
+    case number(Int)
+    case add(recursiveEnum, recursiveEnum)
+    case multiply(recursiveEnum, recursiveEnum)
 }
+//(5+4)*2
+let five = recursiveEnum.number(5)
+let four = recursiveEnum.number(4)
+let sum = recursiveEnum.add(five, four)
+let product = recursiveEnum.multiply(sum, recursiveEnum.number(2))
+
+func evaluate(_ expression: recursiveEnum) -> Int {
+    switch expression {
+    case let .number(value):
+        return value
+    case let .add(left, right):
+        return evaluate(left) + evaluate(right)
+    case let .multiply(left, right):
+        return evaluate(left) * evaluate(right)
+    }
+}
+print(evaluate(product))
+
+enum num {
+    case num1(Int)
+    case num2
+}
+
+var n = num.num2
+
+switch n {
+case .num1(let n1): print("val from num1 is \(n1)")
+default:
+    print("")
+}
+
+//--------------------------------------------------Structures--------------------------------------------------
+struct Resolution {
+    var width = 0
+    var height = 0
+}
+class VideoMode {
+    var resolution = Resolution()
+    var interlaced = false
+    var frameRate = 0.0
+    var name: String?
+}
+
+var someResolution = Resolution()
+let someOtherResolution = Resolution()
+let someVideoMode = VideoMode()
+
+someResolution.width = 100
+print(someOtherResolution.width)
+someVideoMode.frameRate = 60
+
+//memberwise initializer
+let vga = Resolution(width: 640, height: 480)
+vga.width
+
+struct Person {
+// properties with no default values
+    var name: String
+    var age: Int
+}
+// instance of Person with memberwise initializer
+var person1 = Person(name: "Meetraj", age: 20)
+print("Name: \(person1.name) and Age: \(person1.age)")
+
+//--------------------------------------------------Classes--------------------------------------------------
+
+class Student {
+    var name: String
+    var id: Int
+    
+    init(_ name: String, _ id: Int){
+        self.name = name
+        self.id = id
+    }
+    func getStudentInfo(){
+        print("Name : \(self.name) Id : \(self.id)")
+    }
+}
+
+let student1 = Student("Meetraj", 63)
+student1.getStudentInfo()
+let student2 = student1
+print(student1 === student2)
+
+let student3 = Student("Meetraj", 63)
+print(student3 === student2)
