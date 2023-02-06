@@ -55,6 +55,16 @@ func printHello(hello: (String) -> Void, age: Int, firstName: String) {
 }
 printHello(hello: greet, age: 20, firstName: "meetraj")
 
+// function as a return type
+func hello() -> String{
+    return "hello there"
+}
+func greet() -> () -> String{
+    return hello
+}
+var greetings = greet()
+greetings()
+
 //--------------------------------------------------Closures--------------------------------------------------
 let getName: (String) -> (String) = { (name) in
     return("name is \(name)")
@@ -84,8 +94,9 @@ writeToFile(write: true, getData: { str in
 //capture list
 var str = Student("Meetraj", 1)
 var myClosure = { [str] in
-    print (str)
+    print ("from capture list: ",str.name)
 }
+
 str = Student("Harsh", 2)
 let inc = myClosure
 inc()
