@@ -96,8 +96,10 @@ var str = Student("Meetraj", 1)
 var myClosure = { [str] in
     print ("from capture list: ",str.name)
 }
+str.name = "parth"
 
 str = Student("Harsh", 2)
+
 let inc = myClosure
 inc()
 
@@ -233,3 +235,21 @@ print(student1 === student2)
 
 let student3 = Student("Meetraj", 63)
 print(student3 === student2)
+
+//Singleton classes
+class LocationManager{
+    
+    static let obj = LocationManager()
+    
+    var locationGranted: Bool?
+
+    private init(){}
+    
+    func requestForLocation(){
+        locationGranted = true
+        print("Location granted")
+    }
+    
+}
+//Access class function
+LocationManager.obj.requestForLocation()
