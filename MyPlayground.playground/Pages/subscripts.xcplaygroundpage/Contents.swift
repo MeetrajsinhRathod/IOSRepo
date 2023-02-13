@@ -61,3 +61,32 @@ let jupiter = earth[Planet.jupiter]
 //type subscript
 let mars = Planet(rawValue: 3)
 print(Planet[3])
+
+// custom subscript to add and remove element in string using index
+struct Str {
+    var string1: String
+    subscript(index: Int) -> Character? {
+        get {
+            if index < string1.count {
+                return string1[string1.index(string1.startIndex, offsetBy: index)]
+            }
+            else {
+                return nil
+            }
+        }
+        set {
+            if index < string1.count {
+                string1.remove(at: string1.index(string1.startIndex, offsetBy: index))
+                string1.insert(newValue!, at: string1.index(string1.startIndex, offsetBy: index))
+            }
+            else {
+                print("Index out of bound.")
+            }
+        }
+    }
+}
+
+var strObj = Str(string1: "heloooooo")
+strObj[4]
+strObj[1] = "x"
+strObj.string1

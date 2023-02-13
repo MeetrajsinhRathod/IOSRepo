@@ -92,7 +92,7 @@ func giveAname() -> String {
 }
 goodMorning(morning: true, whom: giveAname())
 
-func funcWithAutoClosure(closure: @autoclosure ()-> String) -> String {
+func funcWithAutoClosure(closure: @autoclosure () -> String) -> String {
     return "this is from function : \(closure())"
 }
 //with autoclosure
@@ -107,7 +107,7 @@ struct Resolution {
     var width: Int = 1
     var height: Int = 1
 
-    mutating func pixels(){
+    mutating func pixels() {
         width = 2
     }
 }
@@ -119,15 +119,15 @@ r.width
 // stored and computed properties
 struct Circle {
     var radius: Double
-    var center: (Int,Int)
+    var center: (Int, Int)
 
     static var r: Double = 2.0
 
     var area: Double {
-        get{
+        get {
             return 3.14 * radius * radius
         }
-        set{
+        set {
             radius = newValue
         }
     }
@@ -135,13 +135,13 @@ struct Circle {
 var ball = Circle(radius: 10.0, center: (0, 0))
 ball.area = 30.0
 ball.radius
-enum num{
+enum num {
     case caseOne
     case caseTwo
     static var staticNum = 10
 
     var numGet: String {
-        switch self{
+        switch self {
         case .caseOne: return "caseOne"
         case .caseTwo: return "caseTwo"
         }
@@ -154,16 +154,16 @@ class Samplepgm {
     class var msg: String {
         return "this is the msg"
     }
-   var counter: Int = 0 {
-      willSet {
-         print("Total Counter is: \(newValue)")
-      }
-      didSet {
-         if counter > oldValue {
-            print("Newly Added Counter \(counter - oldValue)")
-         }
-      }
-   }
+    var counter: Int = 0 {
+        willSet {
+            print("Total Counter is: \(newValue)")
+        }
+        didSet {
+            if counter > oldValue {
+                print("Newly Added Counter \(counter - oldValue)")
+            }
+        }
+    }
 }
 
 let NewCounter = Samplepgm()
@@ -202,7 +202,7 @@ struct Currency {
             rupee = "₹" + newValue
         }
     }
-    init (wrappedValue: String){
+    init (wrappedValue: String) {
         self.wrappedValue = wrappedValue
     }
 }
@@ -216,7 +216,7 @@ print(electricityBill.amount)
 
 enum ColorCode {
     case rgb(red: Int, green: Int, blue: Int)
-    mutating func doSomething(){
+    mutating func doSomething() {
         self = .rgb(red: 20, green: 30, blue: 40)
     }
 }
@@ -265,15 +265,64 @@ print(data.secretValue)
 //subscript
 class DaysOfAWeek {
     var days = ["Monday", "Tuesday", "Wednesday",
-      "Thursday", "Friday", "Saturday", "Sunday"]
-   subscript(index: Int) -> String {
-      get {
-         return days[index]
-      }
-      set(newValue) {
-         self.days[index] = newValue
-      }
-   }
+        "Thursday", "Friday", "Saturday", "Sunday"]
+    subscript(index: Int) -> String {
+        get {
+            return days[index]
+        }
+        set(newValue) {
+            self.days[index] = newValue
+        }
+    }
+
 }
 var day = DaysOfAWeek()
 print(day[0])
+
+class Animal {
+    var name = ["Dog"]
+
+    subscript() -> String {
+        get {
+            return name.description
+        }
+        set {
+            name.append(newValue)
+        }
+    }
+    subscript(subs2 index: Int) -> String {
+        get {
+            print("get from sub2")
+            return name[index]
+        }
+        set {
+            print("set from sub2")
+            //name.insert(newValue, at: index)
+        }
+    }
+}
+let newAnimal = Animal()
+newAnimal[] = "Cat"
+newAnimal[subs2: 1] = "Cow"
+
+//Type subscript
+enum Planet: Int {
+    case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
+
+    subscript(planet: Planet) -> Planet {
+        return planet
+    }
+    static subscript(n: Int) -> Planet {
+        return Planet(rawValue: n)!
+    }
+}
+let earth = Planet.earth
+
+//instance subscript
+let jupiter = earth[Planet.jupiter]
+
+//type subscript
+let mars = Planet(rawValue: 3)
+print(Planet[3])
+
+
