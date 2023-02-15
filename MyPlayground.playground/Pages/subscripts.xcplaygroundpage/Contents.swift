@@ -90,3 +90,24 @@ var strObj = Str(string1: "heloooooo")
 strObj[4]
 strObj[1] = "x"
 strObj.string1
+
+extension Set {
+    
+    subscript(index: Int) -> Element{
+        get {
+            var arrGet = Array(self)
+            return arrGet[index]
+        }
+        set {
+            var arrSet = Array(self)
+            arrSet.remove(at: index)
+            arrSet.insert(newValue, at: index)
+            self = Set(arrSet)
+        }
+    }
+}
+
+var set1: Set = [5,4,3,2,1]
+
+set1[0] = 6
+print(set1)
