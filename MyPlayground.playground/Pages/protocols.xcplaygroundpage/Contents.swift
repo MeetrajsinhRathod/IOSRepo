@@ -1,5 +1,40 @@
 import Foundation
 
+protocol Playing {
+    //var time: Int { get set }
+    func doneTraining()
+}
+class Coach {
+    var playing: Playing?
+
+    
+    func train() {
+        print("training")
+        playing?.doneTraining()
+    }
+}
+
+class Player1: Playing {
+    var coach: Coach?
+    //var time = 60
+    
+    init(coach: Coach) {
+        self.coach = coach
+        coach.playing = self
+    }
+    
+    func play() {
+        coach?.train()
+    }
+    
+    func doneTraining() {
+        print("done Training")
+    }
+}
+
+var p1 = Player1(coach: Coach())
+p1.play()
+
 protocol Task {
     var task: String { get set }
 
@@ -41,12 +76,12 @@ manager.doJob()
 //class Developer {
 //    var manager: Manager?
 //
-//    var didJob:((String) -> Void)?
+//    var didJob:((String?) -> Void)?
 //
 //    func doingJob() {
 //        print("doing job")
 //        //manager?.didFinishJob()
-//        didJob!("job")
+//        didJob!(manager?.task)
 //    }
 //}
 //
@@ -61,13 +96,14 @@ manager.doJob()
 //    }
 //
 //    func doJob() {
-//        dev?.didJob = { result in print("done \(result)") }
+//        dev?.didJob = { result in print("done \(result ?? "task")") }
 //        dev?.doingJob()
 //    }
 //}
 //
-//var m = Manager(task: "task")
+//var m = Manager(task: "work")
 //m.doJob()
+
 
 @objc protocol classa {
     @objc var marks: Int { get set }
@@ -111,3 +147,7 @@ class Class: classb {
         return "\(stname) has scored \(marks)"
     }
 }
+
+//var anyObj: AnyObject
+//anyObj = Manager(task: "task")
+//(anyObj as! Manager).task
