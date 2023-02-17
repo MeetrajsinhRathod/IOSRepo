@@ -9,11 +9,19 @@ addFunc(val1: 2, val2: 3, addClosure: { n1, n2 in
 })
 
 // closure with inout and variadic
-var closureWithInoutAndVariadic = { (inoutString: inout String, VariadicInt: Int...) -> Int in
+//var closureWithInoutAndVariadic = { (inoutString: inout String, VariadicInt: Int...) -> Int in
+//    print(inoutString)
+//    inoutString = "hello"
+//    return VariadicInt[0]
+//}
+
+
+var closureWithInoutAndVariadic:(inout String, Int...) -> Int = { inoutString, variadicInt in
     print(inoutString)
     inoutString = "hello"
-    return VariadicInt[0]
+    return variadicInt[0]
 }
+
 var mutableString = "hi"
 closureWithInoutAndVariadic(&mutableString, 1, 2, 3, 4)
 
