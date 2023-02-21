@@ -485,3 +485,34 @@ do {
 catch quantityError.insufficientQuantity {
     print("Item not available")
 }
+//---------------------------------------------------------------------------Extensions---------------------------------------------------------------------------
+//• Create following string manipulation functions using string extensions:
+//o Add a character in a string at 5th position
+//o Replace one character with other in a string
+//o Remove white spaces from string
+//o Get number of words in a string
+
+extension String {
+    
+    mutating func addChar(at: Int, char: Character) {
+        self.insert(char, at: self.index(self.startIndex, offsetBy: at))
+    }
+    
+    mutating func replaceChar(char: Character, replaceWith: Character) {
+        self.replace([char], with: [replaceWith])
+    }
+    
+    mutating func removeSpace() {
+        self.replace(" ", with: "")
+    }
+    
+    func getNumberOfWords() -> Int {
+        return (self.split(separator: " ")).count
+    }
+}
+
+var str = "Hello world"
+str.addChar(at: 5, char: "x")
+str.replaceChar(char: "l", replaceWith: "q")
+str.getNumberOfWords()
+str.removeSpace()
