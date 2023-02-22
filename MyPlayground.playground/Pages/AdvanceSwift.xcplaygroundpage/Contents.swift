@@ -91,22 +91,13 @@ func writeToFile(write: Bool, getData: (String) -> String) {
 writeToFile(write: true, getData: { str in
     return str
 })
-//capture list
-var str = Student("Meetraj", 1)
-var myClosure = { [str] in
-    print ("from capture list: ",str.name)
-}
-str.name = "parth"
 
-str = Student("Harsh", 2)
 
-let inc = myClosure
-inc()
 
 ////--------------------------------------------------Enumeration--------------------------------------------------
 //Enum with function
 enum CompassPoint: String {
-    case north = "north"
+    case north
     case south
     case east
     case west
@@ -118,6 +109,7 @@ enum CompassPoint: String {
 var direction = CompassPoint.north
 direction = .east
 direction.getCurrentDirection()
+direction.rawValue
 
 //Case-Iterable And rawValue
 enum ColorName: Int, CaseIterable {
@@ -142,6 +134,10 @@ enum ColorCode {
 let rgbColor = ColorCode.rgb(red: 100, green: 0, blue: 0)
 print("rgb color code is : \(rgbColor)")
 
+switch rgbColor {
+case .rgb(let red, let green,let blue):
+    print("rgb: \(red), \(green), \(blue)")
+}
 
 //recursive enum
 indirect enum recursiveEnum {
@@ -236,6 +232,18 @@ print(student1 === student2)
 let student3 = Student("Meetraj", 63)
 print(student3 === student2)
 
+//capture list
+var str = Student("Meetraj", 1)
+var myClosure = { [str] in
+    print ("from capture list: ",str.name)
+}
+str.name = "parth"
+
+str = Student("Harsh", 2)
+
+let inc = myClosure
+inc()
+
 //Singleton classes
 class LocationManager{
     
@@ -253,3 +261,71 @@ class LocationManager{
 }
 //Access class function
 LocationManager.obj.requestForLocation()
+
+//--------------------------------------------------Generics--------------------------------------------------
+
+func swapValues<T>(_ val1: inout T, _ val2: inout T) {
+    let temp = val1
+    val1 = val2
+    val2 = temp
+}
+var int1 = 1
+var int2 = 2
+swapValues(&int1, &int2)
+
+var str1 = "hello"
+var str2 = "world"
+swapValues(&str1, &str2)
+
+struct Stack<Element> {
+    var items: [Element] = []
+    mutating func push(_ item: Element) {
+        items.append(item)
+    }
+    mutating func pop() -> Element {
+        return items.removeLast()
+    }
+}
+var numStack = Stack<Int>()
+numStack.push(2)
+numStack.push(4)
+numStack.push(1)
+numStack.push(3)
+
+// constraints and where clause
+extension Stack where Element: Equatable {
+    func isTop(_ item: Element) -> Bool {
+        guard let topItem = items.last else {
+            return false
+        }
+        return topItem == item
+    }
+}
+
+// associated value
+protocol Product
+{
+    associatedtype Code
+    var productCode: Code {get}
+    func description() -> String
+}
+
+struct Laptop : Product
+{
+    typealias Code = String
+    var productCode: String
+
+    func description() -> String {
+        "This is a Laptop"
+    }
+}
+
+struct Keyboard : Product
+{
+    typealias Code = Int
+    var productCode: Int
+
+    func description() -> String {
+        "This is a Keyboard"
+    }
+}

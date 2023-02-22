@@ -32,9 +32,29 @@ class Player1: Playing {
     }
 }
 
+class Player2: Playing {
+    var coach: Coach?
+    //var time = 60
+    
+    init(coach: Coach) {
+        self.coach = coach
+        coach.playing = self
+    }
+    
+    func play() {
+        coach?.train()
+    }
+    
+    func doneTraining() {
+        print("done Training")
+    }
+}
+
 var p1 = Player1(coach: Coach())
 p1.play()
 
+var p2 = Player2(coach: Coach())
+p2.play()
 protocol Task {
     var task: String { get set }
 
@@ -96,8 +116,8 @@ manager.doJob()
 //    }
 //
 //    func doJob() {
-//        dev?.didJob = { result in print("done \(result ?? "task")") }
 //        dev?.doingJob()
+//        dev?.didJob = { result in print("done \(result ?? "task")") }
 //    }
 //}
 //

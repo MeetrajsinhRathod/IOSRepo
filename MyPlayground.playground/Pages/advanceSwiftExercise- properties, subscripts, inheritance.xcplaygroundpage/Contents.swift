@@ -255,6 +255,20 @@ arrObj[2...5]
 //• 17)  I have one key value pair array. Create one function using subscript which takes key as input and returns it’s value.
 //• Output: let array = [[1: “Hello”], [2: “Hi..”]]
 //Now call function subscript(at: 1) it should print "Hello”
+//class ArrayOfDictionary {
+//    var arr: [Dictionary<Int,String>]
+//
+//    init(arr: [Dictionary<Int,String>]) {
+//        self.arr = arr
+//    }
+//
+//    subscript(key: Int) -> [String] {
+//        return [String](arr[key-1].values)
+//    }
+//}
+//let arr = ArrayOfDictionary(arr: [[1: "Hello"], [2: "Hi.."]])
+//print(arr[1])
+
 class ArrayOfDictionary {
     var arr: [Dictionary<Int,String>]
     
@@ -262,17 +276,18 @@ class ArrayOfDictionary {
         self.arr = arr
     }
     
-    subscript(key: Int) -> [String] {
-        return [String](arr[key-1].values)
+    subscript(key: Int) -> String {
+        var ans = arr.first(where: {$0.first(where: {$0.key == key})?.value != nil})
+        return ans?.first(where: {$0.key == key})?.value ?? "not found"
     }
 }
-let arr = ArrayOfDictionary(arr: [[1: "Hello"], [2: "Hi.."]])
-print(arr[1])
+let arr = ArrayOfDictionary(arr: [[3: "Three", 4: "Four"], [2: "Two"]])
+print(arr[4])
 
 //• 18)  Create one array of type Person and create one subscript function which takes person name as input and returns person info like name, age, birthdate etc.
 
 struct PersonStruct {
-    static var arrayOfPerson: [PersonStruct]?
+    static var arrayOfPerson = [PersonStruct]()
     var name: String
     var age: Int
     var birthDate: String
@@ -284,7 +299,7 @@ struct PersonStruct {
     }
 
     static subscript(name: String) -> String {
-        if let output = arrayOfPerson?.first(where: {$0.name == name}){
+        if let output = arrayOfPerson.first(where: {$0.name == name}){
             return "name: \(output.name) age: \(output.age) birthdate: \(output.birthDate)"
         }
         return "not found"
@@ -293,4 +308,3 @@ struct PersonStruct {
 
 PersonStruct.arrayOfPerson = [PersonStruct(name: "Meetraj", age: 20, birthDate: "23/04/2002"), PersonStruct(name: "Dhvanil", age: 17, birthDate: "05/03/2005")]
 print(PersonStruct["Meetraj"])
-

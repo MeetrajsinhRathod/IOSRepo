@@ -10,7 +10,6 @@ struct PasswordErr: Error{
 }
 
 var passwordErrObj = PasswordErr(msg: "")
-var passTooShort: Error
 
 func checkPassword(_ password: String) throws -> String {
     if password.count < 5 {
@@ -43,6 +42,8 @@ do {
 catch PasswordError.obvious {
     print("Password is too obvious")
 }
-catch let errorFromStruct as PasswordErr{
-    print(errorFromStruct.msg)
+catch{
+    if error is PasswordErr {
+        print("Passwrd is too short")
+    }
 }
