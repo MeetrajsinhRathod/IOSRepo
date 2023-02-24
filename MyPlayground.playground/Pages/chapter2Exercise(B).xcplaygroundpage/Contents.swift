@@ -1,4 +1,4 @@
-import UIKit
+import Foundation
 
 //-------------------------------------------------Functions-------------------------------------------------
 
@@ -7,10 +7,12 @@ import UIKit
 func divides(dividend: Int, divisor: Int) -> Bool {
     return dividend % divisor == 0
 }
+
 divides(dividend: 4, divisor: 2)
 
 func countDivisors(number: Int) -> Int {
     var divisorCount = 0
+    //loop to count the number of divisors
     for val in 1...number {
         if divides(dividend: number, divisor: val) {
             divisorCount += 1
@@ -18,23 +20,30 @@ func countDivisors(number: Int) -> Int {
     }
     return divisorCount
 }
+
 countDivisors(number: 5)
 
 func isPrime(number: Int) -> Bool {
     return countDivisors(number: number) == 2
 }
+
 isPrime(number: 2)
 
 //Write a function named countdown that takes a number N. The function should print the numbers from N to 1 with a one second pause in between and then write GO! in the end. To make the computer wait for one second call thesleep function from the standard library. The sleep function takes one parameter, the number of seconds to sleep.
 
-func countDown(countUpto: Int) {
-    for count in stride(from: countUpto, to: 0, by: -1) {
+func countDown(countFrom: Int) {
+    var count = countFrom
+    //loop for count down from N to 1
+    repeat {
         print(count)
         sleep(1)
-    }
+        count -= 1
+    } while (count > 0)
+
     print("GO!")
 }
-countDown(countUpto: 5)
+
+countDown(countFrom: 5)
 
 //A queue is a data structure that can perform two operations:
 //• push which takes a value and adds it at the end of the queue
@@ -70,66 +79,50 @@ countDown(countUpto: 5)
 //Pop Function Definition
 
 // using structure
-//struct Queue<T> {
-//    private var element = [T]()
-//    init(){}
-//
-//    func isEmpty() -> Bool {
-//        return element.isEmpty
-//    }
-//
-//    mutating func push(pushElement: T) {
-//        element.append(pushElement)
-//    }
-//
-//    mutating func pop() -> T? {
-//        if isEmpty() {
-//            return nil
-//        }
-//        return element.removeFirst()
-//    }
-//
-//    func printQueue() {
-//        print(element)
-//    }
-//}
-//
-//var queue1 = Queue<Int>()
-//
-//queue1.push(pushElement: 2)
-//queue1.push(pushElement: 1)
-//queue1.push(pushElement: 3)
-//queue1.printQueue()
-//queue1.pop()
-//queue1.pop()
-//queue1.printQueue()
+struct Queue<T> {
+    
+    private var element = [T]()
 
-var queue1 = [Int]()
+    func isEmpty() -> Bool {
+        return element.isEmpty
+    }
 
-func push(pushElement: Int, queue: inout [Int]) {
-    queue.append(pushElement)
+    mutating func push(pushElement: T) {
+        element.append(pushElement)
+    }
+
+    mutating func pop() -> T? {
+        //check if queue is empty or not before removing an element
+        if isEmpty() {
+            return nil
+        }
+        return element.removeFirst()
+    }
+
+    func printQueue() {
+        print(element)
+    }
 }
 
-func pop(queue: inout [Int]) -> Int? {
-    queue.isEmpty ? nil : queue.removeFirst()
-}
+var queue1 = Queue<Int>()
 
-push(pushElement: 2, queue: &queue1)
-push(pushElement: 1, queue: &queue1)
-push(pushElement: 3, queue: &queue1)
-print(queue1)
-pop(queue: &queue1)
-pop(queue: &queue1)
-print(queue1)
+queue1.push(pushElement: 2)
+queue1.push(pushElement: 1)
+queue1.push(pushElement: 3)
+queue1.printQueue()
+queue1.pop()
+queue1.pop()
+queue1.printQueue()
 
 //-------------------------------------------------Closures-------------------------------------------------
 
 //Write a function named applyKTimes that takes an integer K and a closure and calls the closure K times. The closure will not take any parameters and will not have a return value.
 
-func applyKTimes(Ktimes: Int, myClosure: () -> ()) {
+func applyKTimes(Ktimes: Int, recurringClosure: () -> ()) {
     var repeatTill = Ktimes
+    //loop to call closure K times
     repeat {
-        myClosure()
+        recurringClosure
         repeatTill -= 1
     } while (repeatTill > 0)
 }
@@ -144,17 +137,19 @@ applyKTimes(Ktimes: 3) {
 //user input sbi , sbi interest function called
 
 protocol Bank {
-    var duration: Int { get set }
-    var principalAmount: Int { get set }
-    var rate: Int { get set }
+    
+    var duration: Int { get }
+    var principalAmount: Int { get }
+    var rate: Int { get }
 
     func getSimpleInterest()
 }
 
 class Sbi: Bank {
-    var duration: Int
-    var principalAmount: Int
-    var rate: Int
+
+    let duration: Int
+    let principalAmount: Int
+    let rate: Int
 
     init(duration_inyear: Int, principalAmount: Int, rate_percent: Int) {
         self.duration = duration_inyear
@@ -168,9 +163,10 @@ class Sbi: Bank {
 }
 
 class Hdfc: Bank {
-    var duration: Int
-    var principalAmount: Int
-    var rate: Int
+
+    let duration: Int
+    let principalAmount: Int
+    let rate: Int
 
     init(duration_inyear: Int, principalAmount: Int, rate_percent: Int) {
         self.duration = duration_inyear
@@ -183,8 +179,8 @@ class Hdfc: Bank {
     }
 }
 
-let SbiUser = Sbi(duration_inyear: 1, principalAmount: 3000, rate_percent: 8)
-SbiUser.getSimpleInterest()
+let sbiUser = Sbi(duration_inyear: 1, principalAmount: 3000, rate_percent: 8)
+sbiUser.getSimpleInterest()
 
 let hdfcUser = Hdfc(duration_inyear: 1, principalAmount: 3000, rate_percent: 10)
 hdfcUser.getSimpleInterest()
