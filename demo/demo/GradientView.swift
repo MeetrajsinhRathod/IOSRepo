@@ -12,7 +12,6 @@ class GradientView: UIView {
         updateView()
     }
 }
-    
     override class var layerClass: AnyClass {
        get {
           return CAGradientLayer.self
