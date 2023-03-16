@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63ADDDA129C2D49800A07725 /* TextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA029C2D49800A07725 /* TextFieldViewController.swift */; };
+		63ADDDA329C2E68B00A07725 /* UISwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA229C2E68B00A07725 /* UISwitchViewController.swift */; };
+		63ADDDA529C2EFDA00A07725 /* SliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA429C2EFDA00A07725 /* SliderViewController.swift */; };
+		63ADDDA729C305AD00A07725 /* UIProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA629C305AD00A07725 /* UIProgressViewController.swift */; };
+		63ADDDA929C31AEC00A07725 /* SegmentedControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA829C31AEC00A07725 /* SegmentedControlViewController.swift */; };
 		63AE1CD229C1BD7E00026E69 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE1CD129C1BD7E00026E69 /* LandingPageViewController.swift */; };
 		63AE1CD429C1BDCA00026E69 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE1CD329C1BDCA00026E69 /* RegistrationViewController.swift */; };
 		63AE20E529C1C33800EFD29E /* UIComponents.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AE20E429C1C33800EFD29E /* UIComponents.storyboard */; };
 		63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */; };
+		63FCD2BB29C33F8A0070AB69 /* RefreshViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63FCD2BA29C33F8A0070AB69 /* RefreshViewController.swift */; };
 		7F36A25229BC57B90054676F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36A25129BC57B90054676F /* GradientView.swift */; };
 		7F36A25829BC62750054676F /* Hero New Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25729BC62750054676F /* Hero New Regular.ttf */; };
 		7F36A25D29BC636E0054676F /* Hero New Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25A29BC636E0054676F /* Hero New Medium.ttf */; };
@@ -41,10 +47,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		63ADDDA029C2D49800A07725 /* TextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldViewController.swift; sourceTree = "<group>"; };
+		63ADDDA229C2E68B00A07725 /* UISwitchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISwitchViewController.swift; sourceTree = "<group>"; };
+		63ADDDA429C2EFDA00A07725 /* SliderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewController.swift; sourceTree = "<group>"; };
+		63ADDDA629C305AD00A07725 /* UIProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIProgressViewController.swift; sourceTree = "<group>"; };
+		63ADDDA829C31AEC00A07725 /* SegmentedControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlViewController.swift; sourceTree = "<group>"; };
 		63AE1CD129C1BD7E00026E69 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		63AE1CD329C1BDCA00026E69 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		63AE20E429C1C33800EFD29E /* UIComponents.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIComponents.storyboard; sourceTree = "<group>"; };
 		63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
+		63FCD2BA29C33F8A0070AB69 /* RefreshViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshViewController.swift; sourceTree = "<group>"; };
 		7F36A25129BC57B90054676F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7F36A25729BC62750054676F /* Hero New Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Regular.ttf"; sourceTree = "<group>"; };
 		7F36A25A29BC636E0054676F /* Hero New Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Medium.ttf"; sourceTree = "<group>"; };
@@ -93,6 +105,12 @@
 				63AE1CD329C1BDCA00026E69 /* RegistrationViewController.swift */,
 				7F96A828296C7994009306F8 /* PhoneNumberViewController.swift */,
 				63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */,
+				63ADDDA029C2D49800A07725 /* TextFieldViewController.swift */,
+				63ADDDA229C2E68B00A07725 /* UISwitchViewController.swift */,
+				63ADDDA429C2EFDA00A07725 /* SliderViewController.swift */,
+				63ADDDA629C305AD00A07725 /* UIProgressViewController.swift */,
+				63ADDDA829C31AEC00A07725 /* SegmentedControlViewController.swift */,
+				63FCD2BA29C33F8A0070AB69 /* RefreshViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -293,13 +311,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63ADDDA129C2D49800A07725 /* TextFieldViewController.swift in Sources */,
+				63ADDDA529C2EFDA00A07725 /* SliderViewController.swift in Sources */,
 				63AE1CD429C1BDCA00026E69 /* RegistrationViewController.swift in Sources */,
 				63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */,
 				63AE1CD229C1BD7E00026E69 /* LandingPageViewController.swift in Sources */,
 				7F96A829296C7994009306F8 /* PhoneNumberViewController.swift in Sources */,
 				7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */,
+				63ADDDA729C305AD00A07725 /* UIProgressViewController.swift in Sources */,
 				7F36A25229BC57B90054676F /* GradientView.swift in Sources */,
+				63FCD2BB29C33F8A0070AB69 /* RefreshViewController.swift in Sources */,
+				63ADDDA329C2E68B00A07725 /* UISwitchViewController.swift in Sources */,
 				7F96A827296C7994009306F8 /* SceneDelegate.swift in Sources */,
+				63ADDDA929C31AEC00A07725 /* SegmentedControlViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
