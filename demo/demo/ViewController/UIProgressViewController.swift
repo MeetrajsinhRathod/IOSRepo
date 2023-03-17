@@ -24,7 +24,6 @@ class UIProgressViewController: UIViewController {
         
         progress.completedUnitCount = 0
         
-        
         //countLabel.text = String(val)
         //change height of the progress bar
         progressBar.transform = progressBar.transform.scaledBy(x: 1, y: 5)

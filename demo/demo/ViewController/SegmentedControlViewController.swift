@@ -7,17 +7,16 @@
 
 import UIKit
 
-class SegmentedControlViewController: UIViewController {
+class SegmentedCo4ntrolViewController: UIViewController {
 
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var page: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "dog.png")
-        
         page.addTarget(self, action: #selector(pageDidChange), for: .valueChanged)
-        
     }
     
     @objc func pageDidChange(_ sender: UIPageControl) {

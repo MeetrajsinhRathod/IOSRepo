@@ -7,19 +7,13 @@
 
 import UIKit
 
+//RefreshViewController
 class RefreshViewController: UIViewController {
 
-    
-
-    @IBOutlet weak var tableList: UITableView!
-    var refreshControl = UIRefreshControl()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
     }
-
     /*
     // MARK: - Navigation
 
