@@ -9,9 +9,16 @@ import UIKit
 
 class UITextFieldViewController: UIViewController {
 
+//    @IBOutlet weak var coloredTextField: UITextField!
+//    @IBOutlet weak var emailField: UITextField!
+//    @IBOutlet weak var cornerRadiusField: UITextField!
+    
     @IBOutlet weak var coloredTextField: UITextField!
+
     @IBOutlet weak var emailField: UITextField!
+
     @IBOutlet weak var cornerRadiusField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

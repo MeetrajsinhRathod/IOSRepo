@@ -1,21 +1,17 @@
 //
-//  ZoomingScrollViewController.swift
+//  LabelViewController.swift
 //  demo
 //
-//  Created by Meetrajsinh Rathod on 20/03/23.
+//  Created by Meetrajsinh Rathod on 21/03/23.
 //
 
 import UIKit
 
-class ZoomingScrollViewController: UIViewController {
+class LabelViewController: UIViewController {
 
-    @IBOutlet weak var scroll: UIScrollView!
-    @IBOutlet weak var mapImage: UIImageView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        scroll.delegate = self
-        scroll.maximumZoomScale = 5.0
+
         // Do any additional setup after loading the view.
     }
     
@@ -29,10 +25,5 @@ class ZoomingScrollViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-}
 
-extension ZoomingScrollViewController: UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return mapImage
-    }
 }
