@@ -9,7 +9,35 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
-    let uiComponents = ["UILabel", "UIButton", "UITextField", "UITextView", "UISwitch", "UISlider", "UIProgressView", "UISegmentedControl", "UIPageControl", "UIStepper", "UIScrollView", "UITableView", "UICollectionView", "Pull to refresh", "UIImageView", "Image Picker", "UIActivityIndicator", "WKWebView", "UISearchBar", "Stack view", "UITabBar", "UIToolBar", "UIBarButtons", "UIPickerView", "UIDatePicker", "CLLocation", "UIMapView"]
+    let uiComponentsDictionary = [
+        "UILabel" : "UILabel",
+        "UIButton" : "UIButton",
+        "UITextField" : "UITextField",
+        "UITextView": "UITextField",
+        "UISwitch" : "UISwitch",
+        "UISlider": "UISlider",
+        "UIProgressView" : "UIProgressView",
+        "UISegmentedControl" : "UISegmentedControl",
+        "UIPageControl" : "UISegmentedControl",
+        "UIStepper": "UIProgressView",
+        "UIScrollView" : "UIScrollView",
+        "UITableView" : "UITable",
+        "UICollectionView" : "MovieCollectionViewController",
+        "Pull to refresh" : "Pull to refresh",
+        "UIImageView" : "Image Picker",
+        "Image Picker" : "Image Picker",
+        "UIActivityIndicator" : "UILabel",
+        "WKWebView" : "UILabel",
+        "UISearchBar" : "UILabel",
+        "Stack view" : "UILabel",
+        "UITabBar" : "UILabel",
+        "UIToolBar" : "UILabel",
+        "UIBarButtons" : "UILabel",
+        "UIPickerView" : "UILabel",
+        "UIDatePicker" : "UILabel",
+        "CLLocation" : "UILabel",
+        "UIMapView" : "UILabel"
+    ]
     
     override func viewDidLoad() {
     
@@ -21,6 +49,7 @@ class TableViewController: UITableViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "NavigationCell")
         tableView.rowHeight = 50.0
+        
     }
 
     // MARK: - Table view data source
@@ -32,7 +61,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return uiComponents.count
+        return uiComponentsDictionary.count
     }
 
     
@@ -42,62 +71,21 @@ class TableViewController: UITableViewController {
         else {
             return UITableViewCell()
         }
+        
+        let uiComponents = ["UILabel", "UIButton", "UITextField", "UITextView", "UISwitch", "UISlider", "UIProgressView", "UISegmentedControl", "UIPageControl", "UIStepper", "UIScrollView", "UITableView", "UICollectionView", "Pull to refresh", "UIImageView", "Image Picker", "UIActivityIndicator", "WKWebView", "UISearchBar", "Stack view", "UITabBar", "UIToolBar", "UIBarButtons", "UIPickerView", "UIDatePicker", "CLLocation", "UIMapView"]
+        
         cell.componentBtn.setTitle(uiComponents[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
+
         return cell
     }
     
     @objc func navigateTo(sender: UIButton) {
         let mainStoryBoard = UIStoryboard(name: "UIComponents", bundle: nil)
-        var viewControllerToNavigate: UIViewController
         
+        let viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel?.text ?? "UILabel"] ?? "UILabel")
         
-        switch (sender.titleLabel?.text) {
-        case uiComponents[0]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[0])
-            
-        case uiComponents[1]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[1])
-            
-        case uiComponents[2]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[2])
-            
-        case uiComponents[3]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[2])
-            
-        case uiComponents[4]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[4])
-            
-        case uiComponents[5]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[5])
-            
-        case uiComponents[6]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[6])
-            
-        case uiComponents[7]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[7])
-            
-        case uiComponents[8]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[7])
-            
-        case uiComponents[9]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[6])
-            
-        case uiComponents[10]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[10])
-        
-        case uiComponents[13]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[13])
-            
-        case uiComponents[14]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[15])
-            
-        case uiComponents[15]:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[15])
-        default:
-            viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponents[0])
-        }
-        
+//        let viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel?.text ?? "UILabel"] ?? "UILabel")
         self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
         
     }
