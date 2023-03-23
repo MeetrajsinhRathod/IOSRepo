@@ -17,8 +17,9 @@ class MovieDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        movieName.text = name
+        movieName.text = ""
         movieImage.image = image
+        navigationItem.title = name
         
         // Do any additional setup after loading the view.
     }

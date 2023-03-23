@@ -12,14 +12,39 @@ class RefreshTableViewController: UITableViewController {
     var tableViewElements = [String]()
     @IBOutlet weak var refresh: UIRefreshControl!
     
+    
+    
+    let spinner = UIActivityIndicatorView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        spinner.backgroundColor = .black
+        spinner.style = .large
+        self.showSpinner()
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        headerView.backgroundColor = .opaqueSeparator
+
+        let label = UILabel(frame: headerView.bounds)
+        label.text = "Pull to refresh and see added items"
+        label.textAlignment = .center
+        headerView.addSubview(label)
+
+        tableView.tableHeaderView = headerView
+    }
+    
+    func showSpinner() {
+        let loadingView = UIView(frame: self.view.bounds)
+        loadingView.backgroundColor = .opaqueSeparator
+        spinner.startAnimating()
+        spinner.center = loadingView.center
+        loadingView.addSubview(spinner)
+        self.view.addSubview(loadingView)
+        
+        Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false, block: { t in
+            loadingView.removeFromSuperview()
+        })
     }
 
     @IBAction func refreshTable(_ sender: UIRefreshControl) {

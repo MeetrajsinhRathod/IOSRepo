@@ -11,9 +11,14 @@ private let reuseIdentifier = "Cell"
 
 class MovieCollectionViewController: UICollectionViewController {
 
-    let movies = ["The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3"]
+//    let movies = ["The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3"]
     
+    static let avengers = ["The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame"]
 
+    static let ironMan = ["Iron Man", "Iron Man 2", "Iron Man 3", "Iron Man", "Iron Man 2", "Iron Man 3"]
+
+    let movies = [avengers, ironMan]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,32 +26,49 @@ class MovieCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
-        let headerView = HeaderCollectionReusableView()
-        
+        collectionView.register(MovieCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         navigationItem.title = "Collection view"
+
+        collectionView.register(FooterView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "FooterView")
         
-        
-        collectionView.register(HeaderCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView")
-        
-        // Do any additional setup after loading the view.
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerView", for: indexPath)
+        switch kind {
+        case UICollectionView.elementKindSectionHeader:
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "HeaderView", for: indexPath) as? HeaderView
+            else {
+                return UICollectionReusableView()
+            }
+            header.title.text = "Movie series - \(indexPath.section + 1)"
+            header.backgroundColor = .opaqueSeparator
+            return header
+                    
+        case UICollectionView.elementKindSectionFooter:
+            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "FooterView", for: indexPath) as? FooterView
+            else {
+                return UICollectionReusableView()
+            }
+                    let label = UILabel(frame: footer.bounds)
+                    label.text = "Footer"
+                    label.textAlignment = .center
+                    footer.addSubview(label)
+                    footer.backgroundColor = .opaqueSeparator
 
-        headerView.backgroundColor = .opaqueSeparator
-
-        let label = UILabel(frame: headerView.bounds)
-        label.text = "Table View with custom header, footer and sections"
-        label.textAlignment = .center
-        headerView.addSubview(label)
-
-          return headerView
+                    return footer
+                    
+        default:
+            return UICollectionReusableView()
+        }
         
+
+        
+        
+
     }
+    
     
 
     /*
@@ -63,13 +85,13 @@ class MovieCollectionViewController: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return movies.count
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return movies.count
+        return movies[section].count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,8 +100,8 @@ class MovieCollectionViewController: UICollectionViewController {
             return UICollectionViewCell()
         }
         
-        cell.movieName.text = movies[indexPath.row]
-        cell.movieImage.image = UIImage(named: movies[indexPath.row])
+        cell.movieName.text = movies[indexPath.section][indexPath.row]
+        cell.movieImage.image = UIImage(named: movies[indexPath.section][indexPath.row])
         // Configure the cell
     
         return cell
@@ -87,6 +109,17 @@ class MovieCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDelegate
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let movieDetailsVC = storyboard?.instantiateViewController(withIdentifier: "MovieDetailsViewController") as? MovieDetailsViewController
+            else {
+            return
+        }
+
+        movieDetailsVC.name = movies[indexPath.section][indexPath.row]
+        movieDetailsVC.image = UIImage(named: movies[indexPath.section][indexPath.row]) ?? UIImage()
+        self.navigationController?.pushViewController(movieDetailsVC, animated: true)
+    }
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
