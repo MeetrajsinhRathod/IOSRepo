@@ -13,8 +13,8 @@ class UITextFieldViewController: UIViewController {
 //    @IBOutlet weak var emailField: UITextField!
 //    @IBOutlet weak var cornerRadiusField: UITextField!
     
-    @IBOutlet weak var coloredTextField: UITextField!
-
+    @IBOutlet weak var coloredField: UITextField!
+    
     @IBOutlet weak var emailField: UITextField!
 
     @IBOutlet weak var cornerRadiusField: UITextField!
@@ -22,11 +22,12 @@ class UITextFieldViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        coloredTextField.attributedPlaceholder = NSAttributedString(
-            string: coloredTextField.placeholder!,
+        coloredField.attributedPlaceholder = NSAttributedString(
+            string: coloredField.placeholder!,
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue]
         )
-        coloredTextField.backgroundColor = UIColor.systemPink
+        
+        coloredField.backgroundColor = UIColor.systemPink
         
         cornerRadiusField.layer.cornerRadius = 15.0
         cornerRadiusField.layer.borderWidth = 2.0
@@ -37,7 +38,7 @@ class UITextFieldViewController: UIViewController {
         let image = UIImage(named: "email.png")
         imageView.image = image
         emailField.leftView = imageView
-        emailField.leftViewMode = UITextField.ViewMode.always
+        emailField.leftViewMode = .unlessEditing
         emailField.leftViewMode = .always
     }
     

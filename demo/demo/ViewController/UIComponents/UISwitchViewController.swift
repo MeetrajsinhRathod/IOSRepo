@@ -11,10 +11,17 @@ class UISwitchViewController: UIViewController {
 
     @IBOutlet weak var switchToggle: UISwitch!
     
+    @IBOutlet weak var customSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        customSwitch.thumbTintColor = UIColor(patternImage: UIImage(named: "DropDown.png") ?? UIImage())
+        
+        customSwitch.onImage = UIImage(named: "monkey.png")
+        customSwitch.offImage = UIImage(named: "dog.png")
+        customSwitch.onTintColor = .cyan
+
     }
     @IBAction func turnOnDarkMode(_ sender: UISwitch) {
         if switchToggle.isOn {

@@ -12,11 +12,15 @@ class SliderViewController: UIViewController {
     @IBOutlet weak var sizeSlider: UISlider!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var customSlider: UISlider!
+    
     var size: CGFloat = 200
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        customSlider.setThumbImage(UIImage(systemName: "sun.and.horizon")?.withTintColor(UIColor.orange), for: UIControl.State.normal)
+        
         imageView.frame = CGRect(x: 0, y: 0, width: size, height: size)
         imageView.center = view.center
     }
