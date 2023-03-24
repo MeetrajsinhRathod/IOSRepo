@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		631F442729CC7B1100A84AE9 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631F442629CC7B1100A84AE9 /* FooterView.swift */; };
+		63357A3B29CD7661001C812B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63357A3A29CD7661001C812B /* SignUpViewController.swift */; };
 		6369343029C81F4600560F7B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369342F29C81F4600560F7B /* TableViewController.swift */; };
 		6369343429C84E4600560F7B /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343329C84E4600560F7B /* ScrollViewController.swift */; };
 		6369343629C8676900560F7B /* ZoomingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343529C8676900560F7B /* ZoomingScrollViewController.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		631F442629CC7B1100A84AE9 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		63357A3A29CD7661001C812B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		6369342F29C81F4600560F7B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6369343329C84E4600560F7B /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		6369343529C8676900560F7B /* ZoomingScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomingScrollViewController.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				63E17A4B29C9B89900FE3036 /* LabelViewController.swift */,
 				7FD0C70E29CCC53D00BA097B /* UITextViewController.swift */,
 				7FD0C71029CCCE4B00BA097B /* ImageViewController.swift */,
+				63357A3A29CD7661001C812B /* SignUpViewController.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				63E17A4C29C9B89900FE3036 /* LabelViewController.swift in Sources */,
 				7F96A829296C7994009306F8 /* PhoneNumberViewController.swift in Sources */,
 				63F9CF3B29C49273004C40CE /* ImagePickerViewController.swift in Sources */,
+				63357A3B29CD7661001C812B /* SignUpViewController.swift in Sources */,
 				7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */,
 				63F31B4529CB2A48005C3BC7 /* MovieCollectionViewCell.swift in Sources */,
 				63ADDDA729C305AD00A07725 /* UIProgressViewController.swift in Sources */,
