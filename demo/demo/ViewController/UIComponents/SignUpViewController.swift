@@ -12,9 +12,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var checkBox: UIImageView!
     
     var passwordToggle = false
@@ -23,11 +21,16 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configureUI()
+        addKeyboardObserver()
+
+    }
+    
+    func configureUI() {
         let mailImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         let userImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         let eyeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
         let lockImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        
         
         mailImageView.image = UIImage(named: "mail.png")
         emailTextField.leftView = mailImageView
@@ -46,7 +49,6 @@ class SignUpViewController: UIViewController {
         passwordTextField.leftView = lockImageView
         passwordTextField.leftViewMode = .always
         
-        
         let bottomLine = CALayer()
         bottomLine.frame = CGRect(x: 0, y: emailTextField.frame.height - 0.5 - 0.5, width: emailTextField.frame.size.width, height: 1)
         bottomLine.backgroundColor = UIColor.gray.cgColor
@@ -63,7 +65,6 @@ class SignUpViewController: UIViewController {
         usernameTextField.borderStyle = .none
         passwordTextField.borderStyle = .none
         
-        
         emailTextField.layer.addSublayer(bottomLine)
         usernameTextField.layer.addSublayer(bottomLine2)
         passwordTextField.layer.addSublayer(bottomLine3)
@@ -76,27 +77,23 @@ class SignUpViewController: UIViewController {
         checkBox.isUserInteractionEnabled = true
         checkBox.addGestureRecognizer(tapGesture2)
         checkBox.tintColor = .black
-        
+    }
+    
+    func addKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-            
-            NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
         else {
-          // if keyboard size is not available for some reason, dont do anything
           return
         }
-
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 30 , right: 0.0)
-        scrollView.contentInset = contentInsets
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height + 30 , right: 0.0)
       }
-
-      @objc func keyboardWillHide(notification: NSNotification) {
-        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-        scrollView.contentInset = contentInsets
+    
+    @objc func keyboardWillHide(notification: NSNotification) {
+        scrollView.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
       }
     
     @objc func togglePassword(tapGesture: UITapGestureRecognizer) {
