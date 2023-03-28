@@ -10,8 +10,6 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class MovieCollectionViewController: UICollectionViewController {
-
-//    let movies = ["The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "Iron Man", "Iron Man 2", "Iron Man 3"]
     
     static let avengers = ["The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame", "The Avengers", "Avengers Age of Ultron", "Avengers Infinity War", "Avengers Endgame"]
 

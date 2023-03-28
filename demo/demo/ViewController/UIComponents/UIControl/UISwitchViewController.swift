@@ -15,11 +15,8 @@ class UISwitchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        customSwitch.thumbTintColor = UIColor(patternImage: UIImage(named: "DropDown.png") ?? UIImage())
         
-        customSwitch.onImage = UIImage(named: "monkey.png")
-        customSwitch.offImage = UIImage(named: "dog.png")
+        customSwitch.thumbTintColor = UIColor(patternImage: UIImage(named: "DropDown.png") ?? UIImage())
         customSwitch.onTintColor = .cyan
 
     }

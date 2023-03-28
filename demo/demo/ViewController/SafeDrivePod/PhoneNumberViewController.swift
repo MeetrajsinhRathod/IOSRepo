@@ -17,7 +17,6 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
         super.touchesBegan(touches, with: event)
         self.view.endEditing(true)
         phoneNumber.delegate = self
-        //self.phoneNumber.resignFirstResponder()
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         return (textField.text!.count + (string.count - range.length)) <= 10

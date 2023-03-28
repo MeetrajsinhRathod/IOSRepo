@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="seu-jK-BG8">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OQ4-P9-KIM">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="seu-jK-BG8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="2Uq-6y-o3F"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kj3-Um-dCw">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        </tabBarAppearance>
+                        <tabBarAppearance key="scrollEdgeAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="fPm-aL-YZ2" kind="relationship" relationship="viewControllers" id="rJ8-1x-y8W"/>
+                        <segue destination="R8o-8z-tEj" kind="relationship" relationship="viewControllers" id="sfP-GL-beD"/>
+                        <segue destination="iFq-ed-qsy" kind="relationship" relationship="viewControllers" id="b8q-Vq-atw"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="neR-Ub-lsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1581" y="145"/>
+        </scene>
+        <!--UIViewTab-->
+        <scene sceneID="72Q-Dv-iLb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIViewTab" storyboardName="UIView" referencedIdentifier="UIViewTab" id="fPm-aL-YZ2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="UIView" image="square.dashed" catalog="system" selectedImage="square.dashed.inset.filled" id="5sQ-gk-hjJ">
+                        <color key="badgeColor" systemColor="systemRedColor"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4N2-9o-ukH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1976" y="639"/>
+        </scene>
+        <!--UIControlTab-->
+        <scene sceneID="cAr-FR-m5G">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="UIControlTab" storyboardName="UIControl" referencedIdentifier="UIControlTab" id="R8o-8z-tEj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="UIControl" id="fA0-h1-BP2">
+                        <imageReference key="image" image="gear.circle" catalog="system" symbolScale="default"/>
+                        <color key="badgeColor" name="AccentColor"/>
+                        <imageReference key="selectedImage" image="gear.circle.fill" catalog="system" symbolScale="default"/>
+                    </tabBarItem>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cn1-Po-3Zr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1583" y="639"/>
+        </scene>
+        <!--UIScrollTab-->
+        <scene sceneID="GqL-NJ-DIL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="UIScroll" referencedIdentifier="UIScrollTab" id="iFq-ed-qsy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="arrow.up.arrow.down.square" catalog="system" selectedImage="arrow.up.arrow.down.square.fill" id="bTL-4d-Vwx"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypn-ol-jqd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1237" y="639"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
+        <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
+        <image name="gear.circle" catalog="system" width="128" height="123"/>
+        <image name="gear.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="square.dashed" catalog="system" width="128" height="114"/>
+        <image name="square.dashed.inset.filled" catalog="system" width="128" height="114"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

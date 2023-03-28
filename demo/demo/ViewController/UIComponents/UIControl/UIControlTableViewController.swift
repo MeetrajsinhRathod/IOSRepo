@@ -1,55 +1,39 @@
 //
-//  TableViewController.swift
+//  UIControlTableViewController.swift
 //  demo
 //
-//  Created by Meetrajsinh Rathod on 20/03/23.
+//  Created by Meetrajsinh Rathod on 28/03/23.
 //
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class UIControlTableViewController: UITableViewController {
 
+    
     let uiComponentsDictionary = [
-        "UILabel" : "UILabel",
         "UIButton" : "UIButton",
         "UITextField" : "UITextField",
-        "UITextView": "UITextView",
         "UISwitch" : "UISwitch",
         "UISlider": "UISlider",
-        "UIProgressView" : "UIProgressView",
         "UISegmentedControl" : "UISegmentedControl",
         "UIPageControl" : "UISegmentedControl",
-        "UIStepper": "UIProgressView",
-        "UIScrollView" : "UIScrollView",
-        "UITableView" : "UITable",
-        "UICollectionView" : "MovieCollectionViewController",
         "Pull to refresh" : "Pull to refresh",
-        "UIImageView" : "UIImageView",
-        "Image Picker" : "Image Picker",
-        "UIActivityIndicator" : "UILabel",
-        "WKWebView" : "UILabel",
-        "UISearchBar" : "UILabel",
-        "Stack view" : "UILabel",
-        "UITabBar" : "UILabel",
-        "UIToolBar" : "UILabel",
-        "UIBarButtons" : "UILabel",
-        "UIPickerView" : "UILabel",
-        "UIDatePicker" : "UILabel",
-        "CLLocation" : "UILabel",
-        "UIMapView" : "UILabel"
+        "UIActivityIndicator" : "Pull to refresh"
     ]
-    
     override func viewDidLoad() {
-    
         super.viewDidLoad()
         
-        navigationItem.title = "UIComponents"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "NavigationCell")
         tableView.rowHeight = 50.0
-        
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -64,7 +48,6 @@ class TableViewController: UITableViewController {
         return uiComponentsDictionary.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NavigationCell", for: indexPath) as? TableViewCell
@@ -72,7 +55,7 @@ class TableViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        let uiComponents = ["UILabel", "UIButton", "UITextField", "UITextView", "UISwitch", "UISlider", "UIProgressView", "UISegmentedControl", "UIPageControl", "UIStepper", "UIScrollView", "UITableView", "UICollectionView", "Pull to refresh", "UIImageView", "Image Picker", "UIActivityIndicator", "WKWebView", "UISearchBar", "Stack view", "UITabBar", "UIToolBar", "UIBarButtons", "UIPickerView", "UIDatePicker", "CLLocation", "UIMapView"]
+        let uiComponents = ["UIButton", "UITextField", "UISwitch", "UISlider", "UISegmentedControl", "UIPageControl", "Pull to refresh", "UIActivityIndicator"]
         
         cell.componentBtn.setTitle(uiComponents[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
@@ -81,15 +64,11 @@ class TableViewController: UITableViewController {
     }
     
     @objc func navigateTo(sender: UIButton) {
-        let mainStoryBoard = UIStoryboard(name: "UIComponents", bundle: nil)
-        
-        let viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel?.text ?? "UILabel"] ?? "UILabel")
-        
-//        let viewControllerToNavigate = mainStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel?.text ?? "UILabel"] ?? "UILabel")
+        let UIControlStoryboard = UIStoryboard(name: "UIControl", bundle: nil)
+        let viewControllerToNavigate: UIViewController = UIControlStoryboard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
         self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
         
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
