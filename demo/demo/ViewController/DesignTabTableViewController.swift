@@ -1,5 +1,5 @@
 //
-//  UIScrollTableViewController.swift
+//  DesignTabTableViewController.swift
 //  demo
 //
 //  Created by Meetrajsinh Rathod on 28/03/23.
@@ -7,27 +7,33 @@
 
 import UIKit
 
-class UIScrollTableViewController: UITableViewController {
-    
-    
-    let uiComponentsDictionary = [
-        "UITextView": "UITextView",
-        "UIScrollView" : "UIScrollView",
-        "UIScrollview for view zooming" : "Zomming Scroll View",
-        "UITableView" : "UITable",
-        "UICollectionView" : "MovieCollectionViewController",
-        "Stack view" : "UIScrollView",
+class DesignTabTableViewController: UITableViewController {
+
+    let designsDictionary = [
+        "SafeDrivePod": "SafeDrivePod",
+        "SignUp Page" : "SignUpPage",
+        "Todo List" : "TodoList"
     ]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        navigationController?.navigationBar.prefersLargeTitles = true
         
+        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "NavigationCell")
         tableView.rowHeight = 50.0
-        
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -44,7 +50,7 @@ class UIScrollTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return uiComponentsDictionary.count
+        return designsDictionary.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,17 +60,34 @@ class UIScrollTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        let uiComponents = ["UIScrollView", "UIScrollview for view zooming", "UITableView", "UICollectionView", "UITextView", "Stack view"]
+        let designs = ["SafeDrivePod", "SignUp Page", "Todo List"]
         
-        cell.componentBtn.setTitle(uiComponents[indexPath.row], for: UIControl.State.normal)
+        cell.componentBtn.setTitle(designs[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
 
         return cell
     }
     
     @objc func navigateTo(sender: UIButton) {
-        let UIScrollStoryboard = UIStoryboard(name: "UIScroll", bundle: nil)
-        let viewControllerToNavigate: UIViewController = UIScrollStoryboard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
+        let safeDrivePodStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let signUpStoryboard = UIStoryboard(name: "Practice", bundle: nil)
+        let todoListStoryboard = UIStoryboard(name: "TodoList", bundle: nil)
+        
+        var viewControllerToNavigate: UIViewController
+        
+        switch sender.titleLabel?.text {
+            case "SafeDrivePod":
+                viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            case "SignUp Page":
+                viewControllerToNavigate = signUpStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            
+            case "Todo List":
+                viewControllerToNavigate = todoListStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            
+            default:
+            viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+        }
+        
         self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
         
     }

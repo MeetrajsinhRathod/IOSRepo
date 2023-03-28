@@ -13,10 +13,15 @@ class SegmentedControlViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var page: UIPageControl!
     
+    @IBOutlet weak var customPageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "dog.png")
         page.addTarget(self, action: #selector(pageDidChange), for: .valueChanged)
+        
+        customPageControl.preferredIndicatorImage = UIImage(systemName: "book")
+        customPageControl.preferredCurrentPageIndicatorImage = UIImage(systemName: "book.fill")
     }
     
     @objc func pageDidChange(_ sender: UIPageControl) {

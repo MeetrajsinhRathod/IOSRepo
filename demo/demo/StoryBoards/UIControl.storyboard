@@ -434,6 +434,11 @@
                                     <action selector="changeAnimal:" destination="RSh-3h-fpm" eventType="valueChanged" id="gA1-kz-eDb"/>
                                 </connections>
                             </segmentedControl>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="AsQ-38-rtB">
+                                <rect key="frame" x="129.66666666666669" y="632" width="133.66666666666669" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemPurpleColor"/>
+                                <color key="currentPageIndicatorTintColor" systemColor="systemPinkColor"/>
+                            </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EHm-7N-HJS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -443,12 +448,15 @@
                             <constraint firstItem="k9m-4L-hzJ" firstAttribute="centerX" secondItem="Jtl-Yw-2jS" secondAttribute="centerX" id="IDh-mm-kAe"/>
                             <constraint firstItem="rMg-nJ-d9g" firstAttribute="centerX" secondItem="Jtl-Yw-2jS" secondAttribute="centerX" id="MSz-Ii-gcw"/>
                             <constraint firstItem="k9m-4L-hzJ" firstAttribute="top" secondItem="n6L-nl-juc" secondAttribute="bottom" constant="20" id="N8Y-3N-cc8"/>
+                            <constraint firstItem="AsQ-38-rtB" firstAttribute="centerX" secondItem="Jtl-Yw-2jS" secondAttribute="centerX" id="gSH-D8-evI"/>
                             <constraint firstItem="n6L-nl-juc" firstAttribute="top" secondItem="EHm-7N-HJS" secondAttribute="top" constant="20" id="kjs-fH-oDe"/>
                             <constraint firstItem="rMg-nJ-d9g" firstAttribute="centerY" secondItem="Jtl-Yw-2jS" secondAttribute="centerY" id="ppv-Xw-sY8"/>
                             <constraint firstItem="D0R-wj-rop" firstAttribute="top" secondItem="rMg-nJ-d9g" secondAttribute="bottom" constant="20" id="wMr-EG-oFl"/>
+                            <constraint firstItem="AsQ-38-rtB" firstAttribute="top" secondItem="D0R-wj-rop" secondAttribute="bottom" constant="60" id="wT7-ef-dUv"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="customPageControl" destination="AsQ-38-rtB" id="bNa-uB-MUN"/>
                         <outlet property="imageView" destination="rMg-nJ-d9g" id="0El-Cm-bgf"/>
                         <outlet property="page" destination="D0R-wj-rop" id="zEF-7c-mNz"/>
                         <outlet property="segment" destination="k9m-4L-hzJ" id="NmA-ld-xes"/>
@@ -541,6 +549,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemTealColor">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -18,13 +18,17 @@ class UIViewTableViewController: UITableViewController {
         "Image Picker" : "Image Picker",
         "UITabBar" : "UIViewTableViewController",
         "UIToolBar" : "UIToolBar",
-        "UIBarButton" : "UIViewTableViewController"
+        "UIBarButton" : "UIViewTableViewController",
+        "UISearchBar" : "SearchBar"
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+//        let searchBar = UISearchController()
+//        navigationItem.searchController = searchBar
         
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "NavigationCell")
@@ -57,7 +61,7 @@ class UIViewTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        let uiComponents = ["UILabel", "UIProgressView", "UIStepper", "UIImageView", "Image Picker", "UITabBar", "UIToolBar", "UIBarButton"]
+        let uiComponents = ["UILabel", "UIProgressView", "UIStepper", "UIImageView", "Image Picker", "UITabBar", "UIToolBar", "UIBarButton", "UISearchBar"]
         
         cell.componentBtn.setTitle(uiComponents[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)

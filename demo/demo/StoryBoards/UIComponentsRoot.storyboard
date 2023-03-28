@@ -9,24 +9,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Root View Controller-->
         <scene sceneID="OQ4-P9-KIM">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="seu-jK-BG8" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="seu-jK-BG8" customClass="RootViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="2Uq-6y-o3F"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kj3-Um-dCw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <tabBarAppearance key="standardAppearance">
-                            <color key="backgroundColor" systemColor="systemGray5Color"/>
-                        </tabBarAppearance>
+                        <tabBarAppearance key="standardAppearance" backgroundEffect="systemThickMaterial"/>
                         <tabBarAppearance key="scrollEdgeAppearance"/>
                     </tabBar>
                     <connections>
                         <segue destination="fPm-aL-YZ2" kind="relationship" relationship="viewControllers" id="rJ8-1x-y8W"/>
                         <segue destination="R8o-8z-tEj" kind="relationship" relationship="viewControllers" id="sfP-GL-beD"/>
                         <segue destination="iFq-ed-qsy" kind="relationship" relationship="viewControllers" id="b8q-Vq-atw"/>
+                        <segue destination="w7l-dB-aTQ" kind="relationship" relationship="viewControllers" id="Byw-Fe-OXQ"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neR-Ub-lsF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -69,19 +68,60 @@
             </objects>
             <point key="canvasLocation" x="-1237" y="639"/>
         </scene>
+        <!--Designs-->
+        <scene sceneID="5Af-Sn-i8C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w7l-dB-aTQ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Designs" image="paintbrush" catalog="system" selectedImage="paintbrush.fill" id="YMf-v6-CUG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A79-Md-aDI">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wao-0S-JVi" kind="relationship" relationship="rootViewController" id="uS8-ME-Mh6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6pH-fO-J7B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-705" y="144"/>
+        </scene>
+        <!--Design-->
+        <scene sceneID="pDP-oc-B65">
+            <objects>
+                <tableViewController storyboardIdentifier="DesignTabTableViewController" id="Wao-0S-JVi" userLabel="Design" customClass="DesignTabTableViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="hYE-4W-a94">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Wao-0S-JVi" id="g07-0O-9dL"/>
+                            <outlet property="delegate" destination="Wao-0S-JVi" id="d2A-Y2-e61"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="UIComponents" id="gJU-jr-Umx"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FjD-2B-3xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="144"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.up.arrow.down.square" catalog="system" width="128" height="114"/>
         <image name="arrow.up.arrow.down.square.fill" catalog="system" width="128" height="114"/>
         <image name="gear.circle" catalog="system" width="128" height="123"/>
         <image name="gear.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="paintbrush" catalog="system" width="122" height="128"/>
+        <image name="paintbrush.fill" catalog="system" width="122" height="128"/>
         <image name="square.dashed" catalog="system" width="128" height="114"/>
         <image name="square.dashed.inset.filled" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemGray5Color">
-            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -85,12 +85,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XfQ-jy-oGS">
-                                <rect key="frame" x="141" y="113" width="269" height="34"/>
+                                <rect key="frame" x="141" y="113.33333333333331" width="269" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kyr-JE-yPu">
-                                <rect key="frame" x="141" y="154" width="269" height="34"/>
+                                <rect key="frame" x="141" y="154.33333333333334" width="269" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -266,7 +266,7 @@
         <!--SignUp Page-->
         <scene sceneID="OXr-ra-I1u">
             <objects>
-                <viewController id="LYk-ae-YQA" userLabel="SignUp Page" customClass="SignUpViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpPage" id="LYk-ae-YQA" userLabel="SignUp Page" customClass="SignUpViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qtg-G6-5mY">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -434,11 +434,12 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Amp-0y-xPT" userLabel="Terms&amp;Conditions Stack View">
                                                 <rect key="frame" x="30" y="601.66666666666663" width="370" height="36"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="checkBox" translatesAutoresizingMaskIntoConstraints="NO" id="Blg-0b-jSU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="16" height="36"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="checkmark.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Blg-0b-jSU">
+                                                        <rect key="frame" x="0.0" y="1.6666666666666643" width="19.333333333333332" height="33"/>
+                                                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryc-Pa-Aag" userLabel="By creating an account, you agree to our  Term &amp; Conditions">
-                                                        <rect key="frame" x="26" y="0.0" width="344" height="36"/>
+                                                        <rect key="frame" x="29.333333333333343" y="0.0" width="340.66666666666663" height="36"/>
                                                         <attributedString key="attributedText">
                                                             <fragment>
                                                                 <string key="content">By creating an account, you agree to our
@@ -513,13 +514,6 @@
                                                 <exclude reference="BU0-E6-tuq"/>
                                                 <exclude reference="XHG-8e-7Iw"/>
                                                 <exclude reference="aE0-Z6-R3W"/>
-                                                <exclude reference="6Yg-pd-4wa"/>
-                                                <exclude reference="HfI-cV-ryM"/>
-                                                <exclude reference="UjK-5L-fLD"/>
-                                                <exclude reference="Zp8-tZ-hp4"/>
-                                                <exclude reference="pNH-en-jHE"/>
-                                                <exclude reference="tW3-DG-kat"/>
-                                                <exclude reference="vic-b7-tMD"/>
                                                 <exclude reference="Chd-yx-D11"/>
                                                 <exclude reference="FKd-uG-8oY"/>
                                                 <exclude reference="Nqf-Q1-mbp"/>
@@ -533,6 +527,13 @@
                                                 <exclude reference="YNT-fu-OHr"/>
                                                 <exclude reference="egI-hZ-sUF"/>
                                                 <exclude reference="nwv-9B-tke"/>
+                                                <exclude reference="6Yg-pd-4wa"/>
+                                                <exclude reference="HfI-cV-ryM"/>
+                                                <exclude reference="UjK-5L-fLD"/>
+                                                <exclude reference="Zp8-tZ-hp4"/>
+                                                <exclude reference="pNH-en-jHE"/>
+                                                <exclude reference="tW3-DG-kat"/>
+                                                <exclude reference="vic-b7-tMD"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=compact">
@@ -542,15 +543,15 @@
                                                 <include reference="Sml-o9-dBg"/>
                                                 <include reference="ATf-5o-qjT"/>
                                                 <include reference="BU0-E6-tuq"/>
-                                                <include reference="HfI-cV-ryM"/>
-                                                <include reference="UjK-5L-fLD"/>
-                                                <include reference="vic-b7-tMD"/>
                                                 <include reference="FKd-uG-8oY"/>
                                                 <include reference="Nqf-Q1-mbp"/>
                                                 <include reference="W4g-rj-1LL"/>
                                                 <include reference="uxh-CG-mtr"/>
                                                 <include reference="4Re-T1-3M0"/>
                                                 <include reference="nwv-9B-tke"/>
+                                                <include reference="HfI-cV-ryM"/>
+                                                <include reference="UjK-5L-fLD"/>
+                                                <include reference="vic-b7-tMD"/>
                                             </mask>
                                         </variation>
                                         <variation key="heightClass=regular-widthClass=compact">
@@ -567,13 +568,6 @@
                                                 <exclude reference="BU0-E6-tuq"/>
                                                 <include reference="XHG-8e-7Iw"/>
                                                 <include reference="aE0-Z6-R3W"/>
-                                                <include reference="6Yg-pd-4wa"/>
-                                                <exclude reference="HfI-cV-ryM"/>
-                                                <exclude reference="UjK-5L-fLD"/>
-                                                <include reference="Zp8-tZ-hp4"/>
-                                                <include reference="pNH-en-jHE"/>
-                                                <include reference="tW3-DG-kat"/>
-                                                <exclude reference="vic-b7-tMD"/>
                                                 <include reference="Chd-yx-D11"/>
                                                 <exclude reference="FKd-uG-8oY"/>
                                                 <exclude reference="Nqf-Q1-mbp"/>
@@ -587,6 +581,13 @@
                                                 <include reference="YNT-fu-OHr"/>
                                                 <include reference="egI-hZ-sUF"/>
                                                 <exclude reference="nwv-9B-tke"/>
+                                                <include reference="6Yg-pd-4wa"/>
+                                                <exclude reference="HfI-cV-ryM"/>
+                                                <exclude reference="UjK-5L-fLD"/>
+                                                <include reference="Zp8-tZ-hp4"/>
+                                                <include reference="pNH-en-jHE"/>
+                                                <include reference="tW3-DG-kat"/>
+                                                <exclude reference="vic-b7-tMD"/>
                                             </mask>
                                         </variation>
                                     </view>
@@ -626,7 +627,7 @@
     </scenes>
     <resources>
         <image name="Facebook - Logo" width="19" height="18"/>
-        <image name="checkBox" width="16" height="16"/>
+        <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="location" width="24" height="24"/>
         <image name="log-in" width="24" height="24"/>
         <namedColor name="SignUpColor">

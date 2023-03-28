@@ -118,7 +118,7 @@ class SignUpViewController: UIViewController {
             tappedImage.image = UIImage(systemName: "square")
         } else {
             checkBoxToggle = true
-            tappedImage.image = UIImage(named: "checkBox")
+            tappedImage.image = UIImage(systemName: "checkmark.square")
         }
     }
 

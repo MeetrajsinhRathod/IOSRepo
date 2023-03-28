@@ -1,16 +1,20 @@
 //
-//  LandingPageViewController.swift
+//  RootViewController.swift
 //  demo
 //
-//  Created by Meetrajsinh Rathod on 15/03/23.
+//  Created by Meetrajsinh Rathod on 28/03/23.
 //
 
 import UIKit
 
-class LandingPageViewController: UIViewController {
+class RootViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        let searchBar = UISearchBar()
+        self.navigationItem.titleView = searchBar
+    
         // Do any additional setup after loading the view.
     }
     
