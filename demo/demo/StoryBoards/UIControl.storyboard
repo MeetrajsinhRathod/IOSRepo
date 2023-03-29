@@ -504,6 +504,104 @@
             </objects>
             <point key="canvasLocation" x="1598" y="1388"/>
         </scene>
+        <!--Picker View Controller-->
+        <scene sceneID="xiu-S8-Nh8">
+            <objects>
+                <viewController storyboardIdentifier="UIPicker" id="oxi-uB-GuU" customClass="UIPickerViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IJQ-kh-sow">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose a color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czh-Zf-2gb">
+                                <rect key="frame" x="139.33333333333334" y="159" width="114.33333333333334" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYH-0x-VJi">
+                                <rect key="frame" x="37" y="318" width="320" height="216"/>
+                            </pickerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Olg-A5-C3P"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Czh-Zf-2gb" firstAttribute="centerX" secondItem="IJQ-kh-sow" secondAttribute="centerX" id="6Qh-Hd-CNq"/>
+                            <constraint firstItem="UYH-0x-VJi" firstAttribute="centerY" secondItem="IJQ-kh-sow" secondAttribute="centerY" id="ZQk-4m-D3M"/>
+                            <constraint firstItem="Czh-Zf-2gb" firstAttribute="top" secondItem="Olg-A5-C3P" secondAttribute="top" constant="100" id="b34-PF-ddp"/>
+                            <constraint firstItem="UYH-0x-VJi" firstAttribute="centerX" secondItem="IJQ-kh-sow" secondAttribute="centerX" id="hHB-c0-K3H"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorPicker" destination="UYH-0x-VJi" id="Ot2-0u-DJm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haW-ux-tUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="482" y="2089"/>
+        </scene>
+        <!--DatePicker-->
+        <scene sceneID="pfQ-M2-pk8">
+            <objects>
+                <viewController storyboardIdentifier="DatePicker" id="G7O-St-omN" userLabel="DatePicker" customClass="DatePickerViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JfO-bt-dbJ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="U01-3i-LKH">
+                                <rect key="frame" x="30" y="79" width="333" height="32"/>
+                                <segments>
+                                    <segment title="Wheels"/>
+                                    <segment title="Compact"/>
+                                    <segment title="Inline"/>
+                                    <segment title="Keyboard"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changePicker:" destination="G7O-St-omN" eventType="valueChanged" id="5VH-9W-qhe"/>
+                                </connections>
+                            </segmentedControl>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="1UV-f1-Znd">
+                                <rect key="frame" x="37" y="318" width="320" height="216"/>
+                                <connections>
+                                    <action selector="setDateTime:" destination="G7O-St-omN" eventType="valueChanged" id="T7i-r2-6wD"/>
+                                </connections>
+                            </datePicker>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cpF-QQ-1WV">
+                                <rect key="frame" x="146" y="409" width="101.33333333333331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wul-DV-y4P">
+                                <rect key="frame" x="152.66666666666666" y="628.66666666666663" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WMz-5T-4Nj"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1UV-f1-Znd" firstAttribute="centerY" secondItem="JfO-bt-dbJ" secondAttribute="centerY" id="324-7D-D5v"/>
+                            <constraint firstItem="wul-DV-y4P" firstAttribute="centerY" secondItem="JfO-bt-dbJ" secondAttribute="centerY" multiplier="1.5" id="3TA-LR-TTR"/>
+                            <constraint firstItem="wul-DV-y4P" firstAttribute="centerX" secondItem="JfO-bt-dbJ" secondAttribute="centerX" id="9qJ-lr-Vla"/>
+                            <constraint firstItem="U01-3i-LKH" firstAttribute="leading" secondItem="WMz-5T-4Nj" secondAttribute="leading" constant="30" id="BJN-fE-HTI"/>
+                            <constraint firstItem="U01-3i-LKH" firstAttribute="top" secondItem="WMz-5T-4Nj" secondAttribute="top" constant="20" id="MX1-ws-DfR"/>
+                            <constraint firstItem="1UV-f1-Znd" firstAttribute="centerX" secondItem="JfO-bt-dbJ" secondAttribute="centerX" id="PCh-8H-E6t"/>
+                            <constraint firstItem="WMz-5T-4Nj" firstAttribute="trailing" secondItem="U01-3i-LKH" secondAttribute="trailing" constant="30" id="Tq4-jb-Z5S"/>
+                            <constraint firstItem="cpF-QQ-1WV" firstAttribute="centerX" secondItem="JfO-bt-dbJ" secondAttribute="centerX" id="kZp-IU-KhS"/>
+                            <constraint firstItem="cpF-QQ-1WV" firstAttribute="centerY" secondItem="JfO-bt-dbJ" secondAttribute="centerY" id="ubv-wd-1oZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="dateField" destination="cpF-QQ-1WV" id="ifK-aa-oh6"/>
+                        <outlet property="dateLabel" destination="wul-DV-y4P" id="x3g-NK-5ui"/>
+                        <outlet property="datePicker" destination="1UV-f1-Znd" id="zDQ-pe-4bm"/>
+                        <outlet property="segmentControl" destination="U01-3i-LKH" id="JFD-Av-rBr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="od3-HY-ce0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1597.709923664122" y="2088.7323943661972"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrowshape.left" catalog="system" width="128" height="104"/>

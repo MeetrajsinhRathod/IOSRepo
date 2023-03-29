@@ -11,9 +11,6 @@ class RootViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let searchBar = UISearchBar()
-        self.navigationItem.titleView = searchBar
     
         // Do any additional setup after loading the view.
     }

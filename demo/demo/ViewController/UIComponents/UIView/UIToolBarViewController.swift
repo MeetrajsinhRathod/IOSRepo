@@ -26,8 +26,6 @@ class UIToolBarViewController: UIViewController {
     
     @IBAction func playTapped(_ sender: Any) {
         
-        
-        
         if !playing {
             Play()
         }

@@ -22,6 +22,9 @@
 		63AE1CD229C1BD7E00026E69 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE1CD129C1BD7E00026E69 /* LandingPageViewController.swift */; };
 		63AE1CD429C1BDCA00026E69 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE1CD329C1BDCA00026E69 /* RegistrationViewController.swift */; };
 		63AE20E529C1C33800EFD29E /* UIView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AE20E429C1C33800EFD29E /* UIView.storyboard */; };
+		63CD093C29D417E400CCD6C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093B29D417E400CCD6C8 /* WebViewController.swift */; };
+		63CD093E29D45A7F00CCD6C8 /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */; };
+		63CD094029D4672C00CCD6C8 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */; };
 		63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */; };
 		63E17A4529C9635800FE3036 /* Practice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E17A4429C9635800FE3036 /* Practice.storyboard */; };
 		63E17A4929C9A5A100FE3036 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E17A4729C9A5A100FE3036 /* TableViewCell.swift */; };
@@ -94,6 +97,9 @@
 		63AE1CD129C1BD7E00026E69 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		63AE1CD329C1BDCA00026E69 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		63AE20E429C1C33800EFD29E /* UIView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIView.storyboard; sourceTree = "<group>"; };
+		63CD093B29D417E400CCD6C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewController.swift; sourceTree = "<group>"; };
+		63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		63E17A4429C9635800FE3036 /* Practice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Practice.storyboard; sourceTree = "<group>"; };
 		63E17A4729C9A5A100FE3036 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -236,13 +242,15 @@
 		63EE93E229D2A7D8003BD880 /* UIControl */ = {
 			isa = PBXGroup;
 			children = (
+				63EE93EB29D2E0F2003BD880 /* UIControlTableViewController.swift */,
 				63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */,
 				63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */,
 				63ADDDA229C2E68B00A07725 /* UISwitchViewController.swift */,
 				63ADDDA429C2EFDA00A07725 /* SliderViewController.swift */,
 				63ADDDA829C31AEC00A07725 /* SegmentedControlViewController.swift */,
 				63F9CF3E29C498B1004C40CE /* RefreshTableViewController.swift */,
-				63EE93EB29D2E0F2003BD880 /* UIControlTableViewController.swift */,
+				63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */,
+				63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */,
 			);
 			path = UIControl;
 			sourceTree = "<group>";
@@ -250,13 +258,14 @@
 		63EE93E329D2A7F6003BD880 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				63EE93E729D2DB47003BD880 /* UIViewTableViewController.swift */,
 				63E17A4B29C9B89900FE3036 /* LabelViewController.swift */,
 				63ADDDA629C305AD00A07725 /* UIProgressViewController.swift */,
 				7FD0C71029CCCE4B00BA097B /* ImageViewController.swift */,
 				63F9CF3A29C49273004C40CE /* ImagePickerViewController.swift */,
-				63EE93E729D2DB47003BD880 /* UIViewTableViewController.swift */,
 				63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */,
 				7FB4DC1F29D36A3000CAE8A3 /* SearchBarTableViewController.swift */,
+				63CD093B29D417E400CCD6C8 /* WebViewController.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -264,12 +273,12 @@
 		63EE93E429D2A7FE003BD880 /* UIScroll */ = {
 			isa = PBXGroup;
 			children = (
+				63EE93E929D2DF40003BD880 /* UIScrollTableViewController.swift */,
 				6369343329C84E4600560F7B /* ScrollViewController.swift */,
 				6369343529C8676900560F7B /* ZoomingScrollViewController.swift */,
 				7FD0C70E29CCC53D00BA097B /* UITextViewController.swift */,
 				63E17A4629C9A58000FE3036 /* TableView */,
 				63F31B4129CB27C2005C3BC7 /* CollectionView */,
-				63EE93E929D2DF40003BD880 /* UIScrollTableViewController.swift */,
 			);
 			path = UIScroll;
 			sourceTree = "<group>";
@@ -477,7 +486,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63CD093E29D45A7F00CCD6C8 /* UIPickerViewController.swift in Sources */,
 				63F9CF3F29C498B1004C40CE /* RefreshTableViewController.swift in Sources */,
+				63CD094029D4672C00CCD6C8 /* DatePickerViewController.swift in Sources */,
 				63ADDDA129C2D49800A07725 /* UITextFieldViewController.swift in Sources */,
 				7FB4DC1E29D3660D00CAE8A3 /* RootViewController.swift in Sources */,
 				63ADDDA529C2EFDA00A07725 /* SliderViewController.swift in Sources */,
@@ -500,6 +511,7 @@
 				63F9CF3B29C49273004C40CE /* ImagePickerViewController.swift in Sources */,
 				63357A3B29CD7661001C812B /* SignUpViewController.swift in Sources */,
 				7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */,
+				63CD093C29D417E400CCD6C8 /* WebViewController.swift in Sources */,
 				63F31B4529CB2A48005C3BC7 /* MovieCollectionViewCell.swift in Sources */,
 				63ADDDA729C305AD00A07725 /* UIProgressViewController.swift in Sources */,
 				63F31B4029CB04A0005C3BC7 /* MovieDetailsViewController.swift in Sources */,

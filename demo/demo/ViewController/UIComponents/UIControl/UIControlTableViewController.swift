@@ -18,7 +18,9 @@ class UIControlTableViewController: UITableViewController {
         "UISegmentedControl" : "UISegmentedControl",
         "UIPageControl" : "UISegmentedControl",
         "Pull to refresh" : "Pull to refresh",
-        "UIActivityIndicator" : "Pull to refresh"
+        "UIActivityIndicator" : "Pull to refresh",
+        "UIPicker" : "UIPicker",
+        "DatePicker" : "DatePicker"
     ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,11 +57,12 @@ class UIControlTableViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        let uiComponents = ["UIButton", "UITextField", "UISwitch", "UISlider", "UISegmentedControl", "UIPageControl", "Pull to refresh", "UIActivityIndicator"]
+        let uiComponents = ["UIButton", "UITextField", "UISwitch", "UISlider", "UISegmentedControl", "UIPageControl", "Pull to refresh", "UIActivityIndicator", "UIPicker", "DatePicker"]
         
         cell.componentBtn.setTitle(uiComponents[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
-
+        cell.selectionStyle = .none
+        
         return cell
     }
     

@@ -9,10 +9,21 @@ import UIKit
 
 class RegistrationViewController: UIViewController {
 
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var firstName: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        firstName.becomeFirstResponder()
+        firstName.addTarget(self, action: #selector(returned), for: .primaryActionTriggered)
+        
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func returned() {
+        firstName.resignFirstResponder()
+        lastName.becomeFirstResponder()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

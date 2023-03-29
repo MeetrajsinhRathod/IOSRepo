@@ -58,7 +58,8 @@ class UIScrollTableViewController: UITableViewController {
         
         cell.componentBtn.setTitle(uiComponents[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
-
+        cell.selectionStyle = .none
+        
         return cell
     }
     

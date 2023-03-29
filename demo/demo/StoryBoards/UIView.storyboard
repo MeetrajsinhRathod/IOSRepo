@@ -479,8 +479,8 @@ multiple lines</string>
                                     <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 </toolbarAppearance>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKi-ZC-zmI">
-                                <rect key="frame" x="194" y="455.66666666666669" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play song" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKi-ZC-zmI">
+                                <rect key="frame" x="178.33333333333334" y="455.66666666666669" width="73.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -544,9 +544,67 @@ multiple lines</string>
             </objects>
             <point key="canvasLocation" x="-421" y="2305"/>
         </scene>
+        <!--WebView-->
+        <scene sceneID="jmS-gq-mC3">
+            <objects>
+                <viewController storyboardIdentifier="WKWebView" id="mui-Ld-L88" userLabel="WebView" customClass="WebViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sa7-fP-hTa">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqM-A1-qof">
+                                <rect key="frame" x="0.0" y="133" width="430" height="765"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="b3J-iT-MA4">
+                                <rect key="frame" x="20" y="79" width="320.33333333333331" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="search:" destination="mui-Ld-L88" eventType="primaryActionTriggered" id="ggO-BT-3OQ"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xaI-0y-LTt">
+                                <rect key="frame" x="360.33333333333331" y="79" width="49.666666666666686" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system"/>
+                                <connections>
+                                    <action selector="openUrl:" destination="mui-Ld-L88" eventType="touchUpInside" id="Cuv-wV-AEB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ih0-we-pnB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xaI-0y-LTt" firstAttribute="centerY" secondItem="b3J-iT-MA4" secondAttribute="centerY" id="3z4-gR-Khm"/>
+                            <constraint firstItem="YqM-A1-qof" firstAttribute="top" secondItem="b3J-iT-MA4" secondAttribute="bottom" constant="20" id="FpI-jH-nn7"/>
+                            <constraint firstItem="xaI-0y-LTt" firstAttribute="leading" secondItem="b3J-iT-MA4" secondAttribute="trailing" constant="20" id="OOh-2C-lVS"/>
+                            <constraint firstItem="YqM-A1-qof" firstAttribute="leading" secondItem="ih0-we-pnB" secondAttribute="leading" id="Q59-fw-6uH"/>
+                            <constraint firstItem="ih0-we-pnB" firstAttribute="bottom" secondItem="YqM-A1-qof" secondAttribute="bottom" id="UqG-6K-zbz"/>
+                            <constraint firstItem="ih0-we-pnB" firstAttribute="trailing" secondItem="YqM-A1-qof" secondAttribute="trailing" id="WSx-Fa-qAJ"/>
+                            <constraint firstItem="b3J-iT-MA4" firstAttribute="top" secondItem="ih0-we-pnB" secondAttribute="top" constant="20" id="dpN-f7-icz"/>
+                            <constraint firstItem="b3J-iT-MA4" firstAttribute="leading" secondItem="ih0-we-pnB" secondAttribute="leading" constant="20" id="fp7-sw-3hg"/>
+                            <constraint firstItem="ih0-we-pnB" firstAttribute="trailing" secondItem="xaI-0y-LTt" secondAttribute="trailing" constant="20" id="lqH-In-qIP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBtn" destination="xaI-0y-LTt" id="Vae-O3-oXC"/>
+                        <outlet property="urlTextField" destination="b3J-iT-MA4" id="WvO-w3-LkU"/>
+                        <outlet property="webView" destination="YqM-A1-qof" id="DL3-yu-mA9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ORi-7h-Rvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="451" y="2305"/>
+        </scene>
     </scenes>
     <resources>
         <image name="The Avengers" width="220" height="326"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="square.dashed" catalog="system" width="128" height="114"/>
         <image name="square.dashed.inset.filled" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
