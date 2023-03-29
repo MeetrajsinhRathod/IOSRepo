@@ -16,19 +16,17 @@ class DesignTabTableViewController: UITableViewController {
     ]
     
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(false, animated: animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
-
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationItem.title = ""
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.title = "UIComponents"
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "NavigationCell")

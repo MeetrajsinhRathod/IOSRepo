@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-mf-8qT" userLabel="App Logo">
-                                <rect key="frame" x="123" y="146.33333333333334" width="184" height="186.00000000000003"/>
+                                <rect key="frame" x="123" y="145" width="184" height="186"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-9C-8XZ">
                                 <rect key="frame" x="129.66666666666669" y="413.66666666666669" width="170.66666666666669" height="105.00000000000006"/>
@@ -48,14 +48,14 @@ SafeDrivePod</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5PA-h6-1UT" userLabel="App Logo">
-                                <rect key="frame" x="134.66666666666666" y="842" width="18" height="18"/>
+                                <rect key="frame" x="134.66666666666666" y="793" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5PA-h6-1UT" secondAttribute="height" multiplier="1:1" id="0yE-6I-gNC"/>
                                     <constraint firstAttribute="width" constant="18" id="VbT-eM-jke"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfr-Ia-BRF">
-                                <rect key="frame" x="158.66666666666666" y="844" width="133.99999999999997" height="14"/>
+                                <rect key="frame" x="158.66666666666666" y="795" width="133.99999999999997" height="14"/>
                                 <string key="text">DRIVE SMART. DRIVE SAFE.
 
 </string>
@@ -153,14 +153,14 @@ registered</string>
                                 </buttonConfiguration>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="03z-lh-nCm">
-                                <rect key="frame" x="134.66666666666666" y="842" width="18" height="18"/>
+                                <rect key="frame" x="134.66666666666666" y="793" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="dis-DW-w7a"/>
                                     <constraint firstAttribute="width" secondItem="03z-lh-nCm" secondAttribute="height" multiplier="1:1" id="uan-UT-C3s"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqP-p0-1km">
-                                <rect key="frame" x="158.66666666666666" y="844" width="133.99999999999997" height="14"/>
+                                <rect key="frame" x="158.66666666666666" y="795" width="133.99999999999997" height="14"/>
                                 <string key="text">DRIVE SMART. DRIVE SAFE.
 
 </string>
@@ -172,7 +172,6 @@ registered</string>
                         <viewLayoutGuide key="safeArea" id="J8j-ar-pKh"/>
                         <constraints>
                             <constraint firstItem="UIh-CU-0vw" firstAttribute="top" secondItem="kE0-xP-CVb" secondAttribute="bottom" constant="16" id="9Po-Xp-b5r"/>
-                            <constraint firstItem="p3X-hw-SPa" firstAttribute="trailing" secondItem="DQk-Uw-Kk3" secondAttribute="trailing" id="BaN-JF-FgQ"/>
                             <constraint firstItem="p3X-hw-SPa" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="EGU-Cc-VIC"/>
                             <constraint firstItem="UIh-CU-0vw" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="F3T-Rb-6v2"/>
                             <constraint firstItem="wFX-nq-31A" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="Heb-EA-VRI"/>
@@ -258,14 +257,14 @@ Please check if you typed it correctly!</string>
                                 </buttonConfiguration>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ewV-gb-hgZ">
-                                <rect key="frame" x="134.66666666666666" y="842" width="18" height="18"/>
+                                <rect key="frame" x="134.66666666666666" y="793" width="18" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="18" id="ooG-gN-Luf"/>
                                     <constraint firstAttribute="width" secondItem="ewV-gb-hgZ" secondAttribute="height" multiplier="1:1" id="yfc-FM-9tO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5Z-jO-OTa">
-                                <rect key="frame" x="158.66666666666666" y="844" width="133.99999999999997" height="14"/>
+                                <rect key="frame" x="158.66666666666666" y="795" width="133.99999999999997" height="14"/>
                                 <string key="text">DRIVE SMART. DRIVE SAFE.
 
 </string>
@@ -317,11 +316,10 @@ Please check if you typed it correctly!</string>
         <!--Navigation Controller-->
         <scene sceneID="XYy-LC-sKt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="iBq-mF-2i6" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="iBq-mF-2i6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="4xN-q5-zLz">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

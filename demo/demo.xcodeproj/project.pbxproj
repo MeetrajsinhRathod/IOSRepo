@@ -47,6 +47,7 @@
 		63F31B4529CB2A48005C3BC7 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F31B4429CB2A48005C3BC7 /* MovieCollectionViewCell.swift */; };
 		63F9CF3B29C49273004C40CE /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9CF3A29C49273004C40CE /* ImagePickerViewController.swift */; };
 		63F9CF3F29C498B1004C40CE /* RefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9CF3E29C498B1004C40CE /* RefreshTableViewController.swift */; };
+		7F04EF1129D4B0E20021CB09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04EF1029D4B0E20021CB09 /* MapViewController.swift */; };
 		7F36A25229BC57B90054676F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36A25129BC57B90054676F /* GradientView.swift */; };
 		7F36A25829BC62750054676F /* Hero New Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25729BC62750054676F /* Hero New Regular.ttf */; };
 		7F36A25D29BC636E0054676F /* Hero New Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25A29BC636E0054676F /* Hero New Medium.ttf */; };
@@ -122,6 +123,7 @@
 		63F31B4429CB2A48005C3BC7 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		63F9CF3A29C49273004C40CE /* ImagePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewController.swift; sourceTree = "<group>"; };
 		63F9CF3E29C498B1004C40CE /* RefreshTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTableViewController.swift; sourceTree = "<group>"; };
+		7F04EF1029D4B0E20021CB09 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		7F36A25129BC57B90054676F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7F36A25729BC62750054676F /* Hero New Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Regular.ttf"; sourceTree = "<group>"; };
 		7F36A25A29BC636E0054676F /* Hero New Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Medium.ttf"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */,
 				7FB4DC1F29D36A3000CAE8A3 /* SearchBarTableViewController.swift */,
 				63CD093B29D417E400CCD6C8 /* WebViewController.swift */,
+				7F04EF1029D4B0E20021CB09 /* MapViewController.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -497,6 +500,7 @@
 				63EE93E829D2DB47003BD880 /* UIViewTableViewController.swift in Sources */,
 				63F31B3C29CAD997005C3BC7 /* UITable.swift in Sources */,
 				63F31B3E29CAF5BE005C3BC7 /* MoviesCell.swift in Sources */,
+				7F04EF1129D4B0E20021CB09 /* MapViewController.swift in Sources */,
 				63E17A4929C9A5A100FE3036 /* TableViewCell.swift in Sources */,
 				6369343429C84E4600560F7B /* ScrollViewController.swift in Sources */,
 				63AE1CD429C1BDCA00026E69 /* RegistrationViewController.swift in Sources */,

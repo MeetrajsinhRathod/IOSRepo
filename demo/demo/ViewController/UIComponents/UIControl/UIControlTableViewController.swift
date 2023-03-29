@@ -22,6 +22,16 @@ class UIControlTableViewController: UITableViewController {
         "UIPicker" : "UIPicker",
         "DatePicker" : "DatePicker"
     ]
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationItem.title = ""
+        navigationController?.navigationBar.prefersLargeTitles = false
+        navigationItem.title = "UIComponents"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

@@ -455,7 +455,7 @@ multiple lines</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sW2-A4-uoo">
-                                <rect key="frame" x="0.0" y="849" width="430" height="49"/>
+                                <rect key="frame" x="0.0" y="854" width="430" height="44"/>
                                 <items>
                                     <barButtonItem systemItem="rewind" id="xBd-2p-2R0">
                                         <connections>
@@ -600,6 +600,21 @@ multiple lines</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ORi-7h-Rvp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="451" y="2305"/>
+        </scene>
+        <!--MapView-->
+        <scene sceneID="rYw-Ic-gY3">
+            <objects>
+                <viewController storyboardIdentifier="MapView" id="kQZ-Xf-tMm" userLabel="MapView" customClass="MapViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xxj-xb-ojg">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="I8m-h0-erW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xOw-H2-ekf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1340" y="2305"/>
         </scene>
     </scenes>
     <resources>

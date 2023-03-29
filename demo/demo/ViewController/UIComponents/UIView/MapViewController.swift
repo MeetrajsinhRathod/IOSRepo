@@ -1,16 +1,17 @@
 //
-//  RootViewController.swift
+//  MapViewController.swift
 //  demo
 //
-//  Created by Meetrajsinh Rathod on 28/03/23.
+//  Created by Meetrajsinh Rathod on 29/03/23.
 //
 
 import UIKit
 
-class RootViewController: UITabBarController {
-    
+class MapViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
     

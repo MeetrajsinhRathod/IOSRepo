@@ -15,9 +15,10 @@ class WebViewController: UIViewController {
     @IBOutlet weak var urlTextField: UITextField!
     
     var url = URL(string: "https://google.com")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
         webView.load(URLRequest(url: url!))
         
         let forwardButton = UIBarButtonItem(image: UIImage(systemName: "chevron.forward"), style: .plain, target: self, action: #selector(forward))
