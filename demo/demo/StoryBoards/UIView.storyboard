@@ -3,6 +3,8 @@
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -513,7 +515,7 @@ multiple lines</string>
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="hEd-Ha-83f">
+                        <searchBar key="tableHeaderView" contentMode="redraw" text="" id="hEd-Ha-83f">
                             <rect key="frame" x="0.0" y="0.0" width="430" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
@@ -608,18 +610,71 @@ multiple lines</string>
                     <view key="view" contentMode="scaleToFill" id="xxj-xb-ojg">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBs-o2-5Yx">
+                                <rect key="frame" x="0.0" y="59" width="430" height="839"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VCo-LW-Fnl">
+                                <rect key="frame" x="335" y="748" width="75" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="dv7-BX-2be"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" cornerStyle="large">
+                                    <imageReference key="image" image="road.lanes.curved.right" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="getDirections:" destination="kQZ-Xf-tMm" eventType="touchUpInside" id="jNt-vU-na0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oV0-FI-g0F">
+                                <rect key="frame" x="335" y="808" width="75" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="Law-CC-0NN"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" cornerStyle="large">
+                                    <imageReference key="image" image="location.circle.fill" catalog="system" symbolScale="large"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="30"/>
+                                    <color key="baseForegroundColor" systemColor="tintColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="showUser:" destination="kQZ-Xf-tMm" eventType="touchUpInside" id="msZ-cK-9N2"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="I8m-h0-erW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QBs-o2-5Yx" firstAttribute="leading" secondItem="I8m-h0-erW" secondAttribute="leading" id="3yz-Gl-J2I"/>
+                            <constraint firstItem="I8m-h0-erW" firstAttribute="bottom" secondItem="oV0-FI-g0F" secondAttribute="bottom" constant="40" id="9SZ-Ah-qbr"/>
+                            <constraint firstItem="oV0-FI-g0F" firstAttribute="trailing" secondItem="xxj-xb-ojg" secondAttribute="trailingMargin" id="Bh8-oA-11T"/>
+                            <constraint firstItem="oV0-FI-g0F" firstAttribute="top" secondItem="VCo-LW-Fnl" secondAttribute="bottom" constant="10" id="F4a-zC-Ska"/>
+                            <constraint firstItem="I8m-h0-erW" firstAttribute="trailing" secondItem="VCo-LW-Fnl" secondAttribute="trailing" constant="20" id="FH6-hx-dlw"/>
+                            <constraint firstItem="QBs-o2-5Yx" firstAttribute="top" secondItem="I8m-h0-erW" secondAttribute="top" id="SOt-Pl-AIM"/>
+                            <constraint firstItem="I8m-h0-erW" firstAttribute="bottom" secondItem="QBs-o2-5Yx" secondAttribute="bottom" id="W70-N2-ybD"/>
+                            <constraint firstItem="I8m-h0-erW" firstAttribute="trailing" secondItem="QBs-o2-5Yx" secondAttribute="trailing" id="iu5-Qs-9Fk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="map" destination="QBs-o2-5Yx" id="Rew-6X-WlX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOw-H2-ekf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1340" y="2305"/>
+            <point key="canvasLocation" x="1338.1395348837209" y="2304.7210300429188"/>
         </scene>
     </scenes>
     <resources>
         <image name="The Avengers" width="220" height="326"/>
+        <image name="location.circle.fill" catalog="system" width="128" height="123"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="road.lanes.curved.right" catalog="system" width="128" height="74"/>
         <image name="square.dashed" catalog="system" width="128" height="114"/>
         <image name="square.dashed.inset.filled" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
@@ -651,6 +706,9 @@ multiple lines</string>
         </systemColor>
         <systemColor name="systemPurpleColor">
             <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

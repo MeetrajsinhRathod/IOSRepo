@@ -42,14 +42,17 @@ class DatePickerViewController: UIViewController {
             datePicker.isHidden = false
             dateField.isHidden = true
             datePicker.preferredDatePickerStyle = .wheels
+            dateLabel.isHidden = false
         case 1:
             datePicker.isHidden = false
             dateField.isHidden = true
             datePicker.preferredDatePickerStyle = .compact
+            dateLabel.isHidden = false
         case 2:
             datePicker.isHidden = false
             dateField.isHidden = true
             datePicker.preferredDatePickerStyle = .inline
+            dateLabel.isHidden = false
         case 3:
             datePicker.isHidden = true
             dateField.isHidden = false

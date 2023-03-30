@@ -49,25 +49,9 @@ class SignUpViewController: UIViewController {
         passwordTextField.leftView = lockImageView
         passwordTextField.leftViewMode = .always
         
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0, y: emailTextField.frame.height - 0.5 - 0.5, width: emailTextField.frame.size.width, height: 1)
-        bottomLine.backgroundColor = UIColor.gray.cgColor
-        
-        let bottomLine2 = CALayer()
-        bottomLine2.frame = CGRect(x: 0, y: usernameTextField.frame.height - 0.5, width: usernameTextField.frame.width, height: 1)
-        bottomLine2.backgroundColor = UIColor.gray.cgColor
-        
-        let bottomLine3 = CALayer()
-        bottomLine3.frame = CGRect(x: 0, y: passwordTextField.frame.height - 0.5, width: passwordTextField.frame.width, height: 1)
-        bottomLine3.backgroundColor = UIColor.gray.cgColor
-        
         emailTextField.borderStyle = .none
         usernameTextField.borderStyle = .none
         passwordTextField.borderStyle = .none
-        
-        emailTextField.layer.addSublayer(bottomLine)
-        usernameTextField.layer.addSublayer(bottomLine2)
-        passwordTextField.layer.addSublayer(bottomLine3)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(togglePassword(tapGesture:)))
         eyeImageView.isUserInteractionEnabled = true

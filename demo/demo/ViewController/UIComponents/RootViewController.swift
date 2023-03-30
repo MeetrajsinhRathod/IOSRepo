@@ -11,10 +11,9 @@ class RootViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
         // Do any additional setup after loading the view.
     }
-    
-
     /*
     // MARK: - Navigation
 

@@ -18,7 +18,7 @@ class UIViewTableViewController: UITableViewController {
         "Image Picker" : "Image Picker",
         "UITabBar" : "UIViewTableViewController",
         "UIToolBar" : "UIToolBar",
-        "UIBarButton" : "UIViewTableViewController",
+        "UIBarButton" : "UIToolBar",
         "UISearchBar" : "SearchBar",
         "WKWebView" : "WKWebView",
         "MapView" : "MapView"
@@ -34,8 +34,6 @@ class UIViewTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "NavigationCell")
