@@ -12,7 +12,8 @@ class DesignTabTableViewController: UITableViewController {
     let designsDictionary = [
         "SafeDrivePod": "SafeDrivePod",
         "SignUp Page" : "SignUpPage",
-        "Todo List" : "TodoList"
+        "Todo List" : "TodoList",
+        "Golf" : "Golf"
     ]
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +59,7 @@ class DesignTabTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        let designs = ["SafeDrivePod", "SignUp Page", "Todo List"]
+        let designs = ["SafeDrivePod", "SignUp Page", "Todo List", "Golf"]
         
         cell.componentBtn.setTitle(designs[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
@@ -71,6 +72,7 @@ class DesignTabTableViewController: UITableViewController {
         let safeDrivePodStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let signUpStoryboard = UIStoryboard(name: "Practice", bundle: nil)
         let todoListStoryboard = UIStoryboard(name: "TodoList", bundle: nil)
+        let golfStoryboard = UIStoryboard(name: "Golf", bundle: nil)
         
         var viewControllerToNavigate: UIViewController
         
@@ -82,6 +84,9 @@ class DesignTabTableViewController: UITableViewController {
             
             case "Todo List":
                 viewControllerToNavigate = todoListStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            
+        case "Golf":
+            viewControllerToNavigate = golfStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
             
             default:
             viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)

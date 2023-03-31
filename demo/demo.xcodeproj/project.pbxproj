@@ -12,6 +12,9 @@
 		6369343029C81F4600560F7B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369342F29C81F4600560F7B /* TableViewController.swift */; };
 		6369343429C84E4600560F7B /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343329C84E4600560F7B /* ScrollViewController.swift */; };
 		6369343629C8676900560F7B /* ZoomingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343529C8676900560F7B /* ZoomingScrollViewController.swift */; };
+		638BE31D29D6CEE40007984B /* GroupDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BE31C29D6CEE40007984B /* GroupDetailsViewController.swift */; };
+		638BE31F29D6CF320007984B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BE31E29D6CF320007984B /* Player.swift */; };
+		638BE32129D6E3A10007984B /* PlayesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BE32029D6E3A10007984B /* PlayesTableViewCell.swift */; };
 		63AA2F9A29D2EF0E000D3BC7 /* UIComponentsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */; };
 		63AA2F9C29D30274000D3BC7 /* UIToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */; };
 		63ADDDA129C2D49800A07725 /* UITextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */; };
@@ -22,6 +25,7 @@
 		63AE1CD229C1BD7E00026E69 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE1CD129C1BD7E00026E69 /* LandingPageViewController.swift */; };
 		63AE1CD429C1BDCA00026E69 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AE1CD329C1BDCA00026E69 /* RegistrationViewController.swift */; };
 		63AE20E529C1C33800EFD29E /* UIView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AE20E429C1C33800EFD29E /* UIView.storyboard */; };
+		63BD052229D6AEAD00107007 /* Golf.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63BD052129D6AEAD00107007 /* Golf.storyboard */; };
 		63CD093C29D417E400CCD6C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093B29D417E400CCD6C8 /* WebViewController.swift */; };
 		63CD093E29D45A7F00CCD6C8 /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */; };
 		63CD094029D4672C00CCD6C8 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */; };
@@ -88,6 +92,9 @@
 		6369342F29C81F4600560F7B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6369343329C84E4600560F7B /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		6369343529C8676900560F7B /* ZoomingScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomingScrollViewController.swift; sourceTree = "<group>"; };
+		638BE31C29D6CEE40007984B /* GroupDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsViewController.swift; sourceTree = "<group>"; };
+		638BE31E29D6CF320007984B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		638BE32029D6E3A10007984B /* PlayesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayesTableViewCell.swift; sourceTree = "<group>"; };
 		63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIComponentsRoot.storyboard; sourceTree = "<group>"; };
 		63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBarViewController.swift; sourceTree = "<group>"; };
 		63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +105,7 @@
 		63AE1CD129C1BD7E00026E69 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		63AE1CD329C1BDCA00026E69 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		63AE20E429C1C33800EFD29E /* UIView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIView.storyboard; sourceTree = "<group>"; };
+		63BD052129D6AEAD00107007 /* Golf.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Golf.storyboard; sourceTree = "<group>"; };
 		63CD093B29D417E400CCD6C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewController.swift; sourceTree = "<group>"; };
 		63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
@@ -192,9 +200,20 @@
 			path = SafeDrivePod;
 			sourceTree = "<group>";
 		};
+		638BE31929D6CE820007984B /* Golf */ = {
+			isa = PBXGroup;
+			children = (
+				638BE31C29D6CEE40007984B /* GroupDetailsViewController.swift */,
+				638BE31E29D6CF320007984B /* Player.swift */,
+				638BE32029D6E3A10007984B /* PlayesTableViewCell.swift */,
+			);
+			path = Golf;
+			sourceTree = "<group>";
+		};
 		63AE20E629C1C47400EFD29E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				638BE31929D6CE820007984B /* Golf */,
 				63E7250429D17B3200586427 /* Todo List */,
 				6369343229C8348600560F7B /* SafeDrivePod */,
 				6369343129C833F700560F7B /* UIComponents */,
@@ -214,6 +233,7 @@
 				63EE93E029D2A7A5003BD880 /* UIScroll.storyboard */,
 				63E7250529D17B4B00586427 /* TodoList.storyboard */,
 				63E17A4429C9635800FE3036 /* Practice.storyboard */,
+				63BD052129D6AEAD00107007 /* Golf.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -462,6 +482,7 @@
 				63E17A4A29C9A5A100FE3036 /* TableViewCell.xib in Resources */,
 				7F96A82E296C7995009306F8 /* Assets.xcassets in Resources */,
 				63EE93DF29D2A796003BD880 /* UIControl.storyboard in Resources */,
+				63BD052229D6AEAD00107007 /* Golf.storyboard in Resources */,
 				7F36A25F29BC636E0054676F /* Hero New SemiBold.ttf in Resources */,
 				7F96A82C296C7994009306F8 /* Main.storyboard in Resources */,
 				63AE20E529C1C33800EFD29E /* UIView.storyboard in Resources */,
@@ -508,9 +529,11 @@
 				63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */,
 				7FD0C71129CCCE4B00BA097B /* ImageViewController.swift in Sources */,
 				63AE1CD229C1BD7E00026E69 /* LandingPageViewController.swift in Sources */,
+				638BE32129D6E3A10007984B /* PlayesTableViewCell.swift in Sources */,
 				631F442729CC7B1100A84AE9 /* FooterView.swift in Sources */,
 				63E17A4C29C9B89900FE3036 /* LabelViewController.swift in Sources */,
 				7F96A829296C7994009306F8 /* PhoneNumberViewController.swift in Sources */,
+				638BE31F29D6CF320007984B /* Player.swift in Sources */,
 				63E7250C29D1897600586427 /* TodoCellTableViewCell.swift in Sources */,
 				63F9CF3B29C49273004C40CE /* ImagePickerViewController.swift in Sources */,
 				63357A3B29CD7661001C812B /* SignUpViewController.swift in Sources */,
@@ -527,6 +550,7 @@
 				63E7250829D17BDE00586427 /* TodoListViewController.swift in Sources */,
 				7F96A827296C7994009306F8 /* SceneDelegate.swift in Sources */,
 				6369343029C81F4600560F7B /* TableViewController.swift in Sources */,
+				638BE31D29D6CEE40007984B /* GroupDetailsViewController.swift in Sources */,
 				63F31B4329CB27EB005C3BC7 /* MovieCollectionViewController.swift in Sources */,
 				7FB4DC1A29D3500800CAE8A3 /* DesignTabTableViewController.swift in Sources */,
 				63ADDDA929C31AEC00A07725 /* SegmentedControlViewController.swift in Sources */,

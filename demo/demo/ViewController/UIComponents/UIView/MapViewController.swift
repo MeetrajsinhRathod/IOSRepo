@@ -65,6 +65,8 @@ class MapViewController: UIViewController {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         map.showsUserLocation = true
+        
+        //for satellite view
         //map.preferredConfiguration = MKHybridMapConfiguration(elevationStyle: .realistic)
 
         let simform = MKPointAnnotation()
