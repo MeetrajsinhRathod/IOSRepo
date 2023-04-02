@@ -13,7 +13,8 @@ class DesignTabTableViewController: UITableViewController {
         "SafeDrivePod": "SafeDrivePod",
         "SignUp Page" : "SignUpPage",
         "Todo List" : "TodoList",
-        "Golf" : "Golf"
+        "Golf" : "Golf",
+        "Golf table view" : "GroupDetailsTableViewController"
     ]
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +60,7 @@ class DesignTabTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        let designs = ["SafeDrivePod", "SignUp Page", "Todo List", "Golf"]
+        let designs = ["SafeDrivePod", "SignUp Page", "Todo List", "Golf", "Golf table view"]
         
         cell.componentBtn.setTitle(designs[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
@@ -85,7 +86,7 @@ class DesignTabTableViewController: UITableViewController {
             case "Todo List":
                 viewControllerToNavigate = todoListStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
             
-        case "Golf":
+        case "Golf", "Golf table view":
             viewControllerToNavigate = golfStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
             
             default:

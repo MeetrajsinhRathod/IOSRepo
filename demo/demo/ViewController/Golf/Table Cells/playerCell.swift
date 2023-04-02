@@ -1,14 +1,14 @@
 //
-//  PlayesTableViewCell.swift
+//  playerCell.swift
 //  demo
 //
-//  Created by Meetrajsinh Rathod on 31/03/23.
+//  Created by Meetrajsinh Rathod on 02/04/23.
 //
 
 import UIKit
 
-class PlayesTableViewCell: UITableViewCell {
-
+class playerCell: UITableViewCell {
+    
     @IBOutlet weak var playerImage: UIImageView!
     @IBOutlet weak var playerName: UILabel!
     @IBOutlet weak var playerNumber: UILabel!
@@ -16,12 +16,11 @@ class PlayesTableViewCell: UITableViewCell {
     @IBOutlet weak var replace: UIButton!
     
     var isChecked = false
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         playerImage.layer.cornerRadius = playerImage.frame.size.width/2
-
     }
     
     func set(name: String, number: String, image: UIImage) {
@@ -30,8 +29,7 @@ class PlayesTableViewCell: UITableViewCell {
         self.playerImage.image = image
     }
 
-    @IBAction func checkBoxAction(_ sender: Any) {
-        
+    @IBAction func isChecked(_ sender: Any) {
         if isChecked {
             isChecked = false
             replace.isHidden = false
@@ -42,7 +40,6 @@ class PlayesTableViewCell: UITableViewCell {
             checkBox.setImage(UIImage(named: "radio"), for: .normal)
         }
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

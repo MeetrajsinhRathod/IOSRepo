@@ -30,6 +30,11 @@ class GroupDetailsViewController: UIViewController {
     
     var currentPlayer = 0
     
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,6 +56,9 @@ class GroupDetailsViewController: UIViewController {
 
     }
 
+    @IBAction func goBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension GroupDetailsViewController: UITableViewDataSource, UITableViewDelegate {
@@ -96,6 +104,11 @@ extension GroupDetailsViewController: UITableViewDataSource, UITableViewDelegate
         label.backgroundColor = .clear
         
         let image = UIImageView(image: UIImage(named: "iconsCart"))
+        if (section + 1) % 2 == 0 {
+            image.tintColor = .cyan
+        } else {
+            image.tintColor = .orange
+        }
 //        image.leftAnchor.constraint(equalTo: sectionHeader.trailingAnchor, constant: 20).isActive = true
         sectionHeader.addSubview(label)
         sectionHeader.addSubview(image)

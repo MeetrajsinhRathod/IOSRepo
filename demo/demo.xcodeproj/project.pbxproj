@@ -57,6 +57,11 @@
 		7F36A25D29BC636E0054676F /* Hero New Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25A29BC636E0054676F /* Hero New Medium.ttf */; };
 		7F36A25E29BC636E0054676F /* Hero New Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25B29BC636E0054676F /* Hero New Bold.ttf */; };
 		7F36A25F29BC636E0054676F /* Hero New SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25C29BC636E0054676F /* Hero New SemiBold.ttf */; };
+		7F5DC99829D89B2A0039382D /* GroupDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DC99729D89B2A0039382D /* GroupDetailsTableViewController.swift */; };
+		7F5DC99B29D953190039382D /* headerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DC99A29D953190039382D /* headerCell.swift */; };
+		7F5DC99D29D953240039382D /* playerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DC99C29D953240039382D /* playerCell.swift */; };
+		7F5DC99F29D953370039382D /* SectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DC99E29D953370039382D /* SectionCell.swift */; };
+		7F5DC9A129D953450039382D /* footerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DC9A029D953450039382D /* footerCell.swift */; };
 		7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96A824296C7994009306F8 /* AppDelegate.swift */; };
 		7F96A827296C7994009306F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96A826296C7994009306F8 /* SceneDelegate.swift */; };
 		7F96A829296C7994009306F8 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96A828296C7994009306F8 /* PhoneNumberViewController.swift */; };
@@ -137,6 +142,11 @@
 		7F36A25A29BC636E0054676F /* Hero New Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Medium.ttf"; sourceTree = "<group>"; };
 		7F36A25B29BC636E0054676F /* Hero New Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Bold.ttf"; sourceTree = "<group>"; };
 		7F36A25C29BC636E0054676F /* Hero New SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New SemiBold.ttf"; sourceTree = "<group>"; };
+		7F5DC99729D89B2A0039382D /* GroupDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsTableViewController.swift; sourceTree = "<group>"; };
+		7F5DC99A29D953190039382D /* headerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = headerCell.swift; sourceTree = "<group>"; };
+		7F5DC99C29D953240039382D /* playerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = playerCell.swift; sourceTree = "<group>"; };
+		7F5DC99E29D953370039382D /* SectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionCell.swift; sourceTree = "<group>"; };
+		7F5DC9A029D953450039382D /* footerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = footerCell.swift; sourceTree = "<group>"; };
 		7F96A821296C7994009306F8 /* demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F96A824296C7994009306F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F96A826296C7994009306F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,9 +213,11 @@
 		638BE31929D6CE820007984B /* Golf */ = {
 			isa = PBXGroup;
 			children = (
+				7F5DC99929D952B60039382D /* Table Cells */,
 				638BE31C29D6CEE40007984B /* GroupDetailsViewController.swift */,
 				638BE31E29D6CF320007984B /* Player.swift */,
 				638BE32029D6E3A10007984B /* PlayesTableViewCell.swift */,
+				7F5DC99729D89B2A0039382D /* GroupDetailsTableViewController.swift */,
 			);
 			path = Golf;
 			sourceTree = "<group>";
@@ -335,6 +347,17 @@
 				7F36A25729BC62750054676F /* Hero New Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		7F5DC99929D952B60039382D /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				7F5DC99A29D953190039382D /* headerCell.swift */,
+				7F5DC99C29D953240039382D /* playerCell.swift */,
+				7F5DC99E29D953370039382D /* SectionCell.swift */,
+				7F5DC9A029D953450039382D /* footerCell.swift */,
+			);
+			path = "Table Cells";
 			sourceTree = "<group>";
 		};
 		7F96A818296C7994009306F8 = {
@@ -530,6 +553,7 @@
 				7FD0C71129CCCE4B00BA097B /* ImageViewController.swift in Sources */,
 				63AE1CD229C1BD7E00026E69 /* LandingPageViewController.swift in Sources */,
 				638BE32129D6E3A10007984B /* PlayesTableViewCell.swift in Sources */,
+				7F5DC99B29D953190039382D /* headerCell.swift in Sources */,
 				631F442729CC7B1100A84AE9 /* FooterView.swift in Sources */,
 				63E17A4C29C9B89900FE3036 /* LabelViewController.swift in Sources */,
 				7F96A829296C7994009306F8 /* PhoneNumberViewController.swift in Sources */,
@@ -542,7 +566,9 @@
 				63F31B4529CB2A48005C3BC7 /* MovieCollectionViewCell.swift in Sources */,
 				63ADDDA729C305AD00A07725 /* UIProgressViewController.swift in Sources */,
 				63F31B4029CB04A0005C3BC7 /* MovieDetailsViewController.swift in Sources */,
+				7F5DC99F29D953370039382D /* SectionCell.swift in Sources */,
 				7FB4DC2029D36A3000CAE8A3 /* SearchBarTableViewController.swift in Sources */,
+				7F5DC99D29D953240039382D /* playerCell.swift in Sources */,
 				7F36A25229BC57B90054676F /* GradientView.swift in Sources */,
 				7FD0C70F29CCC53D00BA097B /* UITextViewController.swift in Sources */,
 				63ADDDA329C2E68B00A07725 /* UISwitchViewController.swift in Sources */,
@@ -553,6 +579,8 @@
 				638BE31D29D6CEE40007984B /* GroupDetailsViewController.swift in Sources */,
 				63F31B4329CB27EB005C3BC7 /* MovieCollectionViewController.swift in Sources */,
 				7FB4DC1A29D3500800CAE8A3 /* DesignTabTableViewController.swift in Sources */,
+				7F5DC99829D89B2A0039382D /* GroupDetailsTableViewController.swift in Sources */,
+				7F5DC9A129D953450039382D /* footerCell.swift in Sources */,
 				63ADDDA929C31AEC00A07725 /* SegmentedControlViewController.swift in Sources */,
 				63EE93EA29D2DF40003BD880 /* UIScrollTableViewController.swift in Sources */,
 				63EE2E5829CC6C4B000A811B /* HeaderView.swift in Sources */,
