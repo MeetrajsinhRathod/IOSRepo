@@ -54,10 +54,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func showUser(_ sender: Any) {
-
-        let currentCoordinate = locationManager.location!.coordinate
-        let region = MKCoordinateRegion(center: currentCoordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-        map.setRegion(region, animated: true)
+        locationManager.startUpdatingLocation()
     }
 
     func configure() {
@@ -112,6 +109,7 @@ extension MapViewController: CLLocationManagerDelegate {
         let currentCoordinate = manager.location!.coordinate
         let region = MKCoordinateRegion(center: currentCoordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
         map.setRegion(region, animated: true)
+        manager.stopUpdatingLocation()
     }
 }
 

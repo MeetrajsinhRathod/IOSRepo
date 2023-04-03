@@ -457,7 +457,7 @@ multiple lines</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sW2-A4-uoo">
-                                <rect key="frame" x="0.0" y="854" width="430" height="44"/>
+                                <rect key="frame" x="0.0" y="849" width="430" height="49"/>
                                 <items>
                                     <barButtonItem systemItem="rewind" id="xBd-2p-2R0">
                                         <connections>

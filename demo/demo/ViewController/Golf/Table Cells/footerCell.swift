@@ -8,19 +8,22 @@
 import UIKit
 
 class footerCell: UITableViewCell {
-
-    @IBOutlet weak var btnView: UIView!
-    @IBOutlet weak var rightImg: UIImageView!
+    
+    @IBOutlet weak var saveDetailsBtn: UIButton!
+    @IBOutlet weak var btnImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        btnView.layer.cornerRadius = btnView.frame.height/2
-        btnView.layer.borderWidth = 2.0
-        btnView.layer.borderColor = UIColor.red.cgColor
+        saveDetailsBtn.layer.cornerRadius = saveDetailsBtn.frame.height/2
+        saveDetailsBtn.layer.borderWidth = 2.0
+        saveDetailsBtn.layer.borderColor = UIColor.red.cgColor
         
-        rightImg.layer.cornerRadius = rightImg.frame.width/2
+        btnImg.layer.cornerRadius = btnImg.frame.width/2
     }
 
+    @IBAction func saveDetails(_ sender: Any) {
+        print("saveDetails called")
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

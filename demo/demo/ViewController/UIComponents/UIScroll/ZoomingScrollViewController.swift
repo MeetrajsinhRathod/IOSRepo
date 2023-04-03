@@ -16,7 +16,6 @@ class ZoomingScrollViewController: UIViewController {
         super.viewDidLoad()
         scroll.delegate = self
         scroll.maximumZoomScale = 5.0
-        // Do any additional setup after loading the view.
     }
     
 
