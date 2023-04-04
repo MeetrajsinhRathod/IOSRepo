@@ -30,7 +30,7 @@ class GroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        navigationController?.setToolbarHidden(false, animated: true)
+//        navigationController.setToolbarHidden(false, animated: true)
         //navigationController?.setToolbarItems([UIBarButtonItem(title: "Bar button", style: .plain, target: self, action: nil)], animated: true)
         configureTable()
     }

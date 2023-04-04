@@ -546,15 +546,15 @@ score per foursome. Scorer(*)</string>
                                             <outlet property="cartNumber" destination="pY7-Eg-IQB" id="qRN-MJ-Xca"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="footerCell" rowHeight="171" id="gsC-Pv-WoZ" userLabel="footerCell" customClass="footerCell" customModule="demo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="425.33333206176758" width="430" height="171"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="footerCell" rowHeight="150" id="gsC-Pv-WoZ" userLabel="footerCell" customClass="footerCell" customModule="demo" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="425.33333206176758" width="430" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gsC-Pv-WoZ" id="QWQ-N2-EXL">
-                                            <rect key="frame" x="0.0" y="0.0" width="430" height="171"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="430" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sqC-aZ-BhR">
-                                                    <rect key="frame" x="20" y="31" width="390" height="45"/>
+                                                    <rect key="frame" x="20" y="11" width="390" height="45"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUt-Y6-1Uh">
                                                             <rect key="frame" x="0.0" y="0.0" width="41.666666666666664" height="45"/>
@@ -584,7 +584,7 @@ score per foursome. Scorer(*)</string>
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugo-KW-z7b">
-                                                    <rect key="frame" x="20" y="97" width="390" height="53"/>
+                                                    <rect key="frame" x="20" y="82.666666666666671" width="390" height="46.333333333333329"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Save Details">
@@ -595,7 +595,7 @@ score per foursome. Scorer(*)</string>
                                                     </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BKU-cT-mhg">
-                                                    <rect key="frame" x="357" y="99" width="53" height="49.333333333333329"/>
+                                                    <rect key="frame" x="363.66666666666669" y="84.666666666666671" width="46.333333333333314" height="42.666666666666657"/>
                                                     <color key="backgroundColor" systemColor="systemRedColor"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -611,7 +611,7 @@ score per foursome. Scorer(*)</string>
                                                 <constraint firstAttribute="trailingMargin" secondItem="sqC-aZ-BhR" secondAttribute="trailing" id="JGP-sX-g0B"/>
                                                 <constraint firstItem="Ugo-KW-z7b" firstAttribute="leading" secondItem="QWQ-N2-EXL" secondAttribute="leading" constant="20" id="KXq-ba-pkk"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Ugo-KW-z7b" secondAttribute="bottom" constant="10" id="WCn-Mz-MKK"/>
-                                                <constraint firstItem="sqC-aZ-BhR" firstAttribute="top" secondItem="QWQ-N2-EXL" secondAttribute="topMargin" constant="20" id="b6d-BE-ViI"/>
+                                                <constraint firstItem="sqC-aZ-BhR" firstAttribute="top" secondItem="QWQ-N2-EXL" secondAttribute="topMargin" id="b6d-BE-ViI"/>
                                                 <constraint firstItem="Ugo-KW-z7b" firstAttribute="height" secondItem="QWQ-N2-EXL" secondAttribute="height" multiplier="0.309942" id="rcl-vu-nUh"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="BKU-cT-mhg" secondAttribute="bottom" constant="10" id="w4u-NY-2O7"/>
                                             </constraints>

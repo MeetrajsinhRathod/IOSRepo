@@ -14,7 +14,8 @@ class DesignTabTableViewController: UITableViewController {
         "SignUp Page" : "SignUpPage",
         "Todo List" : "TodoList",
         "Golf" : "Golf",
-        "Golf table view" : "GroupDetailsTableViewController"
+        "Golf table view" : "GroupDetailsTableViewController",
+        "UINavigation" : "UINavigation"
     ]
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +61,7 @@ class DesignTabTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        let designs = ["SafeDrivePod", "SignUp Page", "Todo List", "Golf", "Golf table view"]
+        let designs = ["SafeDrivePod", "SignUp Page", "Todo List", "Golf", "Golf table view", "UINavigation"]
         
         cell.componentBtn.setTitle(designs[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
@@ -74,6 +75,7 @@ class DesignTabTableViewController: UITableViewController {
         let signUpStoryboard = UIStoryboard(name: "Practice", bundle: nil)
         let todoListStoryboard = UIStoryboard(name: "TodoList", bundle: nil)
         let golfStoryboard = UIStoryboard(name: "Golf", bundle: nil)
+        let navStoryboard = UIStoryboard(name: "UINavigation", bundle: nil)
         
         var viewControllerToNavigate: UIViewController
         
@@ -86,8 +88,11 @@ class DesignTabTableViewController: UITableViewController {
             case "Todo List":
                 viewControllerToNavigate = todoListStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
             
-        case "Golf", "Golf table view":
-            viewControllerToNavigate = golfStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            case "Golf", "Golf table view":
+                viewControllerToNavigate = golfStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            
+            case "UINavigation":
+            viewControllerToNavigate = navStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
             
             default:
             viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
