@@ -14,7 +14,6 @@ class DesignTabTableViewController: UITableViewController {
         "SignUp Page" : "SignUpPage",
         "Todo List" : "TodoList",
         "Golf" : "Golf",
-        "Golf table view" : "GroupDetailsTableViewController",
         "UINavigation" : "UINavigation"
     ]
     
@@ -45,12 +44,10 @@ class DesignTabTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return designsDictionary.count
     }
 
@@ -61,7 +58,7 @@ class DesignTabTableViewController: UITableViewController {
             return UITableViewCell()
         }
 
-        let designs = ["SafeDrivePod", "SignUp Page", "Todo List", "Golf", "Golf table view", "UINavigation"]
+        let designs = ["SafeDrivePod", "SignUp Page", "Todo List", "Golf", "UINavigation"]
         
         cell.componentBtn.setTitle(designs[indexPath.row], for: UIControl.State.normal)
         cell.componentBtn.addTarget(self, action: #selector(navigateTo(sender:)), for: UIControl.Event.touchUpInside)
@@ -79,23 +76,29 @@ class DesignTabTableViewController: UITableViewController {
         
         var viewControllerToNavigate: UIViewController
         
+        guard let currentButtonTitle = sender.titleLabel?.text
+        else { return }
+        
+        guard let identifier = designsDictionary[currentButtonTitle]
+        else { return }
+        
         switch sender.titleLabel?.text {
             case "SafeDrivePod":
-                viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: identifier)
             case "SignUp Page":
-                viewControllerToNavigate = signUpStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+                viewControllerToNavigate = signUpStoryboard.instantiateViewController(withIdentifier: identifier)
             
             case "Todo List":
-                viewControllerToNavigate = todoListStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+                viewControllerToNavigate = todoListStoryboard.instantiateViewController(withIdentifier: identifier)
             
-            case "Golf", "Golf table view":
-                viewControllerToNavigate = golfStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            case "Golf":
+                viewControllerToNavigate = golfStoryboard.instantiateViewController(withIdentifier: identifier)
             
             case "UINavigation":
-            viewControllerToNavigate = navStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            viewControllerToNavigate = navStoryboard.instantiateViewController(withIdentifier: identifier)
             
             default:
-            viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: designsDictionary[sender.titleLabel!.text!]!)
+            viewControllerToNavigate = safeDrivePodStoryboard.instantiateViewController(withIdentifier: identifier)
         }
         
         self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)

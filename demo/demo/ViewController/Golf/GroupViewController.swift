@@ -10,14 +10,14 @@ import UIKit
 class GroupViewController: UIViewController {
 
     private var players = [
-        [Player(name: "Harsh", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers")!),
-        Player(name: "Rahul", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man")!)],
+        [Player(name: "Harsh", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers") ?? UIImage()),
+        Player(name: "Rahul", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man") ?? UIImage())],
         
-        [Player(name: "Meetraj", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame")!),
-        Player(name: "Tosif", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers")!)],
+        [Player(name: "Meetraj", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame") ?? UIImage()),
+        Player(name: "Tosif", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers") ?? UIImage())],
         
-        [Player(name: "Parth", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man")!),
-        Player(name: "Ruchit", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame")!)]
+        [Player(name: "Parth", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man") ?? UIImage()),
+        Player(name: "Ruchit", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame") ?? UIImage())]
     ]
     
     @IBOutlet weak var playersTableView: UITableView!
@@ -30,7 +30,7 @@ class GroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-//        navigationController.setToolbarHidden(false, animated: true)
+        //        navigationController.setToolbarHidden(false, animated: true)
         //navigationController?.setToolbarItems([UIBarButtonItem(title: "Bar button", style: .plain, target: self, action: nil)], animated: true)
         configureTable()
     }
@@ -45,8 +45,8 @@ class GroupViewController: UIViewController {
         
         playersTableView.rowHeight = 60
         
-        let headerCell = playersTableView.dequeueReusableCell(withIdentifier: "headerCell") as! headerCell
-        let footerCell = playersTableView.dequeueReusableCell(withIdentifier: "footerCell") as! footerCell
+        guard let headerCell = playersTableView.dequeueReusableCell(withIdentifier: "headerCell") as? headerCell else { return }
+        guard let footerCell = playersTableView.dequeueReusableCell(withIdentifier: "footerCell") as? footerCell else { return }
 
         playersTableView.tableHeaderView = headerCell
         playersTableView.tableFooterView = footerCell
@@ -64,7 +64,8 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! playerCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? playerCell
+        else { return UITableViewCell()}
         
         cell.set(name: players[indexPath.section][indexPath.row].name, number: players[indexPath.section][indexPath.row].phoneNumber, image: players[indexPath.section][indexPath.row].profileImage)
         return cell
@@ -83,7 +84,8 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionCell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionCell
+        guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as? SectionCell
+        else { return UIView()}
     
         if section % 2 == 0 {
             sectionCell.cartImage.tintColor = .orange

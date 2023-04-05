@@ -19,8 +19,6 @@ class UITable: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.rowHeight = 120
-
         let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
         headerView.backgroundColor = .opaqueSeparator
 
@@ -30,15 +28,8 @@ class UITable: UITableViewController {
         headerView.addSubview(label)
 
         tableView.tableHeaderView = headerView
-
+        tableView.rowHeight = 120
         tableView.sectionHeaderTopPadding = 5.0
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
@@ -69,8 +60,7 @@ class UITable: UITableViewController {
             return
         }
 
-        movieDetailsVC.name = Self.movies[indexPath.section][indexPath.row]
-        movieDetailsVC.image = UIImage(named: Self.movies[indexPath.section][indexPath.row]) ?? UIImage()
+        movieDetailsVC.configure(name: Self.movies[indexPath.section][indexPath.row], image: UIImage(named: Self.movies[indexPath.section][indexPath.row]) ?? UIImage())
         self.navigationController?.pushViewController(movieDetailsVC, animated: true)
     }
 
@@ -120,15 +110,4 @@ class UITable: UITableViewController {
         return true
     }
     */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,7 +9,7 @@ import UIKit
 
 class TodoListViewController: UIViewController {
 
-    var todos = [
+    private var todos = [
         Todo(title: "task-1"),
         Todo(title: "task-2"),
         Todo(title: "task-3"),
@@ -17,9 +17,9 @@ class TodoListViewController: UIViewController {
     ]
     
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 
     @IBAction func isEditing(_ sender: Any) {
@@ -29,19 +29,16 @@ class TodoListViewController: UIViewController {
     @IBAction func addTask(_ sender: Any) {
         var taskTextField = UITextField()
         let alert = UIAlertController(title: "Add new task", message: "", preferredStyle: .alert)
-        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        let save = UIAlertAction(title: "Add", style: .default) { (save) in
-            self.todos.append(Todo(title: taskTextField.text!))
-            self.tableView.reloadData()
+
+        let save = UIAlertAction(title: "Add", style: .default) { [weak self] (save) in
+            self?.todos.append(Todo(title: taskTextField.text ?? ""))
+            self?.tableView.reloadData()
         }
-        
         alert.addTextField  { (text) in
             taskTextField = text
             taskTextField.placeholder = "Enter task"
         }
-        
         alert.addAction(cancel)
         alert.addAction(save)
         
@@ -58,8 +55,8 @@ extension TodoListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TodoCellTableViewCell
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TodoCellTableViewCell
+        else { return UITableViewCell()}
         cell.set(title: todos[indexPath.row].title , isDone: todos[indexPath.row].isDone)
         
         return cell
@@ -72,7 +69,6 @@ extension TodoListViewController: UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
-    
 }
 
 extension TodoListViewController: UITableViewDelegate {
@@ -86,31 +82,26 @@ extension TodoListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         var taskTextField = UITextField()
-        
         taskTextField.text = todos[indexPath.row].title
-        
+
         let alert = UIAlertController(title: "Modify task", message: "", preferredStyle: .alert)
-        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        
-        let save = UIAlertAction(title: "Add", style: .default) { (save) in
+        let save = UIAlertAction(title: "Add", style: .default) { [weak self] (save) in
             
-            self.todos.remove(at: indexPath.row)
-            self.todos.append(Todo(title: taskTextField.text!))
-            self.tableView.reloadData()
+            self?.todos[indexPath.row] = Todo(title: taskTextField.text ?? "Title not found")
+            self?.tableView.reloadData()
         }
         
-        alert.addTextField  { (text) in
+        alert.addTextField  { [weak self] (text) in
             taskTextField = text
-            taskTextField.text = self.todos[indexPath.row].title
+            taskTextField.text = self?.todos[indexPath.row].title
             taskTextField.placeholder = "Enter task"
         }
         
         alert.addAction(cancel)
         alert.addAction(save)
-        
         self.present(alert, animated: true)
-        
+
         tableView.deselectRow(at: indexPath, animated: true)
     }
      

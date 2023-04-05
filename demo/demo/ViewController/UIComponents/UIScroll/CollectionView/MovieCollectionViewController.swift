@@ -87,9 +87,7 @@ class MovieCollectionViewController: UICollectionViewController {
             return
         }
 
-        movieDetailsVC.name = movies[indexPath.section][indexPath.row]
-        movieDetailsVC.image = UIImage(named: movies[indexPath.section][indexPath.row]) ?? UIImage()
+        movieDetailsVC.configure(name: movies[indexPath.section][indexPath.row], image: UIImage(named: movies[indexPath.section][indexPath.row]) ?? UIImage())
         self.navigationController?.pushViewController(movieDetailsVC, animated: true)
     }
-
 }

@@ -21,7 +21,7 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       
-        webView.load(URLRequest(url: url!))
+        webView.load(URLRequest(url: (url ?? URL(string: "https://google.com"))!))
         
         let forwardButton = UIBarButtonItem(image: UIImage(systemName: "chevron.forward"), style: .plain, target: self, action: #selector(forward))
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(back))
@@ -59,7 +59,7 @@ class WebViewController: UIViewController {
                 url = URL(string: "https://www.google.com/search?q=\(urlString)")
             }
         }
-        webView.load(URLRequest(url: url!))
+        webView.load(URLRequest(url: (url ?? URL(string: "https://google.com"))!))
     }
 
     @IBAction func openUrl(_ sender: Any) {

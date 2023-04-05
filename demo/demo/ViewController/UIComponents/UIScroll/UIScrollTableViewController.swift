@@ -71,10 +71,15 @@ class UIScrollTableViewController: UITableViewController {
     }
     
     @objc func navigateTo(sender: UIButton) {
-        let UIScrollStoryboard = UIStoryboard(name: "UIScroll", bundle: nil)
-        let viewControllerToNavigate: UIViewController = UIScrollStoryboard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
-        self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
+        guard let currentButtonTitle = sender.titleLabel?.text
+        else { return }
         
+        guard let identifier = uiComponentsDictionary[currentButtonTitle]
+        else { return }
+        
+        let UIScrollStoryboard = UIStoryboard(name: "UIScroll", bundle: nil)
+        let viewControllerToNavigate: UIViewController = UIScrollStoryboard.instantiateViewController(withIdentifier: identifier)
+        self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
     }
 
     /*

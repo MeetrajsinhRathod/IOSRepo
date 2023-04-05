@@ -88,23 +88,28 @@ class TableViewController: UITableViewController {
         
         var viewControllerToNavigate: UIViewController
         
+        guard let currentButtonTitle = sender.titleLabel?.text
+        else { return }
+        
+        guard let identifier = uiComponentsDictionary[currentButtonTitle]
+        else { return }
+        
         switch sender.titleLabel?.text {
             
         case "UILabel", "UIProgressView", "UIImageView", "Image Picker", "UIStepper":
-            viewControllerToNavigate = uiViewStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
+            viewControllerToNavigate = uiViewStoryBoard.instantiateViewController(withIdentifier: identifier)
     
         case "UIButton", "UITextField", "UISwitch", "UISlider", "UISegmentedControl", "UIPageControl", "Pull to refresh", "UIActivityIndicator":
-            viewControllerToNavigate = uiControlStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
+            viewControllerToNavigate = uiControlStoryBoard.instantiateViewController(withIdentifier: identifier)
             
         case "UIScrollView", "UITableView", "UICollectionView", "UITextView", "Stack view":
-            viewControllerToNavigate = uiScrollStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
+            viewControllerToNavigate = uiScrollStoryBoard.instantiateViewController(withIdentifier: identifier)
             
         default:
-            viewControllerToNavigate = uiViewStoryBoard.instantiateViewController(withIdentifier: "UILabel")
+            return
         }
 
         self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
-        
     }
     
 

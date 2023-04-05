@@ -11,17 +11,17 @@ class GroupDetailsTableViewController: UITableViewController {
 
     var players = [
         
-        [Player(name: "Harsh", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers")!),
+        [Player(name: "Harsh", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers") ?? UIImage()),
         
-        Player(name: "Rahul", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man")!)],
+        Player(name: "Rahul", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man") ?? UIImage())],
         
-        [Player(name: "Meetraj", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame")!),
+        [Player(name: "Meetraj", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame") ?? UIImage()),
         
-        Player(name: "Tosif", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers")!)],
+        Player(name: "Tosif", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers") ?? UIImage())],
         
-        [Player(name: "Parth", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man")!),
+        [Player(name: "Parth", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man") ?? UIImage()),
         
-        Player(name: "Ruchit", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame")!)]
+        Player(name: "Ruchit", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame") ?? UIImage())]
     ]
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -40,9 +40,12 @@ class GroupDetailsTableViewController: UITableViewController {
         
         tableView.rowHeight = 65
         
-        let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as! headerCell
-        let footerCell = tableView.dequeueReusableCell(withIdentifier: "footerCell") as! footerCell
-
+        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? headerCell
+        else { return }
+        
+        guard let footerCell = tableView.dequeueReusableCell(withIdentifier: "footerCell") as? footerCell
+        else { return }
+        
         headerCell.backBtn.addTarget(self, action: #selector(goBack), for: .touchUpInside)
         tableView.tableHeaderView = headerCell
         tableView.tableFooterView = footerCell
@@ -64,7 +67,8 @@ class GroupDetailsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as! playerCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "playerCell", for: indexPath) as? playerCell
+        else { return UITableViewCell()}
         
         cell.set(name: players[indexPath.section][indexPath.row].name, number: players[indexPath.section][indexPath.row].phoneNumber, image: players[indexPath.section][indexPath.row].profileImage)
         
@@ -85,7 +89,8 @@ class GroupDetailsTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let sectionCell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as! SectionCell
+        guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: "sectionCell") as? SectionCell
+        else { return UIView() }
         
         if section % 2 == 0 {
             sectionCell.cartImage.tintColor = .orange

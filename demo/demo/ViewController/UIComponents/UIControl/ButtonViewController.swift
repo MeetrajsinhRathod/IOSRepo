@@ -18,9 +18,10 @@ class ButtonViewController: UIViewController {
     }
     
     func setPopUpBtn() {
-        let actionHandler = { (action: UIAction) in
-            self.option.text = "\(action.title) is selected"
-        }
         popUpBtn.menu = UIMenu(children: [UIAction(title: "Option-1", handler: actionHandler), UIAction(title: "Option-2", handler: actionHandler)])
+    }
+
+    func actionHandler(sender: UIAction) {
+        self.option.text = "\(sender.title) is selected"
     }
 }

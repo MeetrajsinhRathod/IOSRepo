@@ -34,11 +34,11 @@ class MapViewController: UIViewController {
         
         let alert = UIAlertController(title: "Get directions", message: "", preferredStyle: .alert)
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
-        let search = UIAlertAction(title: "Search", style: .default) { (search) in
+        let search = UIAlertAction(title: "Search", style: .default) { [weak self] (search) in
             if textField.text == "home" {
-                self.getRoute(destination: MKMapItem(placemark: MKPlacemark(coordinate: self.places[1].coordinate)))
+                self?.getRoute(destination: MKMapItem(placemark: MKPlacemark(coordinate: (self?.places[1].coordinate)!)))
             } else if textField.text == "simform" {
-                self.getRoute(destination: MKMapItem(placemark: MKPlacemark(coordinate: self.places[0].coordinate)))
+                self?.getRoute(destination: MKMapItem(placemark: MKPlacemark(coordinate: (self?.places[0].coordinate)!)))
             }
         }
 
@@ -82,21 +82,24 @@ class MapViewController: UIViewController {
     func getRoute(destination: MKMapItem) {
         
         let directionRequest = MKDirections.Request()
-        directionRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: locationManager.location!.coordinate))
+        guard let currentLocationCoordinates = locationManager.location?.coordinate
+        else { return }
+        
+        directionRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: currentLocationCoordinates))
         directionRequest.destination = destination
         directionRequest.requestsAlternateRoutes = true
         directionRequest.transportType = .automobile
         
         let directions = MKDirections(request: directionRequest)
         
-        directions.calculate{ (response, error) in
+        directions.calculate{ [weak self] (response, error) in
             
             if let error = error {
                 print(error.localizedDescription)
             } else if let response = response {
-                self.route = response.routes[0]
-                self.map.addOverlay(response.routes[0].polyline)
-                self.map.setVisibleMapRect(response.routes[0].polyline.boundingMapRect, animated: true)
+                self?.route = response.routes[0]
+                self?.map.addOverlay(response.routes[0].polyline)
+                self?.map.setVisibleMapRect(response.routes[0].polyline.boundingMapRect, animated: true)
             }
         }
     }
@@ -106,7 +109,8 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 
-        let currentCoordinate = manager.location!.coordinate
+        guard let currentCoordinate = manager.location?.coordinate
+        else { return }
         let region = MKCoordinateRegion(center: currentCoordinate, latitudinalMeters: 5000, longitudinalMeters: 5000)
         map.setRegion(region, animated: true)
         manager.stopUpdatingLocation()

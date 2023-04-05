@@ -77,8 +77,15 @@ class UIControlTableViewController: UITableViewController {
     }
     
     @objc func navigateTo(sender: UIButton) {
+        
+        guard let currentButtonTitle = sender.titleLabel?.text
+        else { return }
+        
+        guard let identifier = uiComponentsDictionary[currentButtonTitle]
+        else { return }
+        
         let UIControlStoryboard = UIStoryboard(name: "UIControl", bundle: nil)
-        let viewControllerToNavigate: UIViewController = UIControlStoryboard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
+        let viewControllerToNavigate: UIViewController = UIControlStoryboard.instantiateViewController(withIdentifier: identifier)
         self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
         
     }

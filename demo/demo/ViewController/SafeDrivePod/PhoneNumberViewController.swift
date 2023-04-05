@@ -19,7 +19,7 @@ class PhoneNumberViewController: UIViewController, UITextFieldDelegate {
         phoneNumber.delegate = self
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return (textField.text!.count + (string.count - range.length)) <= 10
+        return (textField.text?.count ?? 0 + (string.count - range.length)) <= 10
     }
 }
 

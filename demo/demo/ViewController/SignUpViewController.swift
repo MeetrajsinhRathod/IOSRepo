@@ -81,7 +81,8 @@ class SignUpViewController: UIViewController {
       }
     
     @objc func togglePassword(tapGesture: UITapGestureRecognizer) {
-        let tappedImage = tapGesture.view as! UIImageView
+        guard let tappedImage = tapGesture.view as? UIImageView
+        else {return }
         
         if passwordToggle {
             passwordToggle = false
@@ -95,7 +96,8 @@ class SignUpViewController: UIViewController {
     }
     
     @objc func toggleCheckBox(tapGesture: UITapGestureRecognizer) {
-        let tappedImage = tapGesture.view as! UIImageView
+        guard let tappedImage = tapGesture.view as? UIImageView
+        else { return}
         
         if checkBoxToggle {
             checkBoxToggle = false

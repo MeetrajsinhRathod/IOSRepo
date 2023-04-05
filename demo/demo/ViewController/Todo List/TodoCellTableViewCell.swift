@@ -26,13 +26,13 @@ class TodoCellTableViewCell: UITableViewCell {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleCheckBox(tapGesture:)))
         checkBox.isUserInteractionEnabled = true
         checkBox.addGestureRecognizer(tapGesture)
-        
     }
     
     @objc func toggleCheckBox(tapGesture: UITapGestureRecognizer) {
-        let tappedImage = tapGesture.view as! UIImageView
+        guard let tappedImage = tapGesture.view as? UIImageView
+        else { return }
         
-        let attributedText = NSMutableAttributedString(string: title.text!)
+        let attributedText = NSMutableAttributedString(string: title.text ?? "")
         
         if isDone {
             isDone = false

@@ -76,10 +76,16 @@ class UIViewTableViewController: UITableViewController {
     }
     
     @objc func navigateTo(sender: UIButton) {
-        let uiViewStoryBoard = UIStoryboard(name: "UIView", bundle: nil)
-        let viewControllerToNavigate: UIViewController = uiViewStoryBoard.instantiateViewController(withIdentifier: uiComponentsDictionary[sender.titleLabel!.text!]!)
-        self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
         
+        guard let currentButtonTitle = sender.titleLabel?.text
+        else { return }
+        
+        guard let identifier = uiComponentsDictionary[currentButtonTitle]
+        else { return }
+        
+        let uiViewStoryBoard = UIStoryboard(name: "UIView", bundle: nil)
+        let viewControllerToNavigate: UIViewController = uiViewStoryBoard.instantiateViewController(withIdentifier: identifier)
+        self.navigationController?.pushViewController(viewControllerToNavigate, animated: true)
     }
 
     /*

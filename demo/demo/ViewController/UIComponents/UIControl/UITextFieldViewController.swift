@@ -8,25 +8,18 @@
 import UIKit
 
 class UITextFieldViewController: UIViewController {
-
-//    @IBOutlet weak var coloredTextField: UITextField!
-//    @IBOutlet weak var emailField: UITextField!
-//    @IBOutlet weak var cornerRadiusField: UITextField!
     
     @IBOutlet weak var coloredField: UITextField!
-    
     @IBOutlet weak var emailField: UITextField!
-
     @IBOutlet weak var cornerRadiusField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         coloredField.attributedPlaceholder = NSAttributedString(
-            string: coloredField.placeholder!,
+            string: coloredField.placeholder ?? "",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue]
         )
-        
         coloredField.backgroundColor = UIColor.systemPink
         
         cornerRadiusField.layer.cornerRadius = 15.0
