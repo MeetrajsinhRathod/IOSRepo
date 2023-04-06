@@ -14,7 +14,6 @@ class FeaturedJobCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         featuredJobCollection.dataSource = self
         featuredJobCollection.delegate = self
         
@@ -30,8 +29,6 @@ class FeaturedJobCell: UITableViewCell {
     }
 
     @IBAction func pageChange(_ sender: Any) {
-        //pageControl.setCurrentPageIndicatorImage(UIImage(systemName: "capsule.fill"), forPage: pageControl.currentPage)
-        
         featuredJobCollection.scrollToItem(at: IndexPath(row: pageControl.currentPage, section: 0), at: .centeredHorizontally, animated: true)
     }
 }
@@ -47,7 +44,7 @@ extension FeaturedJobCell: UICollectionViewDataSource {
         
         switch indexPath.row {
             case 0:
-            cell.backgroundColor = .blue
+            cell.backgroundColor = .systemIndigo
             case 1:
             cell.backgroundColor = .systemTeal
             case 2:

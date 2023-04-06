@@ -20,10 +20,10 @@ class PopularCollectionViewCell: UICollectionViewCell {
         self.layer.cornerRadius = 20
     }
     
-    func configure(name: String, image: UIImage, role: String, salary: String) {
-        self.companyName.text = name
-        self.companyImage.image = image
-        self.jobRole.text = role
-        self.salary.text = salary
+    func configure(job: Job) {
+        self.companyName.text = job.companyName
+        self.companyImage.image = job.companyImage
+        self.jobRole.text = job.jobRole
+        self.salary.text = job.salary
     }
 }

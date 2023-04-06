@@ -11,6 +11,8 @@ class PopularJobCell: UITableViewCell {
 
     @IBOutlet weak var popularJobCollection: UICollectionView!
 
+    var jobs: [Job] = [ ]
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -33,14 +35,7 @@ extension PopularJobCell: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PopularCollectionViewCell", for: indexPath) as? PopularCollectionViewCell
         else { return UICollectionViewCell() }
         
-        if indexPath.row % 2 != 0 {
-            cell.jobRole.text = "Jr Executive"
-            cell.companyName.text = "Pinterest"
-            cell.salary.text = "$96,000/y"
-            cell.configure(name: "Pinterest", image: UIImage(named: "Pinterest") ?? UIImage(), role: "Jr Executive", salary: "$96,000/y")
-        } else {
-            cell.configure(name: "Spotify", image: UIImage(named: "Spotify") ?? UIImage(), role: "Sr Developer", salary: "$115,000/y")
-        }
+        cell.configure(job: jobs[indexPath.row])
         
         return cell
     }
