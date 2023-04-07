@@ -9,8 +9,9 @@ import UIKit
 
 class FeaturedJobCell: UITableViewCell {
 
-    @IBOutlet weak var featuredJobCollection: UICollectionView!
-    @IBOutlet weak var pageControl: UIPageControl!
+    // MARK: - IBOutlet
+    @IBOutlet private weak var featuredJobCollection: UICollectionView!
+    @IBOutlet private weak var pageControl: UIPageControl!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,11 +20,10 @@ class FeaturedJobCell: UITableViewCell {
         
         pageControl.preferredCurrentPageIndicatorImage = UIImage(systemName: "capsule.fill")
     }
+}
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
+// MARK: - Extension
+extension FeaturedJobCell {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageControl.currentPage = indexPath.row
     }
@@ -33,6 +33,7 @@ class FeaturedJobCell: UITableViewCell {
     }
 }
 
+// MARK: - Collection view data source
 extension FeaturedJobCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         4
@@ -58,9 +59,10 @@ extension FeaturedJobCell: UICollectionViewDataSource {
     }
 }
 
+// MARK: - Collection view flowLayout delegate
 extension FeaturedJobCell: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width-10, height: collectionView.frame.height)
     }
 }

@@ -9,8 +9,10 @@ import UIKit
 
 class PopularJobCell: UITableViewCell {
 
-    @IBOutlet weak var popularJobCollection: UICollectionView!
+    // MARK: - IBOutlet
+    @IBOutlet private weak var popularJobCollection: UICollectionView!
 
+    // MARK: - Variables
     var jobs: [Job] = [ ]
     
     override func awakeFromNib() {
@@ -19,12 +21,9 @@ class PopularJobCell: UITableViewCell {
         popularJobCollection.dataSource = self
         popularJobCollection.delegate = self
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-
 }
+
+// MARK: - Collection view data source
 extension PopularJobCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -41,10 +40,7 @@ extension PopularJobCell: UICollectionViewDataSource {
     }
 }
 
-extension PopularJobCell: UICollectionViewDelegate {
-    
-}
-
+// MARK: - Collection view flowLayout delegate
 extension PopularJobCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/2 - 10, height: collectionView.frame.height)

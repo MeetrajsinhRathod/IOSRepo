@@ -9,14 +9,14 @@ import UIKit
 
 class PopularJobsViewController: UIViewController {
     
+    // MARK: - IBOutlet
+    @IBOutlet private weak var jobDetailsTableView: UITableView!
     
-    @IBOutlet weak var jobDetailsTableView: UITableView!
-    
+    // MARK: - Variables
     var jobs: [Job] = []
 
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = false
-        navigationController?.navigationBar.prefersLargeTitles = true
     }
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.isHidden = true
@@ -24,15 +24,10 @@ class PopularJobsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
-        
-        jobDetailsTableView.dataSource = self
-        jobDetailsTableView.delegate = self
-        jobDetailsTableView.rowHeight = 100
-        jobDetailsTableView.separatorStyle = .none
     }
 }
 
+// MARK: - Table view data source
 extension PopularJobsViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,13 +40,6 @@ extension PopularJobsViewController: UITableViewDataSource {
         else { return UITableViewCell()}
 
         cell.setData(job: jobs[indexPath.row])
-        
         return cell
     }
-    
-    
-}
-
-extension PopularJobsViewController: UITableViewDelegate {
-    
 }

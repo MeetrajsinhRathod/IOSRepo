@@ -9,21 +9,20 @@ import UIKit
 
 class PopularCollectionViewCell: UICollectionViewCell {
     
-
-    @IBOutlet var companyImage: UIImageView!
-    @IBOutlet weak var jobRole: UILabel!
-    @IBOutlet weak var companyName: UILabel!
-    @IBOutlet weak var salary: UILabel!
+    // MARK: - IBOutlet
+    @IBOutlet private weak var companyImage: UIImageView!
+    @IBOutlet private weak var jobRole: UILabel!
+    @IBOutlet private weak var companyName: UILabel!
+    @IBOutlet private weak var salary: UILabel!
 
     override func awakeFromNib() {
-        
-        self.layer.cornerRadius = 20
+        layer.cornerRadius = 20
     }
     
     func configure(job: Job) {
-        self.companyName.text = job.companyName
-        self.companyImage.image = job.companyImage
-        self.jobRole.text = job.jobRole
-        self.salary.text = job.salary
+        companyName.text = job.companyName
+        companyImage.image = job.companyImage
+        jobRole.text = job.jobRole
+        salary.text = job.salary
     }
 }

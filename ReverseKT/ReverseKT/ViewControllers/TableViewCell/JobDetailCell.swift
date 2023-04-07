@@ -9,19 +9,15 @@ import UIKit
 
 class JobDetailCell: UITableViewCell {
 
-    @IBOutlet weak var companyImage: UIImageView!
-    @IBOutlet weak var jobRole: UILabel!
-    @IBOutlet weak var salary: UILabel!
-    @IBOutlet weak var companyName: UILabel!
+    // MARK: - IBOutlet
+    @IBOutlet private weak var companyImage: UIImageView!
+    @IBOutlet private weak var jobRole: UILabel!
+    @IBOutlet private weak var salary: UILabel!
+    @IBOutlet private weak var companyName: UILabel!
+    @IBOutlet private weak var cellContainer: UIView!
     
-    @IBOutlet weak var cellContainer: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        
         cellContainer.layer.cornerRadius = 30
     }
     

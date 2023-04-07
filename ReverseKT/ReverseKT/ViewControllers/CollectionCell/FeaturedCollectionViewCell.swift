@@ -9,10 +9,11 @@ import UIKit
 
 class FeaturedCollectionViewCell: UICollectionViewCell {
     
-
-    @IBOutlet weak var companyImage: UIImageView!
+    // MARK: - IBOutlet
+    @IBOutlet private weak var companyImage: UIImageView!
+    
     override func awakeFromNib() {
-        self.layer.cornerRadius = 20
+        layer.cornerRadius = 20
         companyImage.layer.cornerRadius = 10
     }
 }

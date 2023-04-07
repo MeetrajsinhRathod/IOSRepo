@@ -16,8 +16,6 @@ class WebViewController: UIViewController {
     
     var url = URL(string: "https://google.com")
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
       
