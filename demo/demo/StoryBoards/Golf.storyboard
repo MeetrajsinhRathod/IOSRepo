@@ -652,7 +652,7 @@ score per foursome. Scorer(*)</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZJV-ay-0Fp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129.76744186046511" y="683.69098712446362"/>
+            <point key="canvasLocation" x="257" y="685"/>
         </scene>
     </scenes>
     <resources>
