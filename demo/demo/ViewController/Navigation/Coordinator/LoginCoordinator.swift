@@ -19,7 +19,6 @@ class LoginCoordinator : Coordinator {
     }
 
     func start() {
-
         let loginVC = LoginVC.instatiateStoryBoard()
         loginVC.LoginCoordinator = self
         self.navController.pushViewController(loginVC, animated: false)
@@ -29,7 +28,7 @@ class LoginCoordinator : Coordinator {
         let homeChildCoordinator = HomeCoordinator(self.navController)
         homeChildCoordinator.mainCoordinator = self.mainCoordinator
         mainCoordinator?.childCoordinator.append(homeChildCoordinator)
-        mainCoordinator?.removeChildCoordinator(child: self)
+        //mainCoordinator?.removeChildCoordinator(child: self)
         homeChildCoordinator.start()
     }
 }

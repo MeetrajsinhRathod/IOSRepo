@@ -23,6 +23,28 @@ class MapViewController: UIViewController {
         map.delegate = self
         configure()
     }
+    
+    func configure() {
+
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        map.showsUserLocation = true
+
+        //for satellite view
+        //map.preferredConfiguration = MKHybridMapConfiguration(elevationStyle: .realistic)
+
+        let simform = MKPointAnnotation()
+        simform.coordinate = CLLocationCoordinate2DMake(23.02818331024883, 72.4995136032609)
+        simform.title = "Simform Solutions"
+        places.append(simform)
+
+        let home = MKPointAnnotation()
+        home.coordinate = CLLocationCoordinate2DMake(23.023188, 72.546977)
+        home.title = "Home"
+        places.append(home)
+
+        map.addAnnotations(places)
+    }
 
     @IBAction func getDirections(_ sender: Any) {
         
@@ -57,28 +79,6 @@ class MapViewController: UIViewController {
         locationManager.startUpdatingLocation()
     }
 
-    func configure() {
-
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-        map.showsUserLocation = true
-        
-        //for satellite view
-        //map.preferredConfiguration = MKHybridMapConfiguration(elevationStyle: .realistic)
-
-        let simform = MKPointAnnotation()
-        simform.coordinate = CLLocationCoordinate2DMake(23.02818331024883, 72.4995136032609)
-        simform.title = "Simform Solutions"
-        places.append(simform)
-
-        let home = MKPointAnnotation()
-        home.coordinate = CLLocationCoordinate2DMake(23.023188, 72.546977)
-        home.title = "Home"
-        places.append(home)
-
-        map.addAnnotations(places)
-    }
-
     func getRoute(destination: MKMapItem) {
         
         let directionRequest = MKDirections.Request()
@@ -91,7 +91,6 @@ class MapViewController: UIViewController {
         directionRequest.transportType = .automobile
         
         let directions = MKDirections(request: directionRequest)
-        
         directions.calculate{ [weak self] (response, error) in
             
             if let error = error {

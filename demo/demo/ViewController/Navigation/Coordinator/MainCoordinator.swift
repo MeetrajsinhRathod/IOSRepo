@@ -46,11 +46,8 @@ class MainCoordinator: Coordinator {
 //    }
     
     func removeChildCoordinator(child: Coordinator) {
-            for(index, coordinator) in childCoordinator.enumerated() {
-                if(coordinator === child) {
-                    childCoordinator.remove(at: index)
-                    break
-                }
-            }
+        childCoordinator.removeAll { Coordinator in
+            Coordinator === child
+        }
         }
 }

@@ -43,5 +43,5 @@ extension PopularJobCell: UICollectionViewDataSource {
 // MARK: - Collection view flowLayout delegate
 extension PopularJobCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width/2 - 10, height: collectionView.frame.height)
+        return CGSize(width: collectionView.frame.width/2 - 5, height: collectionView.frame.height)
     }}

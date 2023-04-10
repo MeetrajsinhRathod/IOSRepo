@@ -7,7 +7,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+protocol DataPass {
+    func seeAllJobs()
+}
+
+class ViewController: UIViewController, DataPass {
+    
+    func seeAllJobs() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
+            
+        guard let jobDetailVC = storyBoard.instantiateViewController(withIdentifier: "PopularJobsViewController") as? PopularJobsViewController
+        else { return }
+        jobDetailVC.jobs = jobs
+        navigationController?.pushViewController(jobDetailVC, animated: true)
+    }
+    
     
     // MARK: - IBOutlet
     @IBOutlet private weak var jobTableView: UITableView!
@@ -26,6 +40,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
     }
+    
+    @IBAction func editingDone(_ sender: Any) {
+        searchField.resignFirstResponder()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+        
+    }
+    
 }
 
 // MARK: - Extension
@@ -56,6 +81,8 @@ extension ViewController {
         jobDetailVC.jobs = jobs
         navigationController?.pushViewController(jobDetailVC, animated: true)
     }
+    
+    
 }
 
 // MARK: - Table view data source
@@ -95,7 +122,7 @@ extension ViewController: UITableViewDelegate {
             sectionCell.jobLabel.text = "Featured Jobs"
         } else {
             sectionCell.jobLabel.text = "Popular Jobs"
-            sectionCell.seeMoreBtn.addTarget(self, action: #selector(seeMore), for: .touchUpInside)
+            sectionCell.delegate = self
         }
         return sectionCell
     }

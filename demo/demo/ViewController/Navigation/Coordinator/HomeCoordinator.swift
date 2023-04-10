@@ -19,8 +19,17 @@ class HomeCoordinator : Coordinator {
     
     func start() {
         let homeVC = HomeVC.instatiateStoryBoard()
+        homeVC.HomeCoordinator = self
         homeVC.mainCoordinator = self.mainCoordinator
         self.navController.pushViewController(homeVC, animated: true)
+    }
+    
+    func navigateToLogin() {
+        let loginChildCoordinator = LoginCoordinator(self.navController)
+        loginChildCoordinator.mainCoordinator = self.mainCoordinator
+        mainCoordinator?.childCoordinator.append(loginChildCoordinator)
+        //mainCoordinator?.removeChildCoordinator(child: self)
+        loginChildCoordinator.start()
     }
     
 }

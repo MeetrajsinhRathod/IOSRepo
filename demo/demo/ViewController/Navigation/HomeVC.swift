@@ -23,7 +23,7 @@ class HomeVC: UIViewController, CoordinatorBoard {
     
     @IBAction func logOut(_ sender: Any) {
         defaults.set(false, forKey: "userIsLoggedIn")
-        mainCoordinator?.start()
+        HomeCoordinator?.navigateToLogin()
     }
 
 }

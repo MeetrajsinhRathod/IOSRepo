@@ -48,7 +48,6 @@ class UIProgressViewController: UIViewController {
             val += 1
             progress.completedUnitCount += 1
             stepper.value = Double(progress.completedUnitCount)
-            //progressBar.progress = val
             progressBar.setProgress(Float(progress.fractionCompleted), animated: true)
             countLabel.text = String(val)
         }

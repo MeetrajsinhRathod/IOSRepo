@@ -13,8 +13,18 @@ class SectionCell: UITableViewCell {
     @IBOutlet weak var jobLabel: UILabel!
     @IBOutlet weak var seeMoreBtn: UIButton!
     
+    // MARK: - delegate variable
+    var delegate: DataPass?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    // MARK: - IBAction
+    @IBAction func seeMore(_ sender: Any) {
+        delegate?.seeAllJobs()
+    }
+    
+    
 
 }
