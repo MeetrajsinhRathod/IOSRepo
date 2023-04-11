@@ -20,6 +20,9 @@ class RootNavViewController: UIViewController {
     }
     
 
+    @IBAction func navigateToFullscreen(_ sender: Any) {
+        performSegue(withIdentifier: "fullscreen", sender: self)
+    }
     /*
     // MARK: - Navigation
 

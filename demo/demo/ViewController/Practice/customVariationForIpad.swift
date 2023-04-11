@@ -13,7 +13,7 @@ class customVariationForIpad: UIViewController {
     
     override public var traitCollection: UITraitCollection {
         if UIDevice.current.userInterfaceIdiom == .pad && UIDevice.current.orientation.isPortrait {
-            return UITraitCollection(traitsFrom: [UITraitCollection(horizontalSizeClass: .compact), UITraitCollection(verticalSizeClass: .regular)])
+            return UITraitCollection(traitsFrom: [UITraitCollection(horizontalSizeClass: .regular), UITraitCollection(verticalSizeClass: .regular)])
         }
         else if UIDevice.current.userInterfaceIdiom == .pad && UIDevice.current.orientation.isLandscape {
             return UITraitCollection(traitsFrom: [UITraitCollection(horizontalSizeClass: .regular), UITraitCollection(verticalSizeClass: .compact)])
@@ -37,7 +37,7 @@ class customVariationForIpad: UIViewController {
     @objc
     func openLink() {
         let attributeValue = label.attributedText?.attribute(NSAttributedString.Key.link, at: 0, effectiveRange: nil)
-        if let value = attributeValue {
+        if let attributeValue = attributeValue {
             UIApplication.shared.open((URL(string: (attributeValue as? String ?? "https://google.com")) ?? URL(string: "https://google.com"))!)
         }
     }
