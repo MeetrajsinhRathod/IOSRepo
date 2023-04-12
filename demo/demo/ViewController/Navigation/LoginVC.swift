@@ -18,6 +18,7 @@ class LoginVC: UIViewController, CoordinatorBoard {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     @IBAction func logIn(_ sender: Any) {

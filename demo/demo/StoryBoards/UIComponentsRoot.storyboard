@@ -14,11 +14,13 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="seu-jK-BG8" customClass="RootViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="2Uq-6y-o3F"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="2Uq-6y-o3F">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="S3z-0U-995"/>
+                    </navigationItem>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kj3-Um-dCw">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <tabBarAppearance key="standardAppearance" backgroundEffect="systemThickMaterial"/>
+                        <tabBarAppearance key="standardAppearance"/>
                         <tabBarAppearance key="scrollEdgeAppearance"/>
                     </tabBar>
                     <connections>

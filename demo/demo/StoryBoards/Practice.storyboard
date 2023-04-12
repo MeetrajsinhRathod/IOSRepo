@@ -158,12 +158,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vRA-R9-Fnp">
-                                <rect key="frame" x="20" y="723" width="98.333333333333314" height="35"/>
+                                <rect key="frame" x="19.999999999999993" y="723" width="98.333333333333314" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aks-hB-bs1">
-                                <rect key="frame" x="138.33333333333337" y="723" width="98.333333333333343" height="35"/>
+                                <rect key="frame" x="138.33333333333334" y="723" width="98.333333333333343" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Button"/>
                             </button>
@@ -303,15 +303,15 @@
                                 <exclude reference="Tkh-MN-Gu7"/>
                                 <exclude reference="dRE-Qe-7LI"/>
                                 <exclude reference="xRV-vm-7a1"/>
-                                <exclude reference="2XT-9X-wjo"/>
-                                <exclude reference="Moi-H7-Fpo"/>
-                                <exclude reference="PlP-NQ-F4B"/>
-                                <exclude reference="by5-qJ-GcY"/>
                                 <exclude reference="2Dw-ua-cLK"/>
                                 <exclude reference="Cen-qF-3NP"/>
                                 <exclude reference="abG-58-ehe"/>
                                 <exclude reference="lAP-6q-ztX"/>
                                 <exclude reference="uw1-iq-54W"/>
+                                <exclude reference="2XT-9X-wjo"/>
+                                <exclude reference="Moi-H7-Fpo"/>
+                                <exclude reference="PlP-NQ-F4B"/>
+                                <exclude reference="by5-qJ-GcY"/>
                                 <exclude reference="6YU-yY-Ecb"/>
                                 <exclude reference="bfh-Gj-v4V"/>
                                 <exclude reference="phX-9i-ekV"/>
@@ -344,10 +344,10 @@
                                 <include reference="rZf-TJ-W1x"/>
                                 <include reference="4tP-RE-pc8"/>
                                 <include reference="xRV-vm-7a1"/>
-                                <include reference="PlP-NQ-F4B"/>
-                                <include reference="by5-qJ-GcY"/>
                                 <include reference="Cen-qF-3NP"/>
                                 <include reference="abG-58-ehe"/>
+                                <include reference="PlP-NQ-F4B"/>
+                                <include reference="by5-qJ-GcY"/>
                                 <include reference="6YU-yY-Ecb"/>
                                 <include reference="bfh-Gj-v4V"/>
                                 <include reference="3F6-aJ-mxo"/>
@@ -372,11 +372,11 @@
                                 <include reference="tbw-7R-9Ok"/>
                                 <include reference="Tkh-MN-Gu7"/>
                                 <include reference="dRE-Qe-7LI"/>
-                                <include reference="2XT-9X-wjo"/>
-                                <include reference="Moi-H7-Fpo"/>
                                 <include reference="2Dw-ua-cLK"/>
                                 <include reference="lAP-6q-ztX"/>
                                 <include reference="uw1-iq-54W"/>
+                                <include reference="2XT-9X-wjo"/>
+                                <include reference="Moi-H7-Fpo"/>
                                 <include reference="phX-9i-ekV"/>
                                 <include reference="uVk-U4-a2p"/>
                                 <include reference="jlz-CT-rMc"/>
