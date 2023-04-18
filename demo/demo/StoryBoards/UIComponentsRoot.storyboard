@@ -70,11 +70,11 @@
             </objects>
             <point key="canvasLocation" x="-1237" y="639"/>
         </scene>
-        <!--Designs-->
+        <!--Design/Navigation-->
         <scene sceneID="5Af-Sn-i8C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w7l-dB-aTQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Designs" image="paintbrush" catalog="system" selectedImage="paintbrush.fill" id="YMf-v6-CUG"/>
+                    <tabBarItem key="tabBarItem" title="Design/Navigation" image="paintbrush" catalog="system" selectedImage="paintbrush.fill" id="YMf-v6-CUG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="A79-Md-aDI">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>

@@ -18,12 +18,18 @@ class HomeVC: UIViewController, CoordinatorBoard {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        userName.text = defaults.string(forKey: "username")
+        userName.text = name
+        //userName.text = defaults.string(forKey: "username")
     }
     
     @IBAction func logOut(_ sender: Any) {
         defaults.set(false, forKey: "userIsLoggedIn")
-        HomeCoordinator?.navigateToLogin()
+        navigationController?.popViewController(animated: true)
+        //HomeCoordinator?.navigateToLogin()
+    }
+    
+    func setUsername(name: String) {
+        self.name = name
     }
 
 }

@@ -18,7 +18,6 @@ class LoginVC: UIViewController, CoordinatorBoard {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     @IBAction func logIn(_ sender: Any) {
@@ -27,7 +26,11 @@ class LoginVC: UIViewController, CoordinatorBoard {
             defaults.set(true, forKey: "userIsLoggedIn")
             defaults.set(username.text, forKey: "username")
             
-            LoginCoordinator?.navigateToHomeVC()
+            //LoginCoordinator?.navigateToHomeVC()
+            
+            let homeVC = HomeVC.instatiateStoryBoard()
+            homeVC.setUsername(name: username.text ?? "")
+            navigationController?.pushViewController(homeVC, animated: true)
         }
     }
 }

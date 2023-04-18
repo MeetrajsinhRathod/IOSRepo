@@ -18,17 +18,17 @@
                         <rect key="frame" x="0.0" y="47" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" name="AccentColor"/>
+                        <navigationBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </navigationBarAppearance>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="73K-b0-eeB">
                         <rect key="frame" x="0.0" y="729" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <toolbarAppearance key="standardAppearance" backgroundEffect="regular">
-                            <color key="backgroundColor" systemColor="systemIndigoColor"/>
-                        </toolbarAppearance>
-                        <toolbarAppearance key="scrollEdgeAppearance" backgroundEffect="regular">
-                            <color key="backgroundColor" systemColor="systemCyanColor"/>
-                        </toolbarAppearance>
                     </toolbar>
                     <connections>
                         <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="EG0-V8-Bqe"/>
@@ -89,9 +89,7 @@
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Page Sheet"/>
                                                 <connections>
-                                                    <segue destination="eUR-S1-xBq" kind="popoverPresentation" popoverAnchorView="w1C-Xm-zhP" id="d2M-rX-tsT">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
+                                                    <segue destination="eUR-S1-xBq" kind="presentation" modalPresentationStyle="pageSheet" id="d2M-rX-tsT"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hcK-Cs-r83">
@@ -103,11 +101,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hfb-j4-7I8">
-                                                <rect key="frame" x="150" y="349.66666666666669" width="75" height="34"/>
+                                                <rect key="frame" x="95.000000000000014" y="349.66666666666669" width="185.33333333333337" height="34"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Present As Pop Over "/>
                                                 <connections>
-                                                    <action selector="navigateToFullscreen:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3Px-B9-Qfg"/>
+                                                    <segue destination="Y8W-6p-B00" kind="popoverPresentation" popoverAnchorView="Hfb-j4-7I8" id="7vp-5Y-DcN">
+                                                        <popoverArrowDirection key="popoverArrowDirection" down="YES"/>
+                                                    </segue>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8W-8H-JDf">
@@ -165,11 +165,8 @@
                         <barButtonItem title="Item" id="V1G-oq-Ywl"/>
                         <barButtonItem title="Item" id="0un-r1-17d"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Root" leftItemsSupplementBackButton="YES" id="7C8-t6-86f">
-                        <leftBarButtonItems>
-                            <barButtonItem title="Item" id="iie-gX-2Tq"/>
-                            <barButtonItem title="Item" id="0dy-ec-HIm"/>
-                        </leftBarButtonItems>
+                    <navigationItem key="navigationItem" title="Navigation" leftItemsSupplementBackButton="YES" id="7C8-t6-86f">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="0dy-ec-HIm"/>
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="03r-71-ZSy">
                                 <barButtonItems>
@@ -251,12 +248,13 @@
         <scene sceneID="9l3-PZ-UUG">
             <objects>
                 <viewController id="09z-Rj-Mb3" userLabel="Over Full Screen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7i6-9u-2Ic">
+                    <view key="view" alpha="0.25" contentMode="scaleToFill" id="7i6-9u-2Ic">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v34-8x-lTz">
                                 <rect key="frame" x="138.66666666666666" y="591.66666666666663" width="98" height="35"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="go to root"/>
                                 <connections>
@@ -265,7 +263,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jeb-OC-VYP"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="v34-8x-lTz" firstAttribute="centerX" secondItem="7i6-9u-2Ic" secondAttribute="centerX" id="NxL-Nf-vAy"/>
                             <constraint firstItem="v34-8x-lTz" firstAttribute="centerY" secondItem="7i6-9u-2Ic" secondAttribute="centerY" multiplier="1.5" id="Sb9-be-p6Q"/>
@@ -283,11 +281,11 @@
             <objects>
                 <viewController id="Y8W-6p-B00" userLabel="Over Current Context" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c7t-j3-AqI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="755"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbi-Pb-NFq">
-                                <rect key="frame" x="138.66666666666666" y="591.66666666666663" width="98" height="35"/>
+                                <rect key="frame" x="138.66666666666666" y="548.66666666666663" width="98" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="go to root"/>
                                 <connections>
@@ -296,7 +294,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dlw-3P-wZB"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemMintColor"/>
                         <constraints>
                             <constraint firstItem="Jbi-Pb-NFq" firstAttribute="centerX" secondItem="c7t-j3-AqI" secondAttribute="centerX" id="1NI-Fb-OHP"/>
                             <constraint firstItem="Jbi-Pb-NFq" firstAttribute="centerY" secondItem="c7t-j3-AqI" secondAttribute="centerY" multiplier="1.5" id="w3X-62-9U0"/>
@@ -358,7 +356,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NnA-x8-xds"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="ApG-I0-2i0" firstAttribute="centerX" secondItem="Jt1-DF-Jlh" secondAttribute="centerX" id="Z59-cN-cci"/>
                             <constraint firstItem="ApG-I0-2i0" firstAttribute="centerY" secondItem="Jt1-DF-Jlh" secondAttribute="centerY" multiplier="1.5" id="coS-X5-e4w"/>
@@ -380,7 +378,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHD-g6-uFR">
-                                <rect key="frame" x="148" y="141" width="79" height="35"/>
+                                <rect key="frame" x="148" y="175" width="79" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="pSQ-C2-fyB"/>
                                 </constraints>
@@ -403,7 +401,7 @@
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" changesSelectionAsPrimaryAction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-qK-NW7">
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBT-qK-NW7">
                                 <rect key="frame" x="168.66666666666666" y="501.66666666666674" width="38" height="30"/>
                                 <color key="backgroundColor" name="SignUpColor"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -425,7 +423,7 @@
                             <constraint firstItem="SBT-qK-NW7" firstAttribute="top" secondItem="LXN-fh-SRh" secondAttribute="bottom" constant="50" id="vrn-3b-Hd8"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Login" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="8lq-Q9-b4O">
+                    <navigationItem key="navigationItem" title="Login" prompt="login to continue" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="8lq-Q9-b4O">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="q2H-vC-Ejf"/>
                     </navigationItem>
                     <connections>
@@ -481,6 +479,7 @@
                             <constraint firstItem="q9U-eG-9zb" firstAttribute="centerX" secondItem="4yE-Ch-VH2" secondAttribute="centerX" id="sPV-p4-ybc"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="fW3-CD-5r9"/>
                     <connections>
                         <outlet property="userName" destination="Tvp-Wf-qon" id="anq-BZ-9O9"/>
                     </connections>
@@ -490,6 +489,9 @@
             <point key="canvasLocation" x="1900" y="1550.7042253521126"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7vp-5Y-DcN"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -497,14 +499,17 @@
         <namedColor name="SignUpColor">
             <color red="0.63899999856948853" green="0.3529999852180481" blue="0.98199999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemCyanColor">
-            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
