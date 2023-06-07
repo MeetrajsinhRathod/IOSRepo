@@ -28,7 +28,6 @@ class LoginCoordinator : Coordinator {
         let homeChildCoordinator = HomeCoordinator(self.navController)
         homeChildCoordinator.mainCoordinator = self.mainCoordinator
         mainCoordinator?.childCoordinator.append(homeChildCoordinator)
-        //mainCoordinator?.removeChildCoordinator(child: self)
         homeChildCoordinator.start()
     }
 }

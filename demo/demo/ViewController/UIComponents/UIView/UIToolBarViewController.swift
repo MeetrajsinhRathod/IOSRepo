@@ -9,29 +9,29 @@ import UIKit
 
 class UIToolBarViewController: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var statusLabel: UILabel!
-    
     @IBOutlet weak var songToolbar: UIToolbar!
     
+    //MARK: - Variables
     var playing = false
+    
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
+    //MARK: - IBActions
     @IBAction func rewindTapped(_ sender: Any) {
         statusLabel.text = "Rewinding song"
     }
     
     @IBAction func playTapped(_ sender: Any) {
-        
-        if !playing {
-            Play()
-        }
-        else {
-           Pause()
-        }
+        if !playing { Play() } else { Pause() }
+    }
+    
+    @IBAction func forwardTapped(_ sender: Any) {
+        statusLabel.text = "Fast forwarding song"
     }
     
     func Play() {
@@ -49,17 +49,4 @@ class UIToolBarViewController: UIViewController {
         playing = false
         songToolbar.setItems(barItems, animated: true)
     }
-    @IBAction func forwardTapped(_ sender: Any) {
-        statusLabel.text = "Fast forwarding song"
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

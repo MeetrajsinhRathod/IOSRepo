@@ -10,35 +10,33 @@ import WebKit
 
 class WebViewController: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var webView: WKWebView!
     @IBOutlet weak var searchBtn: UIButton!
     @IBOutlet weak var urlTextField: UITextField!
     
+    //MARK: - Variables
     var url = URL(string: "https://google.com")
     
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         webView.load(URLRequest(url: (url ?? URL(string: "https://google.com"))!))
-        
         let forwardButton = UIBarButtonItem(image: UIImage(systemName: "chevron.forward"), style: .plain, target: self, action: #selector(forward))
         let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.backward"), style: .plain, target: self, action: #selector(back))
         let refreshButton = UIBarButtonItem(image: UIImage(systemName: "arrow.clockwise"), style: .plain, target: self, action: #selector(reload))
-
         navigationItem.rightBarButtonItems = [forwardButton, backButton, refreshButton]
-        
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         webView.allowsBackForwardNavigationGestures = true
     }
     
-    @objc func forward() {
-        webView.goForward()
+    //MARK: - IBActions
+    @IBAction func openUrl(_ sender: Any) {
+        loadUrl()
     }
-    @objc func back() {
-        webView.goBack()
-    }
-    @objc func reload() {
-        webView.reload()
+    
+    @IBAction func search(_ sender: Any) {
+        loadUrl()
     }
     
     func loadUrl() {
@@ -59,12 +57,18 @@ class WebViewController: UIViewController {
         }
         webView.load(URLRequest(url: (url ?? URL(string: "https://google.com"))!))
     }
+}
 
-    @IBAction func openUrl(_ sender: Any) {
-        loadUrl()
-    }
+//MARK: - ObjC
+extension WebViewController {
     
-    @IBAction func search(_ sender: Any) {
-        loadUrl()
+    @objc func forward() {
+        webView.goForward()
+    }
+    @objc func back() {
+        webView.goBack()
+    }
+    @objc func reload() {
+        webView.reload()
     }
 }

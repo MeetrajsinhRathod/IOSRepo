@@ -9,43 +9,22 @@ import UIKit
 
 class SegmentedControlViewController: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var segment: UISegmentedControl!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var page: UIPageControl!
-    
     @IBOutlet weak var customPageControl: UIPageControl!
     
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         imageView.image = UIImage(named: "dog.png")
         page.addTarget(self, action: #selector(pageDidChange), for: .valueChanged)
-        
         customPageControl.preferredIndicatorImage = UIImage(systemName: "book")
         customPageControl.preferredCurrentPageIndicatorImage = UIImage(systemName: "book.fill")
     }
     
-    @objc func pageDidChange(_ sender: UIPageControl) {
-        let currentPage = sender.currentPage
-        
-        switch currentPage {
-        case 0:
-            imageView.image = UIImage(named: "dog.png")
-            segment.selectedSegmentIndex = page.currentPage
-        case 1:
-            imageView.image = UIImage(named: "cat.png")
-            segment.selectedSegmentIndex = page.currentPage
-        case 2:
-            imageView.image = UIImage(named: "cow.png")
-            segment.selectedSegmentIndex = page.currentPage
-        case 3:
-            imageView.image = UIImage(named: "monkey.png")
-            segment.selectedSegmentIndex = page.currentPage
-        default:
-            debugPrint("error")
-        }
-        
-    }
-    
+    //MARK: - IBActions
     @IBAction func changeAnimal(_ sender: UISegmentedControl) {
         switch segment.selectedSegmentIndex {
         case 0:
@@ -64,15 +43,30 @@ class SegmentedControlViewController: UIViewController {
             debugPrint("error")
         }
     }
+}
+
+//MARK: - ObjC
+extension SegmentedControlViewController {
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc
+    func pageDidChange(_ sender: UIPageControl) {
+        let currentPage = sender.currentPage
+        
+        switch currentPage {
+        case 0:
+            imageView.image = UIImage(named: "dog.png")
+            segment.selectedSegmentIndex = page.currentPage
+        case 1:
+            imageView.image = UIImage(named: "cat.png")
+            segment.selectedSegmentIndex = page.currentPage
+        case 2:
+            imageView.image = UIImage(named: "cow.png")
+            segment.selectedSegmentIndex = page.currentPage
+        case 3:
+            imageView.image = UIImage(named: "monkey.png")
+            segment.selectedSegmentIndex = page.currentPage
+        default:
+            debugPrint("error")
+        }
     }
-    */
-
 }

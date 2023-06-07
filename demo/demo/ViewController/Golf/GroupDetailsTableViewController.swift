@@ -9,6 +9,7 @@ import UIKit
 
 class GroupDetailsTableViewController: UITableViewController {
 
+    //MARK: - Variables
     var players = [
         
         [Player(name: "Harsh", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers") ?? UIImage()),
@@ -24,11 +25,11 @@ class GroupDetailsTableViewController: UITableViewController {
         Player(name: "Ruchit", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame") ?? UIImage())]
     ]
     
+    //MARK: - View LifeCycle
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isHidden = false
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,12 +51,19 @@ class GroupDetailsTableViewController: UITableViewController {
         tableView.tableHeaderView = headerCell
         tableView.tableFooterView = footerCell
     }
+}
+
+extension GroupDetailsTableViewController {
     
+    //MARK: - ObjC
     @objc
     func goBack() {
         navigationController?.popViewController(animated: true)
     }
+}
 
+extension GroupDetailsTableViewController {
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

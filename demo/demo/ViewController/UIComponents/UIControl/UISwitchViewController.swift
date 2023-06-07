@@ -9,17 +9,18 @@ import UIKit
 
 class UISwitchViewController: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var switchToggle: UISwitch!
-    
     @IBOutlet weak var customSwitch: UISwitch!
     
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         customSwitch.thumbTintColor = UIColor(patternImage: UIImage(named: "DropDown.png") ?? UIImage())
         customSwitch.onTintColor = .cyan
-
     }
+    
+    //MARK: - IBAction
     @IBAction func turnOnDarkMode(_ sender: UISwitch) {
         if switchToggle.isOn {
             view.overrideUserInterfaceStyle = .dark
@@ -27,16 +28,4 @@ class UISwitchViewController: UIViewController {
             view.overrideUserInterfaceStyle = .light
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -9,32 +9,29 @@ import UIKit
 
 class DatePickerViewController: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dateField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segmentControl: UISegmentedControl!
     
+    //MARK: - Variables
     let datePickerKeyboard = UIDatePicker()
     
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         datePickerKeyboard.preferredDatePickerStyle = .wheels
         datePicker.preferredDatePickerStyle = .wheels
         dateField.inputView = datePickerKeyboard
-        
         datePickerKeyboard.addTarget(self, action: #selector(setDate), for: .valueChanged)
     }
     
-    @objc
-    func setDate() {
-        let dateFormat = DateFormatter()
-        dateFormat.dateStyle = .medium
-        dateFormat.timeStyle = .short
-        
-        dateField.text = dateFormat.string(from: datePickerKeyboard.date)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
+    //MARK: - IBActions
     @IBAction func changePicker(_ sender: UISegmentedControl) {
         
         switch sender.selectedSegmentIndex {
@@ -69,8 +66,17 @@ class DatePickerViewController: UIViewController {
         
         dateLabel.text = dateFormat.string(from: datePicker.date)
     }
+}
+
+//MARK: - Objc
+extension DatePickerViewController {
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
+    @objc
+    func setDate() {
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .medium
+        dateFormat.timeStyle = .short
+        
+        dateField.text = dateFormat.string(from: datePickerKeyboard.date)
     }
 }

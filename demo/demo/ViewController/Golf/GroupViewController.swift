@@ -8,7 +8,11 @@
 import UIKit
 
 class GroupViewController: UIViewController {
-
+    
+    //MARK: - IBOutlets
+    @IBOutlet weak var playersTableView: UITableView!
+    
+    //MARK: - Variables
     private var players = [
         [Player(name: "Harsh", phoneNumber: "1234567890", profileImage: UIImage(named: "The Avengers") ?? UIImage()),
         Player(name: "Rahul", phoneNumber: "2350847591", profileImage: UIImage(named: "Iron Man") ?? UIImage())],
@@ -20,8 +24,7 @@ class GroupViewController: UIViewController {
         Player(name: "Ruchit", phoneNumber: "3568289593", profileImage: UIImage(named: "Avengers Endgame") ?? UIImage())]
     ]
     
-    @IBOutlet weak var playersTableView: UITableView!
-    
+    //MARK: - View LifeCycle
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.isHidden = false
@@ -30,8 +33,6 @@ class GroupViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isHidden = true
-        //        navigationController.setToolbarHidden(false, animated: true)
-        //navigationController?.setToolbarItems([UIBarButtonItem(title: "Bar button", style: .plain, target: self, action: nil)], animated: true)
         configureTable()
     }
     
@@ -39,6 +40,7 @@ class GroupViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    //MARK: - Configure Table
     func configureTable() {
         playersTableView.dataSource = self
         playersTableView.delegate = self
@@ -53,7 +55,8 @@ class GroupViewController: UIViewController {
     }
 }
 
-extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
+//MARK: - TableView Data Source
+extension GroupViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return players.count
@@ -70,6 +73,10 @@ extension GroupViewController: UITableViewDataSource, UITableViewDelegate {
         cell.set(name: players[indexPath.section][indexPath.row].name, number: players[indexPath.section][indexPath.row].phoneNumber, image: players[indexPath.section][indexPath.row].profileImage)
         return cell
     }
+}
+
+//MARK: - TableView Delegate
+extension GroupViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {

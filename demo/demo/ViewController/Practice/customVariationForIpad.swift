@@ -9,8 +9,10 @@ import UIKit
 
 class customVariationForIpad: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var label: UILabel!
     
+    //MARK: - Variables
     override public var traitCollection: UITraitCollection {
         if UIDevice.current.userInterfaceIdiom == .pad && UIDevice.current.orientation.isPortrait {
             return UITraitCollection(traitsFrom: [UITraitCollection(horizontalSizeClass: .regular), UITraitCollection(verticalSizeClass: .regular)])
@@ -21,6 +23,7 @@ class customVariationForIpad: UIViewController {
         return super.traitCollection
     }
     
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +36,10 @@ class customVariationForIpad: UIViewController {
         label.isUserInteractionEnabled = true
         label.addGestureRecognizer(tap)
     }
+}
+
+//MARK: - ObjC
+extension customVariationForIpad {
     
     @objc
     func openLink() {
@@ -41,6 +48,4 @@ class customVariationForIpad: UIViewController {
             UIApplication.shared.open((URL(string: (attributeValue as? String ?? "https://google.com")) ?? URL(string: "https://google.com"))!)
         }
     }
-
-
 }

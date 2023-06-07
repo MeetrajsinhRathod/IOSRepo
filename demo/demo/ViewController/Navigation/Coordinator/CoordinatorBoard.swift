@@ -7,10 +7,7 @@
 
 import UIKit
 
-protocol CoordinatorBoard {
-    
-    //static func instantiateStoryBoard() -> Self
-}
+protocol CoordinatorBoard { }
 
 extension CoordinatorBoard where Self : UIViewController {
     

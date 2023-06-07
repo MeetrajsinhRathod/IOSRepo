@@ -9,12 +9,14 @@ import UIKit
 
 class ButtonViewController: UIViewController {
     
+    //MARK: - IBOutlets
     @IBOutlet weak var option: UILabel!
     @IBOutlet weak var popUpBtn: UIButton!
+    
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setPopUpBtn()
-        // Do any additional setup after loading the view.
     }
     
     func setPopUpBtn() {

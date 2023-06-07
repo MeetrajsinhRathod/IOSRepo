@@ -9,27 +9,19 @@ import UIKit
 
 class ZoomingScrollViewController: UIViewController {
 
+    // MARK: - Outlets
     @IBOutlet weak var scroll: UIScrollView!
     @IBOutlet weak var mapImage: UIImageView!
     
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         scroll.delegate = self
         scroll.maximumZoomScale = 5.0
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
 
+// MARK: - UIScrollView Delegate
 extension ZoomingScrollViewController: UIScrollViewDelegate {
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         return mapImage

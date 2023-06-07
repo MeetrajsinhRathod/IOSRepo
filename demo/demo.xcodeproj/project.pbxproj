@@ -32,7 +32,7 @@
 		63CD093E29D45A7F00CCD6C8 /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */; };
 		63CD094029D4672C00CCD6C8 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */; };
 		63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */; };
-		63E17A4529C9635800FE3036 /* Practice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E17A4429C9635800FE3036 /* Practice.storyboard */; };
+		63E17A4529C9635800FE3036 /* SignUpPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E17A4429C9635800FE3036 /* SignUpPage.storyboard */; };
 		63E17A4929C9A5A100FE3036 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E17A4729C9A5A100FE3036 /* TableViewCell.swift */; };
 		63E17A4A29C9A5A100FE3036 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63E17A4829C9A5A100FE3036 /* TableViewCell.xib */; };
 		63E17A4C29C9B89900FE3036 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E17A4B29C9B89900FE3036 /* LabelViewController.swift */; };
@@ -67,7 +67,7 @@
 		7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96A824296C7994009306F8 /* AppDelegate.swift */; };
 		7F96A827296C7994009306F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96A826296C7994009306F8 /* SceneDelegate.swift */; };
 		7F96A829296C7994009306F8 /* PhoneNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F96A828296C7994009306F8 /* PhoneNumberViewController.swift */; };
-		7F96A82C296C7994009306F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F96A82A296C7994009306F8 /* Main.storyboard */; };
+		7F96A82C296C7994009306F8 /* SafeDrivePod.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F96A82A296C7994009306F8 /* SafeDrivePod.storyboard */; };
 		7F96A82E296C7995009306F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F96A82D296C7995009306F8 /* Assets.xcassets */; };
 		7FA58B3929E2C260006DBFFF /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA58B3829E2C260006DBFFF /* Coordinator.swift */; };
 		7FA58B3B29E2C26D006DBFFF /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA58B3A29E2C26D006DBFFF /* MainCoordinator.swift */; };
@@ -126,7 +126,7 @@
 		63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewController.swift; sourceTree = "<group>"; };
 		63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
-		63E17A4429C9635800FE3036 /* Practice.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Practice.storyboard; sourceTree = "<group>"; };
+		63E17A4429C9635800FE3036 /* SignUpPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpPage.storyboard; sourceTree = "<group>"; };
 		63E17A4729C9A5A100FE3036 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		63E17A4829C9A5A100FE3036 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		63E17A4B29C9B89900FE3036 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 		7F96A824296C7994009306F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F96A826296C7994009306F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7F96A828296C7994009306F8 /* PhoneNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberViewController.swift; sourceTree = "<group>"; };
-		7F96A82B296C7994009306F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7F96A82B296C7994009306F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SafeDrivePod.storyboard; sourceTree = "<group>"; };
 		7F96A82D296C7995009306F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F96A832296C7995009306F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F96A837296C7996009306F8 /* demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = demoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,13 +257,13 @@
 		63AE20E729C1C49F00EFD29E /* StoryBoards */ = {
 			isa = PBXGroup;
 			children = (
-				7F96A82A296C7994009306F8 /* Main.storyboard */,
+				7F96A82A296C7994009306F8 /* SafeDrivePod.storyboard */,
 				63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */,
 				63AE20E429C1C33800EFD29E /* UIView.storyboard */,
 				63EE93DE29D2A796003BD880 /* UIControl.storyboard */,
 				63EE93E029D2A7A5003BD880 /* UIScroll.storyboard */,
 				63E7250529D17B4B00586427 /* TodoList.storyboard */,
-				63E17A4429C9635800FE3036 /* Practice.storyboard */,
+				63E17A4429C9635800FE3036 /* SignUpPage.storyboard */,
 				63BD052129D6AEAD00107007 /* Golf.storyboard */,
 				63CBBC5C29DBFD92006E681B /* UINavigation.storyboard */,
 			);
@@ -546,7 +546,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E17A4529C9635800FE3036 /* Practice.storyboard in Resources */,
+				63E17A4529C9635800FE3036 /* SignUpPage.storyboard in Resources */,
 				7F36A25D29BC636E0054676F /* Hero New Medium.ttf in Resources */,
 				63AA2F9A29D2EF0E000D3BC7 /* UIComponentsRoot.storyboard in Resources */,
 				63E7250629D17B4B00586427 /* TodoList.storyboard in Resources */,
@@ -559,7 +559,7 @@
 				63EE93DF29D2A796003BD880 /* UIControl.storyboard in Resources */,
 				63BD052229D6AEAD00107007 /* Golf.storyboard in Resources */,
 				7F36A25F29BC636E0054676F /* Hero New SemiBold.ttf in Resources */,
-				7F96A82C296C7994009306F8 /* Main.storyboard in Resources */,
+				7F96A82C296C7994009306F8 /* SafeDrivePod.storyboard in Resources */,
 				63AE20E529C1C33800EFD29E /* UIView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,12 +677,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		7F96A82A296C7994009306F8 /* Main.storyboard */ = {
+		7F96A82A296C7994009306F8 /* SafeDrivePod.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7F96A82B296C7994009306F8 /* Base */,
 			);
-			name = Main.storyboard;
+			name = SafeDrivePod.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -811,9 +811,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = demo/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs access to your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs access to your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -838,9 +840,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = demo/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs access to your location";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs access to your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

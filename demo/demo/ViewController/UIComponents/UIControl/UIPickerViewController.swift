@@ -9,10 +9,13 @@ import UIKit
 
 class UIPickerViewController: UIViewController {
 
-    let colors = ["white", "blue", "brown", "cyan", "gray", "green"]
-
+    //MARK: - IBOutlets
     @IBOutlet weak var colorPicker: UIPickerView!
     
+    //MARK: - Variables
+    let colors = ["white", "blue", "brown", "cyan", "gray", "green"]
+    
+    //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         colorPicker.delegate = self
@@ -20,7 +23,9 @@ class UIPickerViewController: UIViewController {
     }
 }
 
+//MARK: - UIPickerView DataSource, Delegate
 extension UIPickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         1
     }
@@ -34,7 +39,6 @@ extension UIPickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
         switch row {
         case 0:
             view.backgroundColor = .white
@@ -52,6 +56,4 @@ extension UIPickerViewController: UIPickerViewDelegate, UIPickerViewDataSource {
             print("error")
         }
     }
-    
-    
 }
