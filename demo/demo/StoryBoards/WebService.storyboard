@@ -12,7 +12,7 @@
         <!--WebService-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="WebService" id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebService" id="Y6W-OH-hqX" customClass="WebServicesViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tA3-uO-hhB">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="82v-s6-mpa">
+                                <rect key="frame" x="100" y="139.33333333333334" width="193" height="32"/>
+                                <segments>
+                                    <segment title="URL Session"/>
+                                    <segment title="Alamofire"/>
+                                </segments>
+                                <connections>
+                                    <action selector="onWebServiceChange:" destination="Y6W-OH-hqX" eventType="valueChanged" id="hpy-BQ-Sea"/>
+                                </connections>
+                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="tA3-uO-hhB" userLabel="URLSession Stack View">
                                 <rect key="frame" x="98.333333333333329" y="302.33333333333331" width="196.66666666666669" height="247.66666666666669"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qxh-ID-peN">
@@ -31,7 +41,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="URL Session - GET"/>
                                         <connections>
-                                            <segue destination="UlS-0f-aiH" kind="show" id="VhH-5E-06Y"/>
+                                            <action selector="onGetRequestButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fiu-8s-Av7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhs-qw-JIC">
@@ -39,7 +49,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="URL Session - POST"/>
                                         <connections>
-                                            <segue destination="gwr-ds-MVX" kind="show" id="wfC-IR-9hA"/>
+                                            <action selector="onPostRequestButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zX7-wM-Kwd"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5to-bm-bJq">
@@ -47,7 +57,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="URL Session - PUT"/>
                                         <connections>
-                                            <segue destination="WJz-gJ-KdF" kind="show" id="6zK-JZ-D6L"/>
+                                            <action selector="onPutRequestButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="SpI-1A-4CG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-6B-iMA">
@@ -55,7 +65,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="URL Session - PATCH"/>
                                         <connections>
-                                            <segue destination="WJz-gJ-KdF" kind="show" id="jdZ-jJ-00O"/>
+                                            <action selector="onPatchRequestButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="fN2-Wi-YaL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aiC-3d-Ipi">
@@ -63,7 +73,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="tinted" title="URL Session - DELETE"/>
                                         <connections>
-                                            <segue destination="ZvA-x8-xTj" kind="show" id="FAT-IG-Q4g"/>
+                                            <action selector="onDeleteRequestButtonClick:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cfv-v8-tRm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -75,22 +85,32 @@
                             <constraint firstItem="Mb8-lw-iEc" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Aq6-zA-s20"/>
                             <constraint firstItem="Mb8-lw-iEc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="BeM-Yi-0q3"/>
                             <constraint firstItem="tA3-uO-hhB" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="Pka-5W-6tY"/>
+                            <constraint firstItem="82v-s6-mpa" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="WzY-y9-RDx"/>
                             <constraint firstItem="tA3-uO-hhB" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="ctf-a3-J5G"/>
+                            <constraint firstItem="82v-s6-mpa" firstAttribute="top" secondItem="Mb8-lw-iEc" secondAttribute="bottom" constant="50" id="wHf-CY-XmA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="WebService" image="safari" catalog="system" selectedImage="safari.fill" id="A2Y-qU-oRd"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="deleteRequestButton" destination="aiC-3d-Ipi" id="inR-gi-o89"/>
+                        <outlet property="getRequestButton" destination="Qxh-ID-peN" id="7P1-Nr-KQ8"/>
+                        <outlet property="patchRequestButton" destination="7Od-6B-iMA" id="UQM-Hw-59Z"/>
+                        <outlet property="postRequestButton" destination="Zhs-qw-JIC" id="085-gm-ff9"/>
+                        <outlet property="putRequestButton" destination="5to-bm-bJq" id="UEZ-Ry-6ey"/>
+                        <outlet property="webServiceSegmentControll" destination="82v-s6-mpa" id="6WT-3q-Q8F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-27"/>
+            <point key="canvasLocation" x="355" y="-27"/>
         </scene>
         <!--URL Session Post View Controller-->
         <scene sceneID="IXB-c0-AXk">
             <objects>
-                <viewController id="gwr-ds-MVX" customClass="URLSessionPostViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLSessionPostViewController" id="gwr-ds-MVX" customClass="URLSessionPostViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CB1-gB-tTC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HCg-82-sxt" userLabel="Register Stack">
@@ -244,14 +264,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hby-eL-lHB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="-247"/>
+            <point key="canvasLocation" x="2108" y="-27"/>
         </scene>
         <!--URL Session Get View Controller-->
         <scene sceneID="dyv-6n-9Ki">
             <objects>
-                <viewController id="UlS-0f-aiH" customClass="URLSessionGetViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLSessionGetViewController" id="UlS-0f-aiH" customClass="URLSessionGetViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Al-hR-PfV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User data from api" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRn-rv-sgR">
@@ -261,7 +281,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Gr5-nW-eE1" userLabel="User Table View">
-                                <rect key="frame" x="10" y="132.66666666666669" width="373" height="640.33333333333326"/>
+                                <rect key="frame" x="10" y="132.66666666666669" width="373" height="675.33333333333326"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" id="IrI-Ep-Nc0" userLabel="User Cell" customClass="UserTableViewCell" customModule="demo" customModuleProvider="target">
@@ -322,14 +342,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZhM-iV-C9b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="-896"/>
+            <point key="canvasLocation" x="1221" y="-27"/>
         </scene>
         <!--URL Session Put View Controller-->
         <scene sceneID="uS0-4S-lXR">
             <objects>
-                <viewController id="WJz-gJ-KdF" customClass="URLSessionPutViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLSessionPutViewController" id="WJz-gJ-KdF" customClass="URLSessionPutViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pRf-qO-Jxt">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Lo-k2-Jmd">
@@ -444,14 +464,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9M-0v-Ltk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094" y="423"/>
+            <point key="canvasLocation" x="1221" y="667"/>
         </scene>
         <!--URL Session Delete View Controller-->
         <scene sceneID="bDB-Sq-oV1">
             <objects>
-                <viewController id="ZvA-x8-xTj" customClass="URLSessionDeleteViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="URLSessionDeleteViewController" id="ZvA-x8-xTj" customClass="URLSessionDeleteViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5Qe-U7-zna">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete data" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LB1-sB-cLd" userLabel="Delete data">
@@ -461,7 +481,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1Ao-gk-uEz" userLabel="Result Stack">
-                                <rect key="frame" x="20" y="635" width="353" height="48"/>
+                                <rect key="frame" x="20" y="670" width="353" height="48"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waC-TH-NX7" userLabel="Result Label">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="24"/>
@@ -478,7 +498,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bgN-f5-nAa">
-                                <rect key="frame" x="20" y="320" width="353" height="143"/>
+                                <rect key="frame" x="20" y="354.66666666666669" width="353" height="143"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter  UserID:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYA-Cb-0h1">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
@@ -492,7 +512,7 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QjW-wN-dfa" userLabel="Delete Button">
-                                        <rect key="frame" x="0.0" y="108.66666666666669" width="353" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="108.66666666666663" width="353" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="gray" title="Delete"/>
                                         <connections>
@@ -525,12 +545,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dnY-pz-SfD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="795" y="1108"/>
+            <point key="canvasLocation" x="2108" y="667"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="6zK-JZ-D6L"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="safari" catalog="system" width="128" height="123"/>
         <image name="safari.fill" catalog="system" width="128" height="123"/>

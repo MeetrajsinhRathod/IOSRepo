@@ -71,7 +71,7 @@ class UserViewModel: NSObject {
             (response:Result<Employee, Error>) in
             switch response {
             case .success(let employee):
-                self.urlSessionPostViewControllerDelegate?.getResponse(response: employee)
+                self.urlSessionPutViewControllerDelegate?.getResponse(response: employee)
             case .failure(let error):
                 debugPrint("Error occured", error)
             }

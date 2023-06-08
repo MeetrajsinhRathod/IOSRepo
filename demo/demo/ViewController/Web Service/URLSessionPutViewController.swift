@@ -7,27 +7,26 @@
 
 import UIKit
 
-class URLSessionPutViewController: UIViewController {
+class URLSessionPutViewController: UIViewController, StoryBoarded {
     
     //MARK: - IBOutlet
-    @IBOutlet weak var usernameTextField: UITextField!
-    @IBOutlet weak var jobTextField: UITextField!
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var jobLabel: UILabel!
-    @IBOutlet weak var userIDTextField: UITextField!
+    @IBOutlet private weak var usernameTextField: UITextField!
+    @IBOutlet private weak var jobTextField: UITextField!
+    @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet private weak var jobLabel: UILabel!
+    @IBOutlet private weak var userIDTextField: UITextField!
+    
     //MARK: - Variables
-    lazy var userViewModel = UserViewModel()
+    private lazy var updateRequestViewModel = UpdateRequestViewModel()
+    private var webServiceType: WebSerciveType = .urlSession
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateRequestViewModel.urlSessionPutViewControllerDelegate = self
     }
     
     //MARK: - IBAction
-    @IBAction func onUpdateClick(_ sender: Any) {
-        
-    }
-    
     @IBAction func putRequest(_ sender: Any) {
         guard let username = usernameTextField.text else { return }
         guard let job = jobTextField.text else { return }
@@ -35,8 +34,11 @@ class URLSessionPutViewController: UIViewController {
         
         if (!username.isEmpty && !job.isEmpty) {
             let employee = Employee(name: username, job: job)
-            userViewModel.updateUserWithPut(employee: employee, id: userID)
-            userViewModel.urlSessionPutViewControllerDelegate = self
+            if (webServiceType == .urlSession) {
+                updateRequestViewModel.updateUserWithPutURLSession(employee: employee, id: userID)
+            } else {
+                updateRequestViewModel.updateUserWithPutAlamofire(employee: employee, id: userID)
+            }
         }
     }
     
@@ -44,11 +46,13 @@ class URLSessionPutViewController: UIViewController {
         guard let username = usernameTextField.text else { return }
         guard let job = jobTextField.text else { return }
         guard let userID = Int(userIDTextField.text ?? "") else { return }
-        
         if (!username.isEmpty && !job.isEmpty) {
             let employee = Employee(name: username, job: job)
-            userViewModel.updateUserWithPatch(employee: employee, id: userID)
-            userViewModel.urlSessionPutViewControllerDelegate = self
+            if (webServiceType == .urlSession) {
+                updateRequestViewModel.updateUserWithPatchURLSession(employee: employee, id: userID)
+            } else {
+                updateRequestViewModel.updateUserWithPatchAlamofire(employee: employee, id: userID)
+            }
         }
     }
     
@@ -57,5 +61,9 @@ class URLSessionPutViewController: UIViewController {
             self.usernameLabel.text = "Username: \(response.name) "
             self.jobLabel.text = "Job: \(response.job) "
         }
+    }
+    
+    func setWebServiceType(webService: WebSerciveType) {
+        webServiceType = webService
     }
 }
