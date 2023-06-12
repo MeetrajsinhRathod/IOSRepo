@@ -14,6 +14,16 @@
 		6369343429C84E4600560F7B /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343329C84E4600560F7B /* ScrollViewController.swift */; };
 		6369343629C8676900560F7B /* ZoomingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343529C8676900560F7B /* ZoomingScrollViewController.swift */; };
 		638BE31F29D6CF320007984B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BE31E29D6CF320007984B /* Player.swift */; };
+		63A0C0C02A376F0800D9158B /* UIComponentsKT.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63A0C0BE2A376F0800D9158B /* UIComponentsKT.storyboard */; };
+		63A0C0C42A376F8700D9158B /* PopularJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C22A376F8700D9158B /* PopularJobsViewController.swift */; };
+		63A0C0C52A376F8700D9158B /* SearchJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C32A376F8700D9158B /* SearchJobsViewController.swift */; };
+		63A0C0D02A376F9600D9158B /* PopularCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C72A376F9600D9158B /* PopularCollectionViewCell.swift */; };
+		63A0C0D12A376F9600D9158B /* FeaturedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C82A376F9600D9158B /* FeaturedCollectionViewCell.swift */; };
+		63A0C0D22A376F9600D9158B /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0CA2A376F9600D9158B /* Job.swift */; };
+		63A0C0D32A376F9600D9158B /* JobSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0CC2A376F9600D9158B /* JobSectionCell.swift */; };
+		63A0C0D42A376F9600D9158B /* JobDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0CD2A376F9600D9158B /* JobDetailCell.swift */; };
+		63A0C0D52A376F9600D9158B /* PopularJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0CE2A376F9600D9158B /* PopularJobCell.swift */; };
+		63A0C0D62A376F9600D9158B /* FeaturedJobCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0CF2A376F9600D9158B /* FeaturedJobCell.swift */; };
 		63AA2F9A29D2EF0E000D3BC7 /* UIComponentsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */; };
 		63AA2F9C29D30274000D3BC7 /* UIToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */; };
 		63ADDDA129C2D49800A07725 /* UITextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */; };
@@ -108,6 +118,16 @@
 		6369343329C84E4600560F7B /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		6369343529C8676900560F7B /* ZoomingScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomingScrollViewController.swift; sourceTree = "<group>"; };
 		638BE31E29D6CF320007984B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		63A0C0BF2A376F0800D9158B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../ReverseKT/ReverseKT/Base.lproj/UIComponentsKT.storyboard; sourceTree = "<group>"; };
+		63A0C0C22A376F8700D9158B /* PopularJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularJobsViewController.swift; sourceTree = "<group>"; };
+		63A0C0C32A376F8700D9158B /* SearchJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchJobsViewController.swift; sourceTree = "<group>"; };
+		63A0C0C72A376F9600D9158B /* PopularCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularCollectionViewCell.swift; sourceTree = "<group>"; };
+		63A0C0C82A376F9600D9158B /* FeaturedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedCollectionViewCell.swift; sourceTree = "<group>"; };
+		63A0C0CA2A376F9600D9158B /* Job.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		63A0C0CC2A376F9600D9158B /* JobSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobSectionCell.swift; sourceTree = "<group>"; };
+		63A0C0CD2A376F9600D9158B /* JobDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailCell.swift; sourceTree = "<group>"; };
+		63A0C0CE2A376F9600D9158B /* PopularJobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularJobCell.swift; sourceTree = "<group>"; };
+		63A0C0CF2A376F9600D9158B /* FeaturedJobCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeaturedJobCell.swift; sourceTree = "<group>"; };
 		63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIComponentsRoot.storyboard; sourceTree = "<group>"; };
 		63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBarViewController.swift; sourceTree = "<group>"; };
 		63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldViewController.swift; sourceTree = "<group>"; };
@@ -239,9 +259,61 @@
 			path = Golf;
 			sourceTree = "<group>";
 		};
+		63A0C0C12A376F5200D9158B /* UIComponentsKT */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0D72A3772BE00D9158B /* ViewControllers */,
+				63A0C0C62A376F9600D9158B /* CollectionCell */,
+				63A0C0C92A376F9600D9158B /* Model */,
+				63A0C0CB2A376F9600D9158B /* TableViewCell */,
+			);
+			path = UIComponentsKT;
+			sourceTree = "<group>";
+		};
+		63A0C0C62A376F9600D9158B /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0C72A376F9600D9158B /* PopularCollectionViewCell.swift */,
+				63A0C0C82A376F9600D9158B /* FeaturedCollectionViewCell.swift */,
+			);
+			name = CollectionCell;
+			path = ../../../../ReverseKT/ReverseKT/ViewControllers/CollectionCell;
+			sourceTree = "<group>";
+		};
+		63A0C0C92A376F9600D9158B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0CA2A376F9600D9158B /* Job.swift */,
+			);
+			name = Model;
+			path = ../../../../ReverseKT/ReverseKT/ViewControllers/Model;
+			sourceTree = "<group>";
+		};
+		63A0C0CB2A376F9600D9158B /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0CC2A376F9600D9158B /* JobSectionCell.swift */,
+				63A0C0CD2A376F9600D9158B /* JobDetailCell.swift */,
+				63A0C0CE2A376F9600D9158B /* PopularJobCell.swift */,
+				63A0C0CF2A376F9600D9158B /* FeaturedJobCell.swift */,
+			);
+			name = TableViewCell;
+			path = ../../../../ReverseKT/ReverseKT/ViewControllers/TableViewCell;
+			sourceTree = "<group>";
+		};
+		63A0C0D72A3772BE00D9158B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0C22A376F8700D9158B /* PopularJobsViewController.swift */,
+				63A0C0C32A376F8700D9158B /* SearchJobsViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		63AE20E629C1C47400EFD29E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				63A0C0C12A376F5200D9158B /* UIComponentsKT */,
 				63B435A229E4336200DDCA66 /* Practice */,
 				63CBBC5E29DC2D06006E681B /* Navigation */,
 				638BE31929D6CE820007984B /* Golf */,
@@ -259,6 +331,7 @@
 			children = (
 				7F96A82A296C7994009306F8 /* SafeDrivePod.storyboard */,
 				63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */,
+				63A0C0BE2A376F0800D9158B /* UIComponentsKT.storyboard */,
 				63AE20E429C1C33800EFD29E /* UIView.storyboard */,
 				63EE93DE29D2A796003BD880 /* UIControl.storyboard */,
 				63EE93E029D2A7A5003BD880 /* UIScroll.storyboard */,
@@ -549,6 +622,7 @@
 				63E17A4529C9635800FE3036 /* SignUpPage.storyboard in Resources */,
 				7F36A25D29BC636E0054676F /* Hero New Medium.ttf in Resources */,
 				63AA2F9A29D2EF0E000D3BC7 /* UIComponentsRoot.storyboard in Resources */,
+				63A0C0C02A376F0800D9158B /* UIComponentsKT.storyboard in Resources */,
 				63E7250629D17B4B00586427 /* TodoList.storyboard in Resources */,
 				63CBBC5D29DBFD92006E681B /* UINavigation.storyboard in Resources */,
 				63EE93E129D2A7A5003BD880 /* UIScroll.storyboard in Resources */,
@@ -607,6 +681,9 @@
 				63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */,
 				7FD0C71129CCCE4B00BA097B /* ImageViewController.swift in Sources */,
 				63AE1CD229C1BD7E00026E69 /* LandingPageViewController.swift in Sources */,
+				63A0C0D02A376F9600D9158B /* PopularCollectionViewCell.swift in Sources */,
+				63A0C0D62A376F9600D9158B /* FeaturedJobCell.swift in Sources */,
+				63A0C0D52A376F9600D9158B /* PopularJobCell.swift in Sources */,
 				7FA58B4229E2F91A006DBFFF /* CoordinatorBoard.swift in Sources */,
 				7F5DC99B29D953190039382D /* headerCell.swift in Sources */,
 				7FA58B3D29E2C2F3006DBFFF /* LoginVC.swift in Sources */,
@@ -615,6 +692,7 @@
 				7F96A829296C7994009306F8 /* PhoneNumberViewController.swift in Sources */,
 				638BE31F29D6CF320007984B /* Player.swift in Sources */,
 				63E7250C29D1897600586427 /* TodoCellTableViewCell.swift in Sources */,
+				63A0C0C42A376F8700D9158B /* PopularJobsViewController.swift in Sources */,
 				63F9CF3B29C49273004C40CE /* ImagePickerViewController.swift in Sources */,
 				63357A3B29CD7661001C812B /* SignUpViewController.swift in Sources */,
 				7FA58B3929E2C260006DBFFF /* Coordinator.swift in Sources */,
@@ -624,7 +702,9 @@
 				63CD093C29D417E400CCD6C8 /* WebViewController.swift in Sources */,
 				63F31B4529CB2A48005C3BC7 /* MovieCollectionViewCell.swift in Sources */,
 				63ADDDA729C305AD00A07725 /* UIProgressViewController.swift in Sources */,
+				63A0C0D12A376F9600D9158B /* FeaturedCollectionViewCell.swift in Sources */,
 				63F31B4029CB04A0005C3BC7 /* MovieDetailsViewController.swift in Sources */,
+				63A0C0D32A376F9600D9158B /* JobSectionCell.swift in Sources */,
 				7F5DC99F29D953370039382D /* SectionCell.swift in Sources */,
 				7FB4DC2029D36A3000CAE8A3 /* SearchBarTableViewController.swift in Sources */,
 				7F5DC99D29D953240039382D /* playerCell.swift in Sources */,
@@ -640,10 +720,13 @@
 				63F31B4329CB27EB005C3BC7 /* MovieCollectionViewController.swift in Sources */,
 				7FB4DC1A29D3500800CAE8A3 /* DesignTabTableViewController.swift in Sources */,
 				7F5DC99829D89B2A0039382D /* GroupDetailsTableViewController.swift in Sources */,
+				63A0C0C52A376F8700D9158B /* SearchJobsViewController.swift in Sources */,
+				63A0C0D42A376F9600D9158B /* JobDetailCell.swift in Sources */,
 				7F5DC9A129D953450039382D /* footerCell.swift in Sources */,
 				63ADDDA929C31AEC00A07725 /* SegmentedControlViewController.swift in Sources */,
 				63EE93EA29D2DF40003BD880 /* UIScrollTableViewController.swift in Sources */,
 				63EE2E5829CC6C4B000A811B /* HeaderView.swift in Sources */,
+				63A0C0D22A376F9600D9158B /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,6 +760,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		63A0C0BE2A376F0800D9158B /* UIComponentsKT.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63A0C0BF2A376F0800D9158B /* Base */,
+			);
+			name = UIComponentsKT.storyboard;
+			sourceTree = "<group>";
+		};
 		7F96A82A296C7994009306F8 /* SafeDrivePod.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

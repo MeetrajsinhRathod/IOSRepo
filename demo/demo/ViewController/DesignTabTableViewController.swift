@@ -15,7 +15,8 @@ class DesignTabTableViewController: UITableViewController {
         "SignUpPage",
         "TodoList",
         "Golf",
-        "UINavigation"
+        "UINavigation",
+        "UIComponentsKT"
     ]
     
     //MARK: View LifeCycle
