@@ -16,6 +16,7 @@ class MeetingDetailsTableViewCell: UITableViewCell {
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var userProfileImageView: UIImageView!
     @IBOutlet private weak var usernameLabel: UILabel!
+    @IBOutlet weak var webinarStack: UIStackView!
     
     //MARK: - Variables
     static let identifier = "detailCell"
@@ -25,5 +26,17 @@ class MeetingDetailsTableViewCell: UITableViewCell {
         cardView.layer.cornerRadius = 10
         cardView.layer.borderWidth = 0.1
         cardView.layer.borderColor = UIColor.lightGray.cgColor
+        userProfileImageView.layer.cornerRadius = userProfileImageView.frame.height/2
+    }
+    
+    func setUpCell(schedule: Schedule, user: ScheduleUser) {
+        meetingTitleLabel.text = ("\(schedule.title) ") + (schedule.description)
+        dateLabel.text = schedule.startTime.getFormattedDateWithTime()
+        timeLabel.text = schedule.duration
+        usernameLabel.text = user.displayName
+//        if let userProfileURL = URL(string: user.avatar) {
+//            userProfileImageView.load(url: userProfileURL)
+//        }
+        webinarStack.isHidden = (schedule.meetingType == MeetingType.c) ? true : false
     }
 }

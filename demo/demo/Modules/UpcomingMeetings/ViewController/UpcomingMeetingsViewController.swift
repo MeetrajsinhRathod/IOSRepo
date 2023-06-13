@@ -10,20 +10,27 @@ import UIKit
 class UpcomingMeetingsViewController: UIViewController {
 
     //MARK: - IBOutlet
-    
     @IBOutlet weak var meetingTableView: UITableView!
     @IBOutlet weak var addMeetingButton: UIButton!
-    private let pullToRefresh = UIRefreshControl()
-    private let activityIndicator = UIActivityIndicatorView()
     
     //MARK: - Variables
-    private var userToken = UserDefaults.standard.string(forKey: "userToken")
+    private let pullToRefresh = UIRefreshControl()
+    private let activityIndicator = UIActivityIndicatorView()
+    private var footerView: UIView?
+    private let userToken = UserDefaults.standard.string(forKey: "userToken")
+    private let upcomingMeetingsViewModel = UpcomingMeetingsViewModel()
+    private var meetingList: [(key:String,values:[UpcomingMeetingsResult])] = []
+    private var currentPage = 1
+    private var totalPage = 1
+    private let limit = 5
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        upcomingMeetingsViewModel.upcomingMeetingsVC = self
         setUpView()
         showSpinner()
+        loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,11 +39,13 @@ class UpcomingMeetingsViewController: UIViewController {
         rightBarMenuButton.tintColor = .lightGray
         navigationController?.navigationBar.topItem?.rightBarButtonItem = rightBarMenuButton
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.topItem?.title = nil
         navigationController?.navigationBar.topItem?.rightBarButtonItem = nil
     }
     
+    //MARK: - Functions
     func setUpView() {
         activityIndicator.backgroundColor = .black
         activityIndicator.style = .large
@@ -44,10 +53,11 @@ class UpcomingMeetingsViewController: UIViewController {
         addMeetingButton.layer.cornerRadius = addMeetingButton.frame.height/2
         meetingTableView.refreshControl = pullToRefresh
         pullToRefresh.addTarget(self, action: #selector(refreshData), for: .primaryActionTriggered)
-    }
-    
-    @objc
-    func refreshData() {
+        footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
+        let footerSpinner = UIActivityIndicatorView()
+        footerSpinner.center = footerView?.center ?? CGPoint(x: 0, y: 0)
+        footerSpinner.startAnimating()
+        footerView?.addSubview(footerSpinner)
     }
     
     func showSpinner() {
@@ -59,8 +69,30 @@ class UpcomingMeetingsViewController: UIViewController {
         activityIndicator.removeFromSuperview()
     }
     
-    func setToken(token: String) {
-        userToken = token
+    func loadData() {
+        upcomingMeetingsViewModel.getUpcomingMeetings(userToken: userToken ?? "", page: currentPage, limit: limit)
+    }
+    
+    func loadMoreData() {
+        meetingTableView.tableFooterView = footerView
+        currentPage += 1
+        upcomingMeetingsViewModel.getUpcomingMeetings(userToken: userToken ?? "", page: currentPage, limit: limit)
+    }
+    
+    func sortMeetingList() {
+        meetingList = meetingList.sorted(by: { $0.key.convertToDate().compare($1.key.convertToDate()) == .orderedDescending })
+    }
+    
+    func upcomingMeetingsResponse(response: [(key:String,values:[UpcomingMeetingsResult])], pages: Int) {
+        meetingList.append(contentsOf: response)
+        sortMeetingList()
+        totalPage = pages
+        DispatchQueue.main.async { [weak self] in
+            self?.meetingTableView.reloadData()
+        }
+        removeSpinner()
+        pullToRefresh.endRefreshing()
+        meetingTableView.tableFooterView = nil
     }
 }
 
@@ -68,16 +100,25 @@ class UpcomingMeetingsViewController: UIViewController {
 extension UpcomingMeetingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        1
+        meetingList.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        meetingList[section].values.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MeetingDetailsTableViewCell.identifier, for: indexPath) as? MeetingDetailsTableViewCell else { return UITableViewCell() }
+        if !(meetingList.isEmpty) {
+            cell.setUpCell(schedule: meetingList[indexPath.section].values[indexPath.row].schedule, user: meetingList[indexPath.section].values[indexPath.row].user )
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.section == (meetingList.count-1) && indexPath.row == meetingList[indexPath.section].values.count - 1 && currentPage<=totalPage {
+            loadMoreData()
+        }
     }
 }
 
@@ -86,6 +127,9 @@ extension UpcomingMeetingsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: MeetingDateTableViewCell.identifier) as? MeetingDateTableViewCell else { return UIView() }
+        if !(meetingList.isEmpty) {
+            sectionCell.setDate(date: meetingList[section].key)
+        }
         return sectionCell
     }
     
@@ -95,5 +139,16 @@ extension UpcomingMeetingsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+}
+
+//MARK: - ObjC
+extension UpcomingMeetingsViewController {
+    
+    @objc
+    func refreshData() {
+        meetingList = []
+        currentPage = 1
+        loadData()
     }
 }
