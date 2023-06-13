@@ -18,7 +18,9 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
     //MARK: - Variables
     var passwordToggle = false
     var oneCloudViewModel = LoginViewModel()
-
+    let defaults = UserDefaults.standard
+    var authenticationCoordinator: AuthenticationCoordinator?
+    
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +88,9 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
 
     func loginSuccess(response: OneCloudLoginResponse) {
         loginButton.isEnabled = true
+        defaults.set(true, forKey: "userIsLoggedIn")
+        defaults.set(response.data[0].token, forKey: "userToken")
+        authenticationCoordinator?.start()
     }
 
     func loginFail() {
