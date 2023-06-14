@@ -32,12 +32,17 @@ enum HttpRequestEnum {
     case updatePut(Int)
     case updatePatch(Int)
     case deleteResouce(Int)
+    case oneCloudLogin
 }
 
 extension HttpRequestEnum {
     
     func getBaseURL() -> String {
-        "https://reqres.in/api/"
+        switch self {
+        case .oneCloudLogin:
+            return "https://sandbox-api.ocmeet.us/api/v1"
+        default: return "https://reqres.in/api/"
+        }
     }
 
     func getPath() -> String {
@@ -48,6 +53,7 @@ extension HttpRequestEnum {
         case .updatePut(let id): return "users/\(id)"
         case .updatePatch(let id): return "users/\(id)"
         case .deleteResouce(let id): return "users/\(id)"
+        case .oneCloudLogin: return "/auth/email-login/"
         }
     }
     
@@ -66,6 +72,7 @@ extension HttpRequestEnum {
         case .updatePut(_): urlRequest.httpMethod = "PUT"
         case .updatePatch(_): urlRequest.httpMethod = "PATCH"
         case .deleteResouce(_): urlRequest.httpMethod = "DELETE"
+        case .oneCloudLogin: urlRequest.httpMethod = "POST"
         }
         return urlRequest
     }
