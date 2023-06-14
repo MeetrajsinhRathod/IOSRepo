@@ -1130,6 +1130,9 @@ Sign in to get started</string>
                                 <buttonConfiguration key="configuration" style="filled" title="Cancel">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="12"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="OnCancelMeetingClick:" destination="IlF-Ga-oID" eventType="touchUpInside" id="C27-1U-E84"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2pR-sn-l4J">
                                 <rect key="frame" x="20" y="342.33333333333331" width="353" height="28.333333333333314"/>
