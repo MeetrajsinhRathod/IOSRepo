@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iBq-mF-2i6">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Hero New Regular.ttf">
+            <string>HeroNew-Regular</string>
+        </array>
+        <array key="Hero New SemiBold.ttf">
+            <string>HeroNew-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Landing Page-->
+        <scene sceneID="GBZ-I5-KeK">
+            <objects>
+                <viewController storyboardIdentifier="SafeDrivePod" hidesBottomBarWhenPushed="YES" id="e3r-er-Yrc" userLabel="Landing Page" customClass="LandingPageViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="50I-xl-vB1" customClass="GradientView" customModule="demo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="aDW-mf-8qT" userLabel="App Logo">
+                                <rect key="frame" x="123" y="157.33333333333334" width="184" height="186.00000000000003"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-9C-8XZ">
+                                <rect key="frame" x="129.66666666666669" y="413.66666666666669" width="170.66666666666669" height="105.00000000000006"/>
+                                <string key="text">Welcome 
+To 
+SafeDrivePod</string>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rTg-QF-shL">
+                                <rect key="frame" x="115" y="674" width="200" height="50"/>
+                                <buttonConfiguration key="configuration" style="filled" title="GET STARTED" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="18"/>
+                                    <color key="baseForegroundColor" name="gradientColor2"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="qiE-ug-t8R" kind="show" id="8BR-JD-FK5"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="5PA-h6-1UT" userLabel="App Logo">
+                                <rect key="frame" x="134.66666666666666" y="842" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5PA-h6-1UT" secondAttribute="height" multiplier="1:1" id="0yE-6I-gNC"/>
+                                    <constraint firstAttribute="width" constant="18" id="VbT-eM-jke"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfr-Ia-BRF">
+                                <rect key="frame" x="158.66666666666666" y="844" width="133.99999999999997" height="14"/>
+                                <string key="text">DRIVE SMART. DRIVE SAFE.
+
+</string>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aAQ-HR-C4l"/>
+                        <constraints>
+                            <constraint firstItem="aDW-mf-8qT" firstAttribute="height" secondItem="50I-xl-vB1" secondAttribute="height" multiplier="0.199571" id="4r4-OX-cUt"/>
+                            <constraint firstItem="aDW-mf-8qT" firstAttribute="centerX" secondItem="aAQ-HR-C4l" secondAttribute="centerX" id="6BN-cG-5Uj"/>
+                            <constraint firstItem="aDW-mf-8qT" firstAttribute="width" secondItem="50I-xl-vB1" secondAttribute="width" multiplier="0.427907" id="FPa-GV-0UX"/>
+                            <constraint firstItem="Dfr-Ia-BRF" firstAttribute="centerX" secondItem="50I-xl-vB1" secondAttribute="centerX" multiplier="1.05" id="Fnw-U4-IZH"/>
+                            <constraint firstItem="rTg-QF-shL" firstAttribute="centerY" secondItem="50I-xl-vB1" secondAttribute="centerY" multiplier="1.5" id="Hdc-vd-YAX"/>
+                            <constraint firstItem="KJO-9C-8XZ" firstAttribute="centerY" secondItem="50I-xl-vB1" secondAttribute="centerY" id="Hwp-Rm-lH7"/>
+                            <constraint firstItem="KJO-9C-8XZ" firstAttribute="centerX" secondItem="50I-xl-vB1" secondAttribute="centerX" id="IEo-8s-pVA"/>
+                            <constraint firstItem="rTg-QF-shL" firstAttribute="width" secondItem="50I-xl-vB1" secondAttribute="width" multiplier="0.465116" id="KkH-kb-E3F"/>
+                            <constraint firstItem="rTg-QF-shL" firstAttribute="centerX" secondItem="50I-xl-vB1" secondAttribute="centerX" id="POW-Tt-nVN"/>
+                            <constraint firstItem="Dfr-Ia-BRF" firstAttribute="leading" secondItem="5PA-h6-1UT" secondAttribute="trailing" constant="6" id="R7p-x5-Zea"/>
+                            <constraint firstItem="5PA-h6-1UT" firstAttribute="centerY" secondItem="Dfr-Ia-BRF" secondAttribute="centerY" id="Xj3-0R-pkj"/>
+                            <constraint firstItem="aAQ-HR-C4l" firstAttribute="bottom" secondItem="Dfr-Ia-BRF" secondAttribute="bottom" constant="40" id="bDI-ui-Hhq"/>
+                            <constraint firstItem="rTg-QF-shL" firstAttribute="height" secondItem="50I-xl-vB1" secondAttribute="height" multiplier="0.0536481" id="dHp-ip-ZtM"/>
+                            <constraint firstItem="aDW-mf-8qT" firstAttribute="centerY" secondItem="aAQ-HR-C4l" secondAttribute="centerY" multiplier="0.5" id="rkd-Iu-4Oc"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" name="gradientColor1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" name="gradientColor2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="aDW-mf-8qT"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="SR8-WS-imh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Zq-N6-yc5" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="861.60000000000002" y="-0.44977511244377816"/>
+        </scene>
+        <!--Registration Page-->
+        <scene sceneID="8H9-hE-md7">
+            <objects>
+                <viewController id="qiE-ug-t8R" userLabel="Registration Page" customClass="RegistrationViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ISZ-fO-2QG" customClass="GradientView" customModule="demo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="70K-gg-nr7">
+                                <rect key="frame" x="144.66666666666669" y="137.66666666666666" width="140.66666666666669" height="50.666666666666657"/>
+                                <string key="text">You are not yet 
+registered</string>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No problem! We will help you with that.  Start by entering your name, that makes the  conversation a little more personal." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFX-nq-31A">
+                                <rect key="frame" x="64" y="215.33333333333334" width="302.33333333333331" height="59.000000000000028"/>
+                                <fontDescription key="fontDescription" name="HeroNew-Regular" family="Hero New" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQk-Uw-Kk3">
+                                <rect key="frame" x="66.666666666666686" y="394.33333333333331" width="297" height="50"/>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p3X-hw-SPa">
+                                <rect key="frame" x="66.666666666666686" y="487.66666666666674" width="297" height="50"/>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" textContentType="name"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE0-xP-CVb">
+                                <rect key="frame" x="115" y="674" width="200" height="50"/>
+                                <buttonConfiguration key="configuration" style="filled" title="NEXT" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="18"/>
+                                    <color key="baseForegroundColor" name="gradientColor2"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="4Xj-50-poM" kind="show" id="KBS-e3-FWi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UIh-CU-0vw">
+                                <rect key="frame" x="113.66666666666669" y="740" width="203" height="37"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change phone number" titleAlignment="center">
+                                    <fontDescription key="titleFontDescription" name="HeroNew-Regular" family="Hero New" pointSize="16"/>
+                                </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="03z-lh-nCm">
+                                <rect key="frame" x="134.66666666666666" y="793" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="dis-DW-w7a"/>
+                                    <constraint firstAttribute="width" secondItem="03z-lh-nCm" secondAttribute="height" multiplier="1:1" id="uan-UT-C3s"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqP-p0-1km">
+                                <rect key="frame" x="158.66666666666666" y="795" width="133.99999999999997" height="14"/>
+                                <string key="text">DRIVE SMART. DRIVE SAFE.
+
+</string>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="J8j-ar-pKh"/>
+                        <constraints>
+                            <constraint firstItem="UIh-CU-0vw" firstAttribute="top" secondItem="kE0-xP-CVb" secondAttribute="bottom" constant="16" id="9Po-Xp-b5r"/>
+                            <constraint firstItem="p3X-hw-SPa" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="EGU-Cc-VIC"/>
+                            <constraint firstItem="UIh-CU-0vw" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="F3T-Rb-6v2"/>
+                            <constraint firstItem="wFX-nq-31A" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="Heb-EA-VRI"/>
+                            <constraint firstItem="kE0-xP-CVb" firstAttribute="width" secondItem="ISZ-fO-2QG" secondAttribute="width" multiplier="0.465116" id="KST-Wb-a3h"/>
+                            <constraint firstItem="p3X-hw-SPa" firstAttribute="centerY" secondItem="ISZ-fO-2QG" secondAttribute="centerY" multiplier="1.1" id="Mod-8y-z7P"/>
+                            <constraint firstItem="p3X-hw-SPa" firstAttribute="height" secondItem="DQk-Uw-Kk3" secondAttribute="height" id="VaY-8B-ohs"/>
+                            <constraint firstItem="03z-lh-nCm" firstAttribute="centerY" secondItem="yqP-p0-1km" secondAttribute="centerY" id="YFc-Kr-I2s"/>
+                            <constraint firstItem="kE0-xP-CVb" firstAttribute="centerY" secondItem="ISZ-fO-2QG" secondAttribute="centerY" multiplier="1.5" id="cum-t9-NZC"/>
+                            <constraint firstItem="DQk-Uw-Kk3" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="eX6-h0-AmS"/>
+                            <constraint firstItem="wFX-nq-31A" firstAttribute="top" secondItem="70K-gg-nr7" secondAttribute="bottom" constant="27" id="ewq-a0-bOO"/>
+                            <constraint firstItem="yqP-p0-1km" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" multiplier="1.05" id="haq-yq-9TN"/>
+                            <constraint firstItem="70K-gg-nr7" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="hqB-xc-DKj"/>
+                            <constraint firstItem="kE0-xP-CVb" firstAttribute="centerX" secondItem="ISZ-fO-2QG" secondAttribute="centerX" id="ldt-iY-7uQ"/>
+                            <constraint firstItem="70K-gg-nr7" firstAttribute="centerY" secondItem="ISZ-fO-2QG" secondAttribute="centerY" multiplier="0.35" id="oID-ku-RD1"/>
+                            <constraint firstItem="DQk-Uw-Kk3" firstAttribute="width" secondItem="ISZ-fO-2QG" secondAttribute="width" multiplier="0.690698" id="oUh-cf-HTA"/>
+                            <constraint firstItem="J8j-ar-pKh" firstAttribute="bottom" secondItem="yqP-p0-1km" secondAttribute="bottom" constant="40" id="p1H-NE-3v3"/>
+                            <constraint firstItem="DQk-Uw-Kk3" firstAttribute="height" secondItem="ISZ-fO-2QG" secondAttribute="height" multiplier="0.0536481" id="pCx-GY-KAa"/>
+                            <constraint firstItem="yqP-p0-1km" firstAttribute="leading" secondItem="03z-lh-nCm" secondAttribute="trailing" constant="6" id="ryw-AA-9Mu"/>
+                            <constraint firstItem="DQk-Uw-Kk3" firstAttribute="centerY" secondItem="ISZ-fO-2QG" secondAttribute="centerY" multiplier="0.9" id="sMc-7n-EZS"/>
+                            <constraint firstItem="p3X-hw-SPa" firstAttribute="leading" secondItem="DQk-Uw-Kk3" secondAttribute="leading" id="uM0-u7-ts6"/>
+                            <constraint firstItem="kE0-xP-CVb" firstAttribute="height" secondItem="ISZ-fO-2QG" secondAttribute="height" multiplier="0.0536481" id="zBT-Xw-kjh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" name="gradientColor1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" name="gradientColor2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" id="Tyr-7S-Iwj"/>
+                    <connections>
+                        <outlet property="firstName" destination="DQk-Uw-Kk3" id="7sQ-eb-CBe"/>
+                        <outlet property="lastName" destination="p3X-hw-SPa" id="YQ7-mG-Ztd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a8i-Xo-1rY" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677.5999999999999" y="-1.3493253373313345"/>
+        </scene>
+        <!--Phone Number Page-->
+        <scene sceneID="BKL-lQ-mDF">
+            <objects>
+                <viewController id="4Xj-50-poM" userLabel="Phone Number Page" customClass="PhoneNumberViewController" customModule="demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LbL-Q5-1hG" customClass="GradientView" customModule="demo" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIG-Iu-o1G">
+                                <rect key="frame" x="94.333333333333329" y="137.66666666666666" width="241.33333333333337" height="50.666666666666657"/>
+                                <string key="text">Let's start by entering your
+phone number</string>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tl3-Q2-pP5">
+                                <rect key="frame" x="81.333333333333343" y="215.33333333333334" width="267.33333333333326" height="59.000000000000028"/>
+                                <string key="text">With your phone number we can check 
+whether you are already registered. 
+Please check if you typed it correctly!</string>
+                                <fontDescription key="fontDescription" name="HeroNew-Regular" family="Hero New" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+91" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-Sd-OUd">
+                                <rect key="frame" x="63" y="435.66666666666669" width="70" height="60.666666666666686"/>
+                                <fontDescription key="fontDescription" name="HeroNew-Regular" family="Hero New" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QSy-6l-cJQ">
+                                <rect key="frame" x="145" y="435.66666666666669" width="226" height="60.666666666666686"/>
+                                <fontDescription key="fontDescription" name="HeroNew-Regular" family="Hero New" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cG-CW-i5s">
+                                <rect key="frame" x="115" y="674" width="200" height="50"/>
+                                <buttonConfiguration key="configuration" style="filled" title="NEXT" cornerStyle="capsule">
+                                    <fontDescription key="titleFontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="18"/>
+                                    <color key="baseForegroundColor" name="gradientColor2"/>
+                                    <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ewV-gb-hgZ">
+                                <rect key="frame" x="134.66666666666666" y="793" width="18" height="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="ooG-gN-Luf"/>
+                                    <constraint firstAttribute="width" secondItem="ewV-gb-hgZ" secondAttribute="height" multiplier="1:1" id="yfc-FM-9tO"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m5Z-jO-OTa">
+                                <rect key="frame" x="158.66666666666666" y="795" width="133.99999999999997" height="14"/>
+                                <string key="text">DRIVE SMART. DRIVE SAFE.
+
+</string>
+                                <fontDescription key="fontDescription" name="HeroNew-SemiBold" family="Hero New" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BV3-mQ-EwW"/>
+                        <constraints>
+                            <constraint firstItem="QSy-6l-cJQ" firstAttribute="centerX" secondItem="LbL-Q5-1hG" secondAttribute="centerX" multiplier="1.2" id="2QX-ft-eBB"/>
+                            <constraint firstItem="QSy-6l-cJQ" firstAttribute="leading" secondItem="yDp-Sd-OUd" secondAttribute="trailing" constant="12" id="9db-x3-akD"/>
+                            <constraint firstItem="QSy-6l-cJQ" firstAttribute="centerY" secondItem="LbL-Q5-1hG" secondAttribute="centerY" id="DhV-Ko-ukf"/>
+                            <constraint firstItem="BV3-mQ-EwW" firstAttribute="bottom" secondItem="m5Z-jO-OTa" secondAttribute="bottom" constant="40" id="Gc8-9Z-wcn"/>
+                            <constraint firstItem="Tl3-Q2-pP5" firstAttribute="top" secondItem="jIG-Iu-o1G" secondAttribute="bottom" constant="27" id="HcI-is-MDg"/>
+                            <constraint firstItem="7cG-CW-i5s" firstAttribute="height" secondItem="LbL-Q5-1hG" secondAttribute="height" multiplier="0.0536481" id="RQ9-TG-tNo"/>
+                            <constraint firstItem="jIG-Iu-o1G" firstAttribute="centerX" secondItem="LbL-Q5-1hG" secondAttribute="centerX" id="WmX-YZ-UQr"/>
+                            <constraint firstItem="m5Z-jO-OTa" firstAttribute="centerX" secondItem="LbL-Q5-1hG" secondAttribute="centerX" multiplier="1.05" id="Zn2-P1-GIU"/>
+                            <constraint firstItem="ewV-gb-hgZ" firstAttribute="centerY" secondItem="m5Z-jO-OTa" secondAttribute="centerY" id="aru-HU-h6k"/>
+                            <constraint firstItem="yDp-Sd-OUd" firstAttribute="top" secondItem="QSy-6l-cJQ" secondAttribute="top" id="bzg-ae-nsx"/>
+                            <constraint firstItem="yDp-Sd-OUd" firstAttribute="centerY" secondItem="QSy-6l-cJQ" secondAttribute="centerY" id="dl8-7W-N7a"/>
+                            <constraint firstItem="Tl3-Q2-pP5" firstAttribute="centerX" secondItem="LbL-Q5-1hG" secondAttribute="centerX" id="eed-NN-WWW"/>
+                            <constraint firstItem="QSy-6l-cJQ" firstAttribute="height" secondItem="LbL-Q5-1hG" secondAttribute="height" multiplier="0.0652174" id="gsT-Pa-Fvv"/>
+                            <constraint firstItem="7cG-CW-i5s" firstAttribute="width" secondItem="LbL-Q5-1hG" secondAttribute="width" multiplier="0.465116" id="m4U-d7-Xpw"/>
+                            <constraint firstItem="7cG-CW-i5s" firstAttribute="centerY" secondItem="LbL-Q5-1hG" secondAttribute="centerY" multiplier="1.5" id="mos-up-HzA"/>
+                            <constraint firstItem="m5Z-jO-OTa" firstAttribute="leading" secondItem="ewV-gb-hgZ" secondAttribute="trailing" constant="6" id="nzi-6j-GKI"/>
+                            <constraint firstItem="QSy-6l-cJQ" firstAttribute="width" secondItem="LbL-Q5-1hG" secondAttribute="width" multiplier="0.525333" id="pqz-Lw-x9H"/>
+                            <constraint firstItem="jIG-Iu-o1G" firstAttribute="centerY" secondItem="LbL-Q5-1hG" secondAttribute="centerY" multiplier="0.35" id="thN-FB-ORQ"/>
+                            <constraint firstItem="7cG-CW-i5s" firstAttribute="centerX" secondItem="LbL-Q5-1hG" secondAttribute="centerX" id="zV5-jN-DKh"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
+                                <color key="value" name="gradientColor1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
+                                <color key="value" name="gradientColor2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <navigationItem key="navigationItem" id="nOs-V4-8dx"/>
+                    <connections>
+                        <outlet property="phoneNumber" destination="QSy-6l-cJQ" id="Wmd-gx-4hs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4xr-5n-rqx" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2493.5999999999999" y="-1.3493253373313345"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XYy-LC-sKt">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yGE-61-dgC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="iBq-mF-2i6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4xN-q5-zLz">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e3r-er-Yrc" kind="relationship" relationship="rootViewController" id="6YS-Es-07J"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-77.599999999999994" y="-0.44977511244377816"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="184" height="186"/>
+        <namedColor name="gradientColor1">
+            <color red="0.15686274509803921" green="0.50196078431372548" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="gradientColor2">
+            <color red="0.015686274509803921" green="0.27058823529411763" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
