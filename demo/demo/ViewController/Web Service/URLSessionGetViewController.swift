@@ -7,19 +7,25 @@
 
 import UIKit
 
-class URLSessionGetViewController: UIViewController {
+class URLSessionGetViewController: UIViewController, StoryBoarded {
 
     //MARK: - IBOutlets
     @IBOutlet private weak var userTableView: UITableView!
     
-    var userData:[User] = []
-    lazy var userViewModel = UserViewModel()
+    //MARK: - Variables
+    private var userData:[User] = []
+    private lazy var getRequestViewModel = GetRequestViewModel()
+    private var webServiceType: WebSerciveType = .urlSession
     
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        userViewModel.urlSessionGetViewControllerDelegate = self
-        userViewModel.getUserDataFromApi()
+        getRequestViewModel.urlSessionGetViewControllerDelegate = self
+        if (webServiceType == .urlSession) {
+            getRequestViewModel.getUserDataURLSession()
+        } else {
+            getRequestViewModel.getUserDataAlamofire()
+        }
         userTableView.dataSource = self
     }
     
@@ -28,6 +34,10 @@ class URLSessionGetViewController: UIViewController {
         DispatchQueue.main.async {
             self.userTableView.reloadData()
         }
+    }
+    
+    func setWebServiceType(webService: WebSerciveType) {
+        webServiceType = webService
     }
 }
 

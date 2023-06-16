@@ -20,6 +20,11 @@ extension Convertable {
     }
 }
 
+enum WebSerciveType {
+    case urlSession
+    case alamofire
+}
+
 enum HttpRequestEnum {
     case getUserData
     case createResource

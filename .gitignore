@@ -26,4 +26,4 @@ timeline.xctimeline
 playground.xcworkspace
 
 .build/
-Pods/
+./Pods/
