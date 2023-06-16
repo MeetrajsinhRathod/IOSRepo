@@ -11,17 +11,7 @@ protocol DataPass {
     func seeAllJobs()
 }
 
-class ViewController: UIViewController, DataPass {
-    
-    func seeAllJobs() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
-            
-        guard let jobDetailVC = storyBoard.instantiateViewController(withIdentifier: "PopularJobsViewController") as? PopularJobsViewController
-        else { return }
-        jobDetailVC.jobs = jobs
-        navigationController?.pushViewController(jobDetailVC, animated: true)
-    }
-    
+class SearchJobsViewController: UIViewController, DataPass {
     
     // MARK: - IBOutlet
     @IBOutlet private weak var jobTableView: UITableView!
@@ -36,35 +26,30 @@ class ViewController: UIViewController, DataPass {
         Job(companyImage: UIImage(named: "Beats") ?? UIImage(), companyName: "Beats", jobRole: "Product Manager", salary: "$84,000/y"),
     ]
 
+    // MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+    
+    // MARK: - IBActions
     @IBAction func editingDone(_ sender: Any) {
         searchField.resignFirstResponder()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        view.endEditing(true)
-        
-    }
-    
-}
-
-// MARK: - Extension
-extension ViewController {
-    
+    // MARK: - Functions
     func configureUI() {
         searchConfigrationImage.layer.cornerRadius = 10
         let searchImageView = UIView(frame: CGRect(x: 10, y: 0, width: 40, height: 40))
         let searchButton = UIButton(frame: CGRect(x: 10, y: 10, width: 22, height: 20))
         searchButton.setImage(UIImage(systemName: "magnifyingglass"), for: .normal)
-        
         searchButton.tintColor = .lightGray
         searchImageView.addSubview(searchButton)
-        
         searchField.layer.cornerRadius = 10
         searchField.clipsToBounds = true
         searchField.leftView = searchImageView
@@ -72,21 +57,29 @@ extension ViewController {
         searchField.leftViewMode = .always
     }
     
-    @objc
-    func seeMore() {
-        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
-            
+    func seeAllJobs() {
+        let storyBoard = UIStoryboard(name: "UIComponentsKT", bundle: .main)
         guard let jobDetailVC = storyBoard.instantiateViewController(withIdentifier: "PopularJobsViewController") as? PopularJobsViewController
         else { return }
         jobDetailVC.jobs = jobs
         navigationController?.pushViewController(jobDetailVC, animated: true)
     }
-    
-    
+}
+
+// MARK: - ObjC
+extension SearchJobsViewController {
+    @objc
+    func seeMore() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: .main)
+        guard let jobDetailVC = storyBoard.instantiateViewController(withIdentifier: "PopularJobsViewController") as? PopularJobsViewController
+        else { return }
+        jobDetailVC.jobs = jobs
+        navigationController?.pushViewController(jobDetailVC, animated: true)
+    }
 }
 
 // MARK: - Table view data source
-extension ViewController: UITableViewDataSource {
+extension SearchJobsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -112,12 +105,11 @@ extension ViewController: UITableViewDataSource {
 }
 
 // MARK: - Table view delegate
-extension ViewController: UITableViewDelegate {
+extension SearchJobsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: "SectionCell") as? SectionCell
+        guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: "SectionCell") as? JobSectionCell
         else { return UITableViewCell() }
-        
         if section == 0 {
             sectionCell.jobLabel.text = "Featured Jobs"
         } else {
