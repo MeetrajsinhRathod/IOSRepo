@@ -43,6 +43,7 @@
 		638BE31F29D6CF320007984B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BE31E29D6CF320007984B /* Player.swift */; };
 		63A0C0C42A376F8700D9158B /* PopularJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C22A376F8700D9158B /* PopularJobsViewController.swift */; };
 		63A0C0C52A376F8700D9158B /* SearchJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C32A376F8700D9158B /* SearchJobsViewController.swift */; };
+		63A0C09E2A373FAA00D9158B /* OneCloudLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */; };
 		63AA2F9A29D2EF0E000D3BC7 /* UIComponentsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */; };
 		63AA2F9C29D30274000D3BC7 /* UIToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */; };
 		63ADDDA129C2D49800A07725 /* UITextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */; };
@@ -168,6 +169,7 @@
 		638BE31E29D6CF320007984B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		63A0C0C22A376F8700D9158B /* PopularJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularJobsViewController.swift; sourceTree = "<group>"; };
 		63A0C0C32A376F8700D9158B /* SearchJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchJobsViewController.swift; sourceTree = "<group>"; };
+		63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCloudLoginViewController.swift; sourceTree = "<group>"; };
 		63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIComponentsRoot.storyboard; sourceTree = "<group>"; };
 		63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBarViewController.swift; sourceTree = "<group>"; };
 		63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldViewController.swift; sourceTree = "<group>"; };
@@ -423,6 +425,30 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		63A0C09A2A373F4D00D9158B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C09B2A373F5600D9158B /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		63A0C09B2A373F5600D9158B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C09C2A373F6900D9158B /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		63A0C09C2A373F6900D9158B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		63AE20E629C1C47400EFD29E /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +639,7 @@
 				632558762A3C7D3E00E4B21B /* Helper */,
 				632558742A3C7D3E00E4B21B /* Model */,
 				632558792A3C7D3E00E4B21B /* ViewModel */,
+				63A0C09A2A373F4D00D9158B /* Modules */,
 				7F25F59729B87BC4005DE9A8 /* Delegates */,
 				63AE20E629C1C47400EFD29E /* ViewController */,
 				63AE20E729C1C49F00EFD29E /* StoryBoards */,
@@ -941,6 +968,7 @@
 				7FA58B4629E33E55006DBFFF /* HomeCoordinator.swift in Sources */,
 				7FA58B3F29E2C317006DBFFF /* HomeVC.swift in Sources */,
 				7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */,
+				63A0C09E2A373FAA00D9158B /* OneCloudLoginViewController.swift in Sources */,
 				63CD093C29D417E400CCD6C8 /* WebViewController.swift in Sources */,
 				63F31B4529CB2A48005C3BC7 /* MovieCollectionViewCell.swift in Sources */,
 				632558AE2A3C836500E4B21B /* GetRequestViewModel.swift in Sources */,
