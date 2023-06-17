@@ -12,8 +12,9 @@ class UpcomingMeetingsViewModel: NSObject {
 
     //MARK: - Variables
     weak var upcomingMeetingsVC: UpcomingMeetingsViewController?
+    weak var cancelMeetingVC: CancelMeetingViewController?
     var baseViewModel = BaseViewModel()
-    
+
     //MARK: - Functions
     func getUpcomingMeetings(userToken: String, page: Int, limit: Int) {
         let authorization: HTTPHeaders = [.authorization(bearerToken: userToken)]
@@ -29,12 +30,15 @@ class UpcomingMeetingsViewModel: NSObject {
             }
         }
     }
-    
-    func generateDateScheduleDictionary(meetingResult: [UpcomingMeetingsResult]) -> [(key:String,values:[UpcomingMeetingsResult])] {
-        var dictionary:[String: [UpcomingMeetingsResult]] = [:]
+
+    func generateDateScheduleDictionary(meetingResult: [UpcomingMeetingsResult]) -> [(key: String, values: [UpcomingMeetingsResult])] {
+        var dictionary: [String: [UpcomingMeetingsResult]] = [:]
         meetingResult.forEach { result in
+            if dictionary.isEmpty {
+                dictionary[result.date.getFormattedDate()]?.append(result)
+            }
             if dictionary.contains(where: { pair in
-                pair.key.getFormattedDate() == result.date
+                pair.key == result.date.getFormattedDate()
             }) {
                 dictionary[result.date.getFormattedDate()]?.append(result)
             }
@@ -42,6 +46,19 @@ class UpcomingMeetingsViewModel: NSObject {
                 dictionary[result.date.getFormattedDate()] = [result]
             }
         }
-        return dictionary.compactMap({(key:$0,values:$1)})
+        return dictionary.compactMap({ (key: $0, values: $1) })
+    }
+
+    func cancelMeeting(userToken: String, id: Int) {
+        let authorization: HTTPHeaders = [.authorization(bearerToken: userToken)]
+        AF.request(HttpRequestEnum.cancelMeeting(id).getTargetURL(), method: .post, headers: authorization).responseDecodable { [weak self]
+            (response: DataResponse<CancelMeetingResponse, AFError>) in
+            switch response.result {
+            case .success(let cancelMeetingResponse):
+                self?.cancelMeetingVC?.cancelMeetingResponse(response: cancelMeetingResponse)
+            case .failure(let error):
+                debugPrint("Error occured", error)
+            }
+        }
     }
 }

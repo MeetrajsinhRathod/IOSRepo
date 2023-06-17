@@ -9,8 +9,9 @@ import UIKit
 import PanModal
 
 protocol Presentable {
-    func presentDialog()
+    func presentDialog(meetingId: Int)
     func presentMenu(chidoriMenu: ChidoriMenu)
+    func cancelMeetingResponse(response: CancelMeetingResponse)
 }
 
 class UpcomingMeetingsViewController: UIViewController {
@@ -18,18 +19,18 @@ class UpcomingMeetingsViewController: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var meetingTableView: UITableView!
     @IBOutlet weak var addMeetingButton: UIButton!
-    
+
     //MARK: - Variables
     private let pullToRefresh = UIRefreshControl()
     private let activityIndicator = UIActivityIndicatorView()
     private var footerView: UIView?
     private let userToken = UserDefaults.standard.string(forKey: "userToken")
     private let upcomingMeetingsViewModel = UpcomingMeetingsViewModel()
-    private var meetingList: [(key:String,values:[UpcomingMeetingsResult])] = []
+    private var meetingList: [(key: String, values: [UpcomingMeetingsResult])] = []
     private var currentPage = 1
     private var totalPage = 1
-    private let limit = 5
-    
+    private let limit = 7
+
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,25 +39,25 @@ class UpcomingMeetingsViewController: UIViewController {
         showSpinner()
         loadData()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.navigationBar.topItem?.title = "Upcoming Meetings"
         let rightBarMenuButton = UIBarButtonItem(image: UIImage(named: "ic_menu"), style: .plain, target: self, action: nil)
         rightBarMenuButton.tintColor = .lightGray
         navigationController?.navigationBar.topItem?.rightBarButtonItem = rightBarMenuButton
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         navigationController?.navigationBar.topItem?.title = nil
         navigationController?.navigationBar.topItem?.rightBarButtonItem = nil
     }
-    
+
     //MARK: - Functions
     func setUpView() {
         activityIndicator.backgroundColor = .black
         activityIndicator.style = .large
         activityIndicator.center = self.view.center
-        addMeetingButton.layer.cornerRadius = addMeetingButton.frame.height/2
+        addMeetingButton.layer.cornerRadius = addMeetingButton.frame.height / 2
         meetingTableView.refreshControl = pullToRefresh
         pullToRefresh.addTarget(self, action: #selector(refreshData), for: .primaryActionTriggered)
         footerView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 100))
@@ -65,31 +66,31 @@ class UpcomingMeetingsViewController: UIViewController {
         footerSpinner.startAnimating()
         footerView?.addSubview(footerSpinner)
     }
-    
+
     func showSpinner() {
         activityIndicator.startAnimating()
         self.view.addSubview(activityIndicator)
     }
-    
+
     func removeSpinner() {
         activityIndicator.removeFromSuperview()
     }
-    
+
     func loadData() {
         upcomingMeetingsViewModel.getUpcomingMeetings(userToken: userToken ?? "", page: currentPage, limit: limit)
     }
-    
+
     func loadMoreData() {
         meetingTableView.tableFooterView = footerView
         currentPage += 1
         upcomingMeetingsViewModel.getUpcomingMeetings(userToken: userToken ?? "", page: currentPage, limit: limit)
     }
-    
+
     func sortMeetingList() {
-        meetingList = meetingList.sorted(by: { $0.key.convertToDate().compare($1.key.convertToDate()) == .orderedDescending })
+        meetingList = meetingList.sorted(by: { $0.key.convertToDate().compare($1.key.convertToDate()) == .orderedAscending })
     }
-    
-    func upcomingMeetingsResponse(response: [(key:String,values:[UpcomingMeetingsResult])], pages: Int) {
+
+    func upcomingMeetingsResponse(response: [(key: String, values: [UpcomingMeetingsResult])], pages: Int) {
         meetingList.append(contentsOf: response)
         sortMeetingList()
         totalPage = pages
@@ -100,30 +101,43 @@ class UpcomingMeetingsViewController: UIViewController {
         pullToRefresh.endRefreshing()
         meetingTableView.tableFooterView = nil
     }
+    
+    func cancelMeetingResponse(response: CancelMeetingResponse) {
+        if (response.status == 200) {
+            DispatchQueue.main.async { [weak self] in
+                self?.refreshData()
+            }
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Unable to cancel the meeting. Please try again.", preferredStyle: .actionSheet)
+            let close = UIAlertAction(title: "Close", style: .cancel)
+            alert.addAction(close)
+            self.present(alert, animated: true)
+        }
+    }
 }
 
 // MARK: - Table view data source
 extension UpcomingMeetingsViewController: UITableViewDataSource {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         meetingList.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         meetingList[section].values.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: MeetingDetailsTableViewCell.identifier, for: indexPath) as? MeetingDetailsTableViewCell else { return UITableViewCell() }
         if !(meetingList.isEmpty) {
-            cell.setUpCell(schedule: meetingList[indexPath.section].values[indexPath.row].schedule, user: meetingList[indexPath.section].values[indexPath.row].user )
+            cell.setUpCell(schedule: meetingList[indexPath.section].values[indexPath.row].schedule, user: meetingList[indexPath.section].values[indexPath.row].user)
         }
         cell.presentDialogDelegate = self
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == (meetingList.count-1) && indexPath.row == meetingList[indexPath.section].values.count - 1 && currentPage<=totalPage {
+        if indexPath.section == (meetingList.count - 1) && indexPath.row == meetingList[indexPath.section].values.count - 1 && currentPage <= totalPage {
             loadMoreData()
         }
     }
@@ -131,7 +145,7 @@ extension UpcomingMeetingsViewController: UITableViewDataSource {
 
 // MARK: - Table view delegate
 extension UpcomingMeetingsViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let sectionCell = tableView.dequeueReusableCell(withIdentifier: MeetingDateTableViewCell.identifier) as? MeetingDateTableViewCell else { return UIView() }
         if !(meetingList.isEmpty) {
@@ -150,21 +164,23 @@ extension UpcomingMeetingsViewController: UITableViewDelegate {
 }
 
 extension UpcomingMeetingsViewController: Presentable {
-    
+
     func presentMenu(chidoriMenu: ChidoriMenu) {
         self.present(chidoriMenu, animated: true)
     }
-    
-    func presentDialog() {
+
+    func presentDialog(meetingId: Int) {
         dismiss(animated: true)
         let cancelDialog = CancelMeetingViewController.instatiateStoryBoard(storyboardName: "WebService")
+        cancelDialog.setMeetingId(meetingId: meetingId)
+        cancelDialog.presentableDelegate = self
         self.presentPanModal(cancelDialog)
     }
 }
 
 //MARK: - ObjC
 extension UpcomingMeetingsViewController {
-    
+
     @objc
     func refreshData() {
         meetingList = []

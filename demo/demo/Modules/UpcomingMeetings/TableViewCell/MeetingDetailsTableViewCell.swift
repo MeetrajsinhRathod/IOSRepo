@@ -23,6 +23,7 @@ class MeetingDetailsTableViewCell: UITableViewCell {
     static let identifier = "detailCell"
     var presentDialogDelegate: Presentable?
     var actionMappings: [UIAction.Identifier: UIActionHandler] = [:]
+    var meetingId = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,6 +42,7 @@ class MeetingDetailsTableViewCell: UITableViewCell {
     }
     
     func setUpCell(schedule: Schedule, user: ScheduleUser) {
+        meetingId = schedule.pk
         meetingTitleLabel.text = ("\(schedule.title) ") + (schedule.description)
         dateLabel.text = schedule.startTime.getFormattedDateWithTime()
         timeLabel.text = schedule.duration
@@ -59,7 +61,7 @@ extension MeetingDetailsTableViewCell: ChidoriDelegate {
     }
     
     func setUpMenu(tappedPoint: CGPoint) {
-        var menu: UIMenu = {
+        let menu: UIMenu = {
             var postActions: [UIAction] = []
             
             let copyLinkIdentifier = UIAction.Identifier("copyLink")
@@ -84,7 +86,7 @@ extension MeetingDetailsTableViewCell: ChidoriDelegate {
         func actionHandler(action: UIAction) { }
         
         func openCancelMeetingDialog(action: UIAction) {
-            presentDialogDelegate?.presentDialog()
+            presentDialogDelegate?.presentDialog(meetingId: meetingId)
         }
         
         let chidoriMenu = ChidoriMenu(menu: menu, summonPoint: tappedPoint)

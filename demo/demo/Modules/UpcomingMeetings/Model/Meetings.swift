@@ -105,3 +105,13 @@ struct ScheduleUser: Codable {
         case email, avatar
     }
 }
+
+struct CancelMeetingResponse: Codable {
+    let status: Int
+    let data: CancelMeetingData
+    let message: String
+}
+
+struct CancelMeetingData: Codable {
+    let message: String
+}
