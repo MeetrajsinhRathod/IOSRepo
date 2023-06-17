@@ -70,6 +70,8 @@
 		63D05BC72A382E9A0002EC26 /* UpcomingMeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BC62A382E9A0002EC26 /* UpcomingMeetingsViewController.swift */; };
 		63D05BCA2A382EA50002EC26 /* MeetingDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BC82A382EA50002EC26 /* MeetingDateTableViewCell.swift */; };
 		63D05BCB2A382EA50002EC26 /* MeetingDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BC92A382EA50002EC26 /* MeetingDetailsTableViewCell.swift */; };
+		63D05BCE2A3834440002EC26 /* Meetings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BCD2A3834440002EC26 /* Meetings.swift */; };
+		63D05BD12A38347A0002EC26 /* UpcomingMeetingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BD02A38347A0002EC26 /* UpcomingMeetingsViewModel.swift */; };
 		63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */; };
 		63E17A4529C9635800FE3036 /* SignUpPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E17A4429C9635800FE3036 /* SignUpPage.storyboard */; };
 		63E17A4929C9A5A100FE3036 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E17A4729C9A5A100FE3036 /* TableViewCell.swift */; };
@@ -205,6 +207,8 @@
 		63D05BC62A382E9A0002EC26 /* UpcomingMeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingMeetingsViewController.swift; sourceTree = "<group>"; };
 		63D05BC82A382EA50002EC26 /* MeetingDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingDateTableViewCell.swift; sourceTree = "<group>"; };
 		63D05BC92A382EA50002EC26 /* MeetingDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		63D05BCD2A3834440002EC26 /* Meetings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meetings.swift; sourceTree = "<group>"; };
+		63D05BD02A38347A0002EC26 /* UpcomingMeetingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingMeetingsViewModel.swift; sourceTree = "<group>"; };
 		63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		63E17A4429C9635800FE3036 /* SignUpPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpPage.storyboard; sourceTree = "<group>"; };
 		63E17A4729C9A5A100FE3036 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -570,6 +574,8 @@
 		63D05BC32A382E4B0002EC26 /* UpcomingMeetings */ = {
 			isa = PBXGroup;
 			children = (
+				63D05BCF2A38344C0002EC26 /* ViewModel */,
+				63D05BCC2A3834350002EC26 /* Model */,
 				63D05BC52A382E760002EC26 /* TableViewCell */,
 				63D05BC42A382E5A0002EC26 /* ViewController */,
 			);
@@ -591,6 +597,22 @@
 				63D05BC92A382EA50002EC26 /* MeetingDetailsTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		63D05BCC2A3834350002EC26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63D05BCD2A3834440002EC26 /* Meetings.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		63D05BCF2A38344C0002EC26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63D05BD02A38347A0002EC26 /* UpcomingMeetingsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		63E17A4629C9A58000FE3036 /* TableView */ = {
@@ -1045,6 +1067,7 @@
 				7FA58B3D29E2C2F3006DBFFF /* LoginVC.swift in Sources */,
 				631F442729CC7B1100A84AE9 /* FooterView.swift in Sources */,
 				63D05BCA2A382EA50002EC26 /* MeetingDateTableViewCell.swift in Sources */,
+                63D05BCE2A3834440002EC26 /* Meetings.swift in Sources */,
 				63E17A4C29C9B89900FE3036 /* LabelViewController.swift in Sources */,
 				632558472A3C780700E4B21B /* FeaturedJobCell.swift in Sources */,
 				6325584A2A3C780700E4B21B /* Job.swift in Sources */,
@@ -1065,6 +1088,7 @@
 				7FA58B4629E33E55006DBFFF /* HomeCoordinator.swift in Sources */,
 				63A0C0B42A3753EC00D9158B /* AuthenticationCoordinator.swift in Sources */,
 				7FA58B3F29E2C317006DBFFF /* HomeVC.swift in Sources */,
+				63D05BD12A38347A0002EC26 /* UpcomingMeetingsViewModel.swift in Sources */,
 				7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */,
 				63A0C09E2A373FAA00D9158B /* OneCloudLoginViewController.swift in Sources */,
 				63CD093C29D417E400CCD6C8 /* WebViewController.swift in Sources */,

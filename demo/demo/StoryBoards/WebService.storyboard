@@ -1047,6 +1047,7 @@ Sign in to get started</string>
                                             <outlet property="timeLabel" destination="2tt-tF-d8n" id="hUR-aV-qbd"/>
                                             <outlet property="userProfileImageView" destination="2Fp-Je-dJI" id="Ftg-My-BtD"/>
                                             <outlet property="usernameLabel" destination="1yW-ZZ-ZDk" id="DNX-h7-sfe"/>
+                                            <outlet property="webinarStack" destination="gN6-pb-qKK" id="P60-LW-o0b"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

@@ -18,4 +18,8 @@ class MeetingDateTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    func setDate(date: String) {
+        dateLabel.text = date
+    }
 }

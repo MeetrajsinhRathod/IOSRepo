@@ -33,14 +33,15 @@ enum HttpRequestEnum {
     case updatePatch(Int)
     case deleteResouce(Int)
     case oneCloudLogin
+    case getUpcomingMeeting(Int, Int)
 }
 
 extension HttpRequestEnum {
     
     func getBaseURL() -> String {
         switch self {
-        case .oneCloudLogin:
-            return "https://sandbox-api.ocmeet.us/api/v1"
+        case .oneCloudLogin, .getUpcomingMeeting:
+            return "https://sandbox-api.ocmeet.us/api/v1/"
         default: return "https://reqres.in/api/"
         }
     }
@@ -53,7 +54,8 @@ extension HttpRequestEnum {
         case .updatePut(let id): return "users/\(id)"
         case .updatePatch(let id): return "users/\(id)"
         case .deleteResouce(let id): return "users/\(id)"
-        case .oneCloudLogin: return "/auth/email-login/"
+        case .oneCloudLogin: return "auth/email-login/"
+        case .getUpcomingMeeting(let page, let limit): return "meeting/schedule/upcoming_meetings/?page=\(page)&limit=\(limit)"
         }
     }
     
@@ -69,10 +71,11 @@ extension HttpRequestEnum {
         switch self {
         case .getUserData: urlRequest.httpMethod = "GET"
         case .createResource, .login : urlRequest.httpMethod = "POST"
-        case .updatePut(_): urlRequest.httpMethod = "PUT"
-        case .updatePatch(_): urlRequest.httpMethod = "PATCH"
-        case .deleteResouce(_): urlRequest.httpMethod = "DELETE"
+        case .updatePut: urlRequest.httpMethod = "PUT"
+        case .updatePatch: urlRequest.httpMethod = "PATCH"
+        case .deleteResouce: urlRequest.httpMethod = "DELETE"
         case .oneCloudLogin: urlRequest.httpMethod = "POST"
+        case .getUpcomingMeeting: urlRequest.httpMethod = "GET"
         }
         return urlRequest
     }
