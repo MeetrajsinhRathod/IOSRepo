@@ -69,8 +69,8 @@ class WebServicesViewController: UIViewController {
     }
     
     @IBAction func onOneCloudScreenButtonClick(_ sender: Any) {
-        let oneCloudScreenVC = OneCloudLoginViewController.instatiateStoryBoard(storyboardName: "WebService")
-        self.navigationController?.pushViewController(oneCloudScreenVC, animated: true)
+        let authenticationCoordinator = AuthenticationCoordinator(self.navigationController ?? UINavigationController())
+        authenticationCoordinator.start()
     }
     
     func setButttonTitle(webServiceType: WebSerciveType) {

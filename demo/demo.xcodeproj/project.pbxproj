@@ -46,6 +46,10 @@
 		63A0C09E2A373FAA00D9158B /* OneCloudLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */; };
 		63A0C0A42A37480000D9158B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0A32A37480000D9158B /* LoginViewModel.swift */; };
 		63A0C0A72A37485E00D9158B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0A62A37485E00D9158B /* LoginModel.swift */; };
+		63A0C0B42A3753EC00D9158B /* AuthenticationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0B32A3753EC00D9158B /* AuthenticationCoordinator.swift */; };
+		63A0C0B62A3753FC00D9158B /* DashboardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0B52A3753FC00D9158B /* DashboardCoordinator.swift */; };
+		63A0C0B82A3755DB00D9158B /* OneCloudHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0B72A3755DB00D9158B /* OneCloudHomeViewController.swift */; };
+		63A0C0BA2A375CCE00D9158B /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0B92A375CCE00D9158B /* UserProfileViewController.swift */; };
 		63AA2F9A29D2EF0E000D3BC7 /* UIComponentsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */; };
 		63AA2F9C29D30274000D3BC7 /* UIToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */; };
 		63ADDDA129C2D49800A07725 /* UITextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */; };
@@ -174,6 +178,10 @@
 		63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCloudLoginViewController.swift; sourceTree = "<group>"; };
 		63A0C0A32A37480000D9158B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		63A0C0A62A37485E00D9158B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		63A0C0B32A3753EC00D9158B /* AuthenticationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationCoordinator.swift; sourceTree = "<group>"; };
+		63A0C0B52A3753FC00D9158B /* DashboardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCoordinator.swift; sourceTree = "<group>"; };
+		63A0C0B72A3755DB00D9158B /* OneCloudHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCloudHomeViewController.swift; sourceTree = "<group>"; };
+		63A0C0B92A375CCE00D9158B /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIComponentsRoot.storyboard; sourceTree = "<group>"; };
 		63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBarViewController.swift; sourceTree = "<group>"; };
 		63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldViewController.swift; sourceTree = "<group>"; };
@@ -432,6 +440,7 @@
 		63A0C09A2A373F4D00D9158B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				63A0C0B02A3753B400D9158B /* Dashboard */,
 				63A0C09B2A373F5600D9158B /* Login */,
 			);
 			path = Modules;
@@ -469,6 +478,32 @@
 				63A0C0A62A37485E00D9158B /* LoginModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		63A0C0B02A3753B400D9158B /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0B12A3753BB00D9158B /* ViewController */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		63A0C0B12A3753BB00D9158B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0B72A3755DB00D9158B /* OneCloudHomeViewController.swift */,
+				63A0C0B92A375CCE00D9158B /* UserProfileViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		63A0C0B22A3753D900D9158B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0B32A3753EC00D9158B /* AuthenticationCoordinator.swift */,
+				63A0C0B52A3753FC00D9158B /* DashboardCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		63AE20E629C1C47400EFD29E /* ViewController */ = {
@@ -661,6 +696,7 @@
 				632558762A3C7D3E00E4B21B /* Helper */,
 				632558742A3C7D3E00E4B21B /* Model */,
 				632558792A3C7D3E00E4B21B /* ViewModel */,
+				63A0C0B22A3753D900D9158B /* Coordinator */,
 				63A0C09A2A373F4D00D9158B /* Modules */,
 				7F25F59729B87BC4005DE9A8 /* Delegates */,
 				63AE20E629C1C47400EFD29E /* ViewController */,
@@ -989,7 +1025,11 @@
 				7FA58B3929E2C260006DBFFF /* Coordinator.swift in Sources */,
 				632558712A3C7D2F00E4B21B /* UserTableViewCell.swift in Sources */,
 				632558492A3C780700E4B21B /* FeaturedCollectionViewCell.swift in Sources */,
+				63A0C0B62A3753FC00D9158B /* DashboardCoordinator.swift in Sources */,
+				63ED292C2A31AADB0091190F /* UpdateRequestViewModel.swift in Sources */,
+				63ED291F2A318E910091190F /* WebServicesViewController.swift in Sources */,
 				7FA58B4629E33E55006DBFFF /* HomeCoordinator.swift in Sources */,
+				63A0C0B42A3753EC00D9158B /* AuthenticationCoordinator.swift in Sources */,
 				7FA58B3F29E2C317006DBFFF /* HomeVC.swift in Sources */,
 				7F96A825296C7994009306F8 /* AppDelegate.swift in Sources */,
 				63A0C09E2A373FAA00D9158B /* OneCloudLoginViewController.swift in Sources */,
@@ -1001,6 +1041,7 @@
 				7F5DC99F29D953370039382D /* SectionCell.swift in Sources */,
 				7FB4DC2029D36A3000CAE8A3 /* SearchBarTableViewController.swift in Sources */,
 				632558462A3C780700E4B21B /* PopularJobCell.swift in Sources */,
+				63A0C0B82A3755DB00D9158B /* OneCloudHomeViewController.swift in Sources */,
 				7F5DC99D29D953240039382D /* playerCell.swift in Sources */,
 				631F30E229DAB23000875565 /* GroupViewController.swift in Sources */,
 				7F36A25229BC57B90054676F /* GradientView.swift in Sources */,
@@ -1012,6 +1053,7 @@
 				63E7250A29D17BEE00586427 /* Todo.swift in Sources */,
 				6325587C2A3C7D3E00E4B21B /* User.swift in Sources */,
 				63E7250829D17BDE00586427 /* TodoListViewController.swift in Sources */,
+				63A0C0BA2A375CCE00D9158B /* UserProfileViewController.swift in Sources */,
 				7F96A827296C7994009306F8 /* SceneDelegate.swift in Sources */,
 				6369343029C81F4600560F7B /* TableViewController.swift in Sources */,
 				63B435A429E4345500DDCA66 /* customVariationForIpad.swift in Sources */,
