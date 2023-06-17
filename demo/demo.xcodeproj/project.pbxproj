@@ -44,6 +44,8 @@
 		63A0C0C42A376F8700D9158B /* PopularJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C22A376F8700D9158B /* PopularJobsViewController.swift */; };
 		63A0C0C52A376F8700D9158B /* SearchJobsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0C32A376F8700D9158B /* SearchJobsViewController.swift */; };
 		63A0C09E2A373FAA00D9158B /* OneCloudLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */; };
+		63A0C0A42A37480000D9158B /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0A32A37480000D9158B /* LoginViewModel.swift */; };
+		63A0C0A72A37485E00D9158B /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63A0C0A62A37485E00D9158B /* LoginModel.swift */; };
 		63AA2F9A29D2EF0E000D3BC7 /* UIComponentsRoot.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */; };
 		63AA2F9C29D30274000D3BC7 /* UIToolBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */; };
 		63ADDDA129C2D49800A07725 /* UITextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */; };
@@ -170,6 +172,8 @@
 		63A0C0C22A376F8700D9158B /* PopularJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopularJobsViewController.swift; sourceTree = "<group>"; };
 		63A0C0C32A376F8700D9158B /* SearchJobsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchJobsViewController.swift; sourceTree = "<group>"; };
 		63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneCloudLoginViewController.swift; sourceTree = "<group>"; };
+		63A0C0A32A37480000D9158B /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		63A0C0A62A37485E00D9158B /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		63AA2F9929D2EF0E000D3BC7 /* UIComponentsRoot.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UIComponentsRoot.storyboard; sourceTree = "<group>"; };
 		63AA2F9B29D30274000D3BC7 /* UIToolBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToolBarViewController.swift; sourceTree = "<group>"; };
 		63ADDDA029C2D49800A07725 /* UITextFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextFieldViewController.swift; sourceTree = "<group>"; };
@@ -436,6 +440,8 @@
 		63A0C09B2A373F5600D9158B /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				63A0C0A52A37480400D9158B /* Model */,
+				63A0C0A22A3747D500D9158B /* ViewModel */,
 				63A0C09C2A373F6900D9158B /* ViewController */,
 			);
 			path = Login;
@@ -447,6 +453,22 @@
 				63A0C09D2A373FAA00D9158B /* OneCloudLoginViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		63A0C0A22A3747D500D9158B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0A32A37480000D9158B /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		63A0C0A52A37480400D9158B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63A0C0A62A37485E00D9158B /* LoginModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		63AE20E629C1C47400EFD29E /* ViewController */ = {
@@ -926,6 +948,8 @@
 				63CBBC6029DC2D2A006E681B /* RootNavViewController.swift in Sources */,
 				63ADDDA529C2EFDA00A07725 /* SliderViewController.swift in Sources */,
 				6325587E2A3C7D3E00E4B21B /* URLBuilder.swift in Sources */,
+				63A0C0A42A37480000D9158B /* LoginViewModel.swift in Sources */,
+				63ED292A2A31AAD00091190F /* PostRequestViewModel.swift in Sources */,
 				63EE93EC29D2E0F2003BD880 /* UIControlTableViewController.swift in Sources */,
 				63AA2F9C29D30274000D3BC7 /* UIToolBarViewController.swift in Sources */,
 				6325587F2A3C7D3E00E4B21B /* UserViewModel.swift in Sources */,
@@ -981,6 +1005,7 @@
 				631F30E229DAB23000875565 /* GroupViewController.swift in Sources */,
 				7F36A25229BC57B90054676F /* GradientView.swift in Sources */,
 				632558802A3C7D3E00E4B21B /* BaseViewModel.swift in Sources */,
+				63A0C0A72A37485E00D9158B /* LoginModel.swift in Sources */,
 				7FD0C70F29CCC53D00BA097B /* UITextViewController.swift in Sources */,
 				632558A62A3C835200E4B21B /* Utills.swift in Sources */,
 				63ADDDA329C2E68B00A07725 /* UISwitchViewController.swift in Sources */,
