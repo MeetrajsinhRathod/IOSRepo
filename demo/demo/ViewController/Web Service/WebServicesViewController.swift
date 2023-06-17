@@ -16,6 +16,7 @@ class WebServicesViewController: UIViewController {
     @IBOutlet private weak var putRequestButton: UIButton!
     @IBOutlet private weak var patchRequestButton: UIButton!
     @IBOutlet private weak var deleteRequestButton: UIButton!
+    @IBOutlet weak var oneCloudScreenButton: UIButton!
     
     //MARK: - Variables
     private var webServiceType = WebSerciveType.urlSession
@@ -65,6 +66,11 @@ class WebServicesViewController: UIViewController {
         let urlSessionDeleteVC = URLSessionDeleteViewController.instatiateStoryBoard(storyboardName: "WebService")
         urlSessionDeleteVC.setWebServiceType(webService: webServiceType)
         self.present(urlSessionDeleteVC, animated: true)
+    }
+    
+    @IBAction func onOneCloudScreenButtonClick(_ sender: Any) {
+        let oneCloudScreenVC = OneCloudLoginViewController.instatiateStoryBoard(storyboardName: "WebService")
+        self.navigationController?.pushViewController(oneCloudScreenVC, animated: true)
     }
     
     func setButttonTitle(webServiceType: WebSerciveType) {
