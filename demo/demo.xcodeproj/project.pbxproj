@@ -95,6 +95,12 @@
 		63F9CF3B29C49273004C40CE /* ImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9CF3A29C49273004C40CE /* ImagePickerViewController.swift */; };
 		63F9CF3F29C498B1004C40CE /* RefreshTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9CF3E29C498B1004C40CE /* RefreshTableViewController.swift */; };
 		7F04EF1129D4B0E20021CB09 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F04EF1029D4B0E20021CB09 /* MapViewController.swift */; };
+		7F0A231F2A3CF96F00C8346C /* ChidoriMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A231B2A3CF96F00C8346C /* ChidoriMenu.swift */; };
+		7F0A23202A3CF96F00C8346C /* ChidoriPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A231C2A3CF96F00C8346C /* ChidoriPresentationController.swift */; };
+		7F0A23212A3CF96F00C8346C /* ChidoriMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A231D2A3CF96F00C8346C /* ChidoriMenuTableViewCell.swift */; };
+		7F0A23222A3CF96F00C8346C /* ChidoriAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A231E2A3CF96F00C8346C /* ChidoriAnimationController.swift */; };
+		7F0A23242A3CF9B700C8346C /* CancelMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A23232A3CF9B700C8346C /* CancelMeetingViewController.swift */; };
+		7F0A23272A3CFA0300C8346C /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A23262A3CFA0300C8346C /* PanModal */; };
 		7F36A25229BC57B90054676F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36A25129BC57B90054676F /* GradientView.swift */; };
 		7F36A25829BC62750054676F /* Hero New Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25729BC62750054676F /* Hero New Regular.ttf */; };
 		7F36A25D29BC636E0054676F /* Hero New Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25A29BC636E0054676F /* Hero New Medium.ttf */; };
@@ -233,6 +239,11 @@
 		63F9CF3E29C498B1004C40CE /* RefreshTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTableViewController.swift; sourceTree = "<group>"; };
 		7AEF50BA5681848C0DBE9273 /* Pods-demoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-demoTests.release.xcconfig"; path = "Target Support Files/Pods-demoTests/Pods-demoTests.release.xcconfig"; sourceTree = "<group>"; };
 		7F04EF1029D4B0E20021CB09 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		7F0A231B2A3CF96F00C8346C /* ChidoriMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChidoriMenu.swift; sourceTree = "<group>"; };
+		7F0A231C2A3CF96F00C8346C /* ChidoriPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChidoriPresentationController.swift; sourceTree = "<group>"; };
+		7F0A231D2A3CF96F00C8346C /* ChidoriMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChidoriMenuTableViewCell.swift; sourceTree = "<group>"; };
+		7F0A231E2A3CF96F00C8346C /* ChidoriAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChidoriAnimationController.swift; sourceTree = "<group>"; };
+		7F0A23232A3CF9B700C8346C /* CancelMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelMeetingViewController.swift; sourceTree = "<group>"; };
 		7F36A25129BC57B90054676F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7F36A25729BC62750054676F /* Hero New Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Regular.ttf"; sourceTree = "<group>"; };
 		7F36A25A29BC636E0054676F /* Hero New Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Medium.ttf"; sourceTree = "<group>"; };
@@ -276,6 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0A23272A3CFA0300C8346C /* PanModal in Frameworks */,
 				51E8FC7766C11AB79587BFC8 /* Pods_demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -585,6 +597,7 @@
 		63D05BC42A382E5A0002EC26 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A23232A3CF9B700C8346C /* CancelMeetingViewController.swift */,
 				63D05BC62A382E9A0002EC26 /* UpcomingMeetingsViewController.swift */,
 			);
 			path = ViewController;
@@ -694,6 +707,25 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		7F0A23192A3CF96F00C8346C /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				7F0A231A2A3CF96F00C8346C /* Chidori Menu */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		7F0A231A2A3CF96F00C8346C /* Chidori Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7F0A231B2A3CF96F00C8346C /* ChidoriMenu.swift */,
+				7F0A231C2A3CF96F00C8346C /* ChidoriPresentationController.swift */,
+				7F0A231D2A3CF96F00C8346C /* ChidoriMenuTableViewCell.swift */,
+				7F0A231E2A3CF96F00C8346C /* ChidoriAnimationController.swift */,
+			);
+			path = "Chidori Menu";
+			sourceTree = "<group>";
+		};
 		7F25F59729B87BC4005DE9A8 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -748,6 +780,7 @@
 		7F96A823296C7994009306F8 /* demo */ = {
 			isa = PBXGroup;
 			children = (
+				7F0A23192A3CF96F00C8346C /* Custom Views */,
 				632558762A3C7D3E00E4B21B /* Helper */,
 				632558742A3C7D3E00E4B21B /* Model */,
 				632558792A3C7D3E00E4B21B /* ViewModel */,
@@ -793,6 +826,9 @@
 			dependencies = (
 			);
 			name = demo;
+			packageProductDependencies = (
+				7F0A23262A3CFA0300C8346C /* PanModal */,
+			);
 			productName = demo;
 			productReference = 7F96A821296C7994009306F8 /* demo.app */;
 			productType = "com.apple.product-type.application";
@@ -868,6 +904,9 @@
 				Base,
 			);
 			mainGroup = 7F96A818296C7994009306F8;
+			packageReferences = (
+				7F0A23252A3CFA0300C8346C /* XCRemoteSwiftPackageReference "PanModal" */,
+			);
 			productRefGroup = 7F96A822296C7994009306F8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1051,6 +1090,7 @@
 				632558722A3C7D2F00E4B21B /* URLSessionGetViewController.swift in Sources */,
 				63F31B3E29CAF5BE005C3BC7 /* MoviesCell.swift in Sources */,
 				7F04EF1129D4B0E20021CB09 /* MapViewController.swift in Sources */,
+				7F0A23212A3CF96F00C8346C /* ChidoriMenuTableViewCell.swift in Sources */,
 				63E17A4929C9A5A100FE3036 /* TableViewCell.swift in Sources */,
 				6369343429C84E4600560F7B /* ScrollViewController.swift in Sources */,
 				632558AC2A3C836500E4B21B /* UpdateRequestViewModel.swift in Sources */,
@@ -1069,6 +1109,7 @@
 				63D05BCA2A382EA50002EC26 /* MeetingDateTableViewCell.swift in Sources */,
                 63D05BCE2A3834440002EC26 /* Meetings.swift in Sources */,
 				63E17A4C29C9B89900FE3036 /* LabelViewController.swift in Sources */,
+				7F0A231F2A3CF96F00C8346C /* ChidoriMenu.swift in Sources */,
 				632558472A3C780700E4B21B /* FeaturedJobCell.swift in Sources */,
 				6325584A2A3C780700E4B21B /* Job.swift in Sources */,
 				632559672A3C849800E4B21B /* WebServicesViewController.swift in Sources */,
@@ -1085,6 +1126,7 @@
 				63A0C0B62A3753FC00D9158B /* DashboardCoordinator.swift in Sources */,
 				63ED292C2A31AADB0091190F /* UpdateRequestViewModel.swift in Sources */,
 				63ED291F2A318E910091190F /* WebServicesViewController.swift in Sources */,
+				7F0A23242A3CF9B700C8346C /* CancelMeetingViewController.swift in Sources */,
 				7FA58B4629E33E55006DBFFF /* HomeCoordinator.swift in Sources */,
 				63A0C0B42A3753EC00D9158B /* AuthenticationCoordinator.swift in Sources */,
 				7FA58B3F29E2C317006DBFFF /* HomeVC.swift in Sources */,
@@ -1103,6 +1145,7 @@
 				7F5DC99D29D953240039382D /* playerCell.swift in Sources */,
 				63D05BC72A382E9A0002EC26 /* UpcomingMeetingsViewController.swift in Sources */,
 				631F30E229DAB23000875565 /* GroupViewController.swift in Sources */,
+				7F0A23222A3CF96F00C8346C /* ChidoriAnimationController.swift in Sources */,
 				7F36A25229BC57B90054676F /* GradientView.swift in Sources */,
 				632558802A3C7D3E00E4B21B /* BaseViewModel.swift in Sources */,
 				63A0C0A72A37485E00D9158B /* LoginModel.swift in Sources */,
@@ -1110,6 +1153,7 @@
 				632558A62A3C835200E4B21B /* Utills.swift in Sources */,
 				63ADDDA329C2E68B00A07725 /* UISwitchViewController.swift in Sources */,
 				63E7250A29D17BEE00586427 /* Todo.swift in Sources */,
+				7F0A23202A3CF96F00C8346C /* ChidoriPresentationController.swift in Sources */,
 				6325587C2A3C7D3E00E4B21B /* User.swift in Sources */,
 				63E7250829D17BDE00586427 /* TodoListViewController.swift in Sources */,
 				63A0C0BA2A375CCE00D9158B /* UserProfileViewController.swift in Sources */,
@@ -1461,6 +1505,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7F0A23252A3CFA0300C8346C /* XCRemoteSwiftPackageReference "PanModal" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/slackhq/PanModal";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7F0A23262A3CFA0300C8346C /* PanModal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7F0A23252A3CFA0300C8346C /* XCRemoteSwiftPackageReference "PanModal" */;
+			productName = PanModal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7F96A819296C7994009306F8 /* Project object */;
 }
