@@ -6,6 +6,12 @@
 //
 
 import UIKit
+import PanModal
+
+protocol Presentable {
+    func presentDialog()
+    func presentMenu(chidoriMenu: ChidoriMenu)
+}
 
 class UpcomingMeetingsViewController: UIViewController {
 
@@ -112,6 +118,7 @@ extension UpcomingMeetingsViewController: UITableViewDataSource {
         if !(meetingList.isEmpty) {
             cell.setUpCell(schedule: meetingList[indexPath.section].values[indexPath.row].schedule, user: meetingList[indexPath.section].values[indexPath.row].user )
         }
+        cell.presentDialogDelegate = self
         return cell
     }
     
@@ -139,6 +146,19 @@ extension UpcomingMeetingsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+}
+
+extension UpcomingMeetingsViewController: Presentable {
+    
+    func presentMenu(chidoriMenu: ChidoriMenu) {
+        self.present(chidoriMenu, animated: true)
+    }
+    
+    func presentDialog() {
+        dismiss(animated: true)
+        let cancelDialog = CancelMeetingViewController.instatiateStoryBoard(storyboardName: "WebService")
+        self.presentPanModal(cancelDialog)
     }
 }
 
