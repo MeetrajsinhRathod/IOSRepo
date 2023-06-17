@@ -67,6 +67,9 @@
 		63CD093C29D417E400CCD6C8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093B29D417E400CCD6C8 /* WebViewController.swift */; };
 		63CD093E29D45A7F00CCD6C8 /* UIPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */; };
 		63CD094029D4672C00CCD6C8 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */; };
+		63D05BC72A382E9A0002EC26 /* UpcomingMeetingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BC62A382E9A0002EC26 /* UpcomingMeetingsViewController.swift */; };
+		63D05BCA2A382EA50002EC26 /* MeetingDateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BC82A382EA50002EC26 /* MeetingDateTableViewCell.swift */; };
+		63D05BCB2A382EA50002EC26 /* MeetingDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D05BC92A382EA50002EC26 /* MeetingDetailsTableViewCell.swift */; };
 		63DA4A3029C1EE1000727649 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */; };
 		63E17A4529C9635800FE3036 /* SignUpPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E17A4429C9635800FE3036 /* SignUpPage.storyboard */; };
 		63E17A4929C9A5A100FE3036 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E17A4729C9A5A100FE3036 /* TableViewCell.swift */; };
@@ -199,6 +202,9 @@
 		63CD093B29D417E400CCD6C8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		63CD093D29D45A7F00CCD6C8 /* UIPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewController.swift; sourceTree = "<group>"; };
 		63CD093F29D4672C00CCD6C8 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		63D05BC62A382E9A0002EC26 /* UpcomingMeetingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingMeetingsViewController.swift; sourceTree = "<group>"; };
+		63D05BC82A382EA50002EC26 /* MeetingDateTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingDateTableViewCell.swift; sourceTree = "<group>"; };
+		63D05BC92A382EA50002EC26 /* MeetingDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeetingDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		63DA4A2F29C1EE1000727649 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		63E17A4429C9635800FE3036 /* SignUpPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpPage.storyboard; sourceTree = "<group>"; };
 		63E17A4729C9A5A100FE3036 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -440,6 +446,7 @@
 		63A0C09A2A373F4D00D9158B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				63D05BC32A382E4B0002EC26 /* UpcomingMeetings */,
 				63A0C0B02A3753B400D9158B /* Dashboard */,
 				63A0C09B2A373F5600D9158B /* Login */,
 			);
@@ -558,6 +565,32 @@
 				7FA58B3E29E2C317006DBFFF /* HomeVC.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		63D05BC32A382E4B0002EC26 /* UpcomingMeetings */ = {
+			isa = PBXGroup;
+			children = (
+				63D05BC52A382E760002EC26 /* TableViewCell */,
+				63D05BC42A382E5A0002EC26 /* ViewController */,
+			);
+			path = UpcomingMeetings;
+			sourceTree = "<group>";
+		};
+		63D05BC42A382E5A0002EC26 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				63D05BC62A382E9A0002EC26 /* UpcomingMeetingsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		63D05BC52A382E760002EC26 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				63D05BC82A382EA50002EC26 /* MeetingDateTableViewCell.swift */,
+				63D05BC92A382EA50002EC26 /* MeetingDetailsTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		63E17A4629C9A58000FE3036 /* TableView */ = {
@@ -1011,6 +1044,7 @@
 				7F5DC99B29D953190039382D /* headerCell.swift in Sources */,
 				7FA58B3D29E2C2F3006DBFFF /* LoginVC.swift in Sources */,
 				631F442729CC7B1100A84AE9 /* FooterView.swift in Sources */,
+				63D05BCA2A382EA50002EC26 /* MeetingDateTableViewCell.swift in Sources */,
 				63E17A4C29C9B89900FE3036 /* LabelViewController.swift in Sources */,
 				632558472A3C780700E4B21B /* FeaturedJobCell.swift in Sources */,
 				6325584A2A3C780700E4B21B /* Job.swift in Sources */,
@@ -1043,6 +1077,7 @@
 				632558462A3C780700E4B21B /* PopularJobCell.swift in Sources */,
 				63A0C0B82A3755DB00D9158B /* OneCloudHomeViewController.swift in Sources */,
 				7F5DC99D29D953240039382D /* playerCell.swift in Sources */,
+				63D05BC72A382E9A0002EC26 /* UpcomingMeetingsViewController.swift in Sources */,
 				631F30E229DAB23000875565 /* GroupViewController.swift in Sources */,
 				7F36A25229BC57B90054676F /* GradientView.swift in Sources */,
 				632558802A3C7D3E00E4B21B /* BaseViewModel.swift in Sources */,
@@ -1055,6 +1090,7 @@
 				63E7250829D17BDE00586427 /* TodoListViewController.swift in Sources */,
 				63A0C0BA2A375CCE00D9158B /* UserProfileViewController.swift in Sources */,
 				7F96A827296C7994009306F8 /* SceneDelegate.swift in Sources */,
+				63D05BCB2A382EA50002EC26 /* MeetingDetailsTableViewCell.swift in Sources */,
 				6369343029C81F4600560F7B /* TableViewController.swift in Sources */,
 				63B435A429E4345500DDCA66 /* customVariationForIpad.swift in Sources */,
 				63F31B4329CB27EB005C3BC7 /* MovieCollectionViewController.swift in Sources */,
