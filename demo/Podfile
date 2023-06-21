@@ -7,6 +7,7 @@ target 'demo' do
 
   # Pods for demo
 pod 'Alamofire', '~>  5.7.1' # For Api call
+pod 'SkeletonView'
   target 'demoTests' do
     inherit! :search_paths
     # Pods for testing

@@ -26,18 +26,24 @@ class AuthenticationCoordinator: Coordinator {
             }
             navigateToHomeVC()
         } else {
-            let loginVC = OneCloudLoginViewController.instatiateStoryBoard(storyboardName: "WebService")
-            loginVC.authenticationCoordinator = self
-            self.navController.pushViewController(loginVC, animated: false)
+            let onBoardingCoordinator = OnboardingCoordinator(self.navController)
+            onBoardingCoordinator.start()
         }
     }
     
     func navigateToHomeVC() {
+        navController.popToRootViewController(animated: false)
         let dashboardCoordinator = DashboardCoordinator(self.navController)
         dashboardCoordinator.start()
     }
     
     func logOut() {
         navController.popToRootViewController(animated: true)
+    }
+    
+    func navigateToLoginVC() {
+        let loginVC = OneCloudLoginViewController.instatiateStoryBoard(storyboardName: "WebService")
+        loginVC.authenticationCoordinator = self
+        self.navController.pushViewController(loginVC, animated: false)
     }
 }

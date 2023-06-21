@@ -44,6 +44,8 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
 
     @IBAction func onLoginButtonClick(_ sender: Any) {
         loginButton.isEnabled = false
+        emailTextField.isEnabled = false
+        passwordTextField.isEnabled = false
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
         if (!email.isEmpty && !password.isEmpty) {
@@ -88,17 +90,23 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
 
     func loginSuccess(response: OneCloudLoginResponse) {
         loginButton.isEnabled = true
+        emailTextField.isEnabled = true
+        passwordTextField.isEnabled = true
         defaults.set(true, forKey: "userIsLoggedIn")
         defaults.set(response.data[0].token, forKey: "userToken")
+        defaults.set(response.data[0].user, forKey: "userId")
         authenticationCoordinator?.start()
     }
 
     func loginFail() {
+        loginButton.isEnabled = true
+        emailTextField.isEnabled = true
+        passwordTextField.isEnabled = true
         let alert = UIAlertController(title: "Login Failed", message: "Error occured: Unable To Log in.", preferredStyle: .actionSheet)
         let cancel = UIAlertAction(title: "Try Again", style: .cancel)
         alert.addAction(cancel)
         self.present(alert, animated: true)
-        loginButton.isEnabled = false
+        loginButton.isEnabled = true
     }
 }
 

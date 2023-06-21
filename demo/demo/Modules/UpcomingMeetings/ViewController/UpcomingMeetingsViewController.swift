@@ -7,6 +7,7 @@
 
 import UIKit
 import PanModal
+import SkeletonView
 
 protocol Presentable {
     func presentDialog(meetingId: Int)
@@ -65,6 +66,7 @@ class UpcomingMeetingsViewController: UIViewController {
         footerSpinner.center = footerView?.center ?? CGPoint(x: 0, y: 0)
         footerSpinner.startAnimating()
         footerView?.addSubview(footerSpinner)
+        meetingTableView.rowHeight = UITableView.automaticDimension
     }
 
     func showSpinner() {
@@ -114,6 +116,16 @@ class UpcomingMeetingsViewController: UIViewController {
             self.present(alert, animated: true)
         }
     }
+    
+    func showshimmer() {
+        meetingTableView.isSkeletonable = true
+        meetingTableView.showAnimatedGradientSkeleton()
+    }
+    
+    func stopShimmer() {
+        meetingTableView.stopSkeletonAnimation()
+        self.view.hideSkeleton()
+    }
 }
 
 // MARK: - Table view data source
@@ -137,7 +149,7 @@ extension UpcomingMeetingsViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.section == (meetingList.count - 1) && indexPath.row == meetingList[indexPath.section].values.count - 1 && currentPage <= totalPage {
+        if indexPath.section == (meetingList.count - 1) && indexPath.row == meetingList[indexPath.section].values.count - 1 && currentPage < totalPage {
             loadMoreData()
         }
     }
@@ -160,6 +172,13 @@ extension UpcomingMeetingsViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
+    }
+}
+
+extension UpcomingMeetingsViewController: SkeletonTableViewDataSource {
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return MeetingDateTableViewCell.identifier
     }
 }
 
