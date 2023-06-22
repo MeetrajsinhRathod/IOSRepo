@@ -43,7 +43,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="UIView" image="square.dashed" catalog="system" selectedImage="square.dashed.inset.filled" id="ub2-8I-J6W"/>
-                    <navigationItem key="navigationItem" title="UIComponents" largeTitleDisplayMode="always" id="6wC-Ih-GaP"/>
+                    <navigationItem key="navigationItem" title="UIComponents" id="6wC-Ih-GaP"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TPm-jy-dG9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

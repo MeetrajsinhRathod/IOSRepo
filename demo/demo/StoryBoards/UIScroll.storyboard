@@ -14,8 +14,8 @@
             <objects>
                 <navigationController storyboardIdentifier="UIScrollTab" automaticallyAdjustsScrollViewInsets="NO" id="HeQ-SJ-goB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="omq-VM-oSM">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="omq-VM-oSM">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -518,7 +518,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-6c-Q91">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PKw-6c-Q91">
                                 <rect key="frame" x="20" y="79" width="353" height="200"/>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
@@ -540,7 +540,7 @@ This is a text view which contains multiline text with scrolling enabled and tex
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" calendarEvent="YES" lookupSuggestion="YES"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mir-n7-AF9">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mir-n7-AF9">
                                 <rect key="frame" x="20" y="329" width="353" height="200"/>
                                 <color key="backgroundColor" systemColor="systemMintColor"/>
                                 <constraints>

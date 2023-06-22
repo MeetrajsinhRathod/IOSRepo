@@ -15,7 +15,7 @@
         <scene sceneID="q82-lJ-S5p">
             <objects>
                 <tabBarController storyboardIdentifier="UIComponentsKT" hidesBottomBarWhenPushed="YES" id="Pne-Sb-OtT" userLabel="RootVC" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="9By-dq-6O1"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="9By-dq-6O1"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xui-rJ-erO">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
@@ -63,7 +63,7 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-pJ-cHB">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ugz-pJ-cHB">
                                         <rect key="frame" x="282" y="0.0" width="71" height="75"/>
                                     </imageView>
                                 </subviews>
@@ -635,7 +635,7 @@
         <image name="config" width="436" height="572"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
-        <image name="user" width="71" height="75"/>
+        <image name="userAvatar" width="71" height="75"/>
         <namedColor name="BackgroundColor">
             <color red="0.98000001907348633" green="0.97899997234344482" blue="0.99400001764297485" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

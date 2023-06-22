@@ -16,8 +16,8 @@
             <objects>
                 <navigationController storyboardIdentifier="UIControlTab" automaticallyAdjustsScrollViewInsets="NO" id="Rm9-Ai-1Zn" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RfO-PW-StS">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="RfO-PW-StS">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -519,7 +519,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UYH-0x-VJi">
-                                <rect key="frame" x="37" y="318" width="320" height="216"/>
+                                <rect key="frame" x="36.666666666666657" y="318" width="320" height="216"/>
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Olg-A5-C3P"/>
@@ -560,7 +560,7 @@
                                 </connections>
                             </segmentedControl>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="1UV-f1-Znd">
-                                <rect key="frame" x="37" y="318" width="320" height="216"/>
+                                <rect key="frame" x="36.666666666666657" y="318" width="320" height="216"/>
                                 <connections>
                                     <action selector="setDateTime:" destination="G7O-St-omN" eventType="valueChanged" id="T7i-r2-6wD"/>
                                 </connections>
@@ -616,7 +616,7 @@
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="gradientColor1">
-            <color red="0.15686274509803921" green="0.50196078431372548" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.15700000524520874" green="0.50199997425079346" blue="0.63099998235702515" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

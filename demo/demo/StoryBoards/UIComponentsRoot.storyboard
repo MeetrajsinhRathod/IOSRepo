@@ -87,8 +87,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w7l-dB-aTQ" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Design/Navigation" image="paintbrush" catalog="system" selectedImage="paintbrush.fill" id="YMf-v6-CUG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A79-Md-aDI">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="A79-Md-aDI">
+                        <rect key="frame" x="0.0" y="59" width="393" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

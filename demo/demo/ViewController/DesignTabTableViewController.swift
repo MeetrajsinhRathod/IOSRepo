@@ -20,19 +20,10 @@ class DesignTabTableViewController: UITableViewController {
     ]
     
     //MARK: View LifeCycle
-    override func viewWillAppear(_ animated: Bool) {
-        navigationController?.navigationBar.prefersLargeTitles = true
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationItem.title = ""
-        navigationController?.navigationBar.prefersLargeTitles = false
-        navigationItem.title = "UIComponents"
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = true
         tableView.delegate = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "NavigationCell")
         tableView.rowHeight = 50.0
