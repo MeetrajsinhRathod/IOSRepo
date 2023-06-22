@@ -383,6 +383,7 @@
                             <constraint firstItem="lB3-Nu-gX1" firstAttribute="top" secondItem="Qnp-bP-yn8" secondAttribute="top" id="qfU-IB-FOe"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="6ZF-a9-SZs"/>
                     <connections>
                         <outlet property="checkBox" destination="Blg-0b-jSU" id="yae-d3-eCL"/>
                         <outlet property="emailTextField" destination="qNx-m1-jCx" id="6Zv-yR-KhS"/>

@@ -4,6 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Medium.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Black.ttf</string>
 		<string>Hero New Regular.ttf</string>
 		<string>Hero New Bold.ttf</string>
 		<string>Hero New Medium.ttf</string>

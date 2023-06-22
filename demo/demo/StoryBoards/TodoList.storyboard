@@ -98,6 +98,7 @@
                             <constraint firstItem="0ve-NZ-yZT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="wE1-Pn-4Ww"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="klb-AU-XHr"/>
                     <connections>
                         <outlet property="tableView" destination="5ya-o3-gZ8" id="D68-0i-YyB"/>
                     </connections>

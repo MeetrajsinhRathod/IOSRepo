@@ -165,7 +165,7 @@
                         <barButtonItem title="Item" id="V1G-oq-Ywl"/>
                         <barButtonItem title="Item" id="0un-r1-17d"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Navigation" leftItemsSupplementBackButton="YES" id="7C8-t6-86f">
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="7C8-t6-86f">
                         <barButtonItem key="leftBarButtonItem" title="Item" id="0dy-ec-HIm"/>
                         <centerItemGroups>
                             <barButtonItemGroup customizationDisposition="fixed" id="03r-71-ZSy">
