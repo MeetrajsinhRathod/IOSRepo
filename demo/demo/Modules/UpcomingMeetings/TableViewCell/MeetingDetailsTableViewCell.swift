@@ -16,7 +16,6 @@ class MeetingDetailsTableViewCell: UITableViewCell {
     @IBOutlet private weak var timeLabel: UILabel!
     @IBOutlet private weak var userProfileImageView: UIImageView!
     @IBOutlet private weak var usernameLabel: UILabel!
-    @IBOutlet weak var webinarStack: UIStackView!
     @IBOutlet weak var menuButton: UIButton!
     
     //MARK: - Variables
@@ -50,7 +49,6 @@ class MeetingDetailsTableViewCell: UITableViewCell {
 //        if let userProfileURL = URL(string: user.avatar) {
 //            userProfileImageView.load(url: userProfileURL)
 //        }
-        webinarStack.isHidden = (schedule.meetingType == MeetingType.c) ? true : false
     }
 }
 

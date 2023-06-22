@@ -35,13 +35,15 @@ enum HttpRequestEnum {
     case oneCloudLogin
     case getUpcomingMeeting(Int, Int)
     case cancelMeeting(Int)
+    case getUserInfo
+    case setStatus(Int)
 }
 
 extension HttpRequestEnum {
     
     func getBaseURL() -> String {
         switch self {
-        case .oneCloudLogin, .getUpcomingMeeting, .cancelMeeting:
+        case .oneCloudLogin, .getUpcomingMeeting, .cancelMeeting, .getUserInfo, .setStatus:
             return "https://sandbox-api.ocmeet.us/api/v1/"
         default: return "https://reqres.in/api/"
         }
@@ -58,6 +60,8 @@ extension HttpRequestEnum {
         case .oneCloudLogin: return "auth/email-login/"
         case .getUpcomingMeeting(let page, let limit): return "meeting/schedule/upcoming_meetings/?page=\(page)&limit=\(limit)"
         case .cancelMeeting(let id): return "meeting/schedule/\(id)/cancel_schedule_meeting/"
+        case .getUserInfo: return "auth/profile-information/"
+        case .setStatus(let id): return "auth/user-status/\(id)/"
         }
     }
     
@@ -79,6 +83,8 @@ extension HttpRequestEnum {
         case .oneCloudLogin: urlRequest.httpMethod = "POST"
         case .getUpcomingMeeting: urlRequest.httpMethod = "GET"
         case .cancelMeeting: urlRequest.httpMethod = "POST"
+        case .getUserInfo: urlRequest.httpMethod = "GET"
+        case .setStatus: urlRequest.httpMethod = "PATCH"
         }
         return urlRequest
     }
