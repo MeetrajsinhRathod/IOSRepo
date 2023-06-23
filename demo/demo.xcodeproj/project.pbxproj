@@ -117,6 +117,8 @@
 		7F0A23222A3CF96F00C8346C /* ChidoriAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A231E2A3CF96F00C8346C /* ChidoriAnimationController.swift */; };
 		7F0A23242A3CF9B700C8346C /* CancelMeetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A23232A3CF9B700C8346C /* CancelMeetingViewController.swift */; };
 		7F0A23272A3CFA0300C8346C /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = 7F0A23262A3CFA0300C8346C /* PanModal */; };
+		7F35B85E2A463B8900BB3B89 /* BaseErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F35B85D2A463B8900BB3B89 /* BaseErrorResponse.swift */; };
+		7F35B8602A463BBF00BB3B89 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F35B85F2A463BBF00BB3B89 /* UIView+Extensions.swift */; };
 		7F36A25229BC57B90054676F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F36A25129BC57B90054676F /* GradientView.swift */; };
 		7F36A25829BC62750054676F /* Hero New Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25729BC62750054676F /* Hero New Regular.ttf */; };
 		7F36A25D29BC636E0054676F /* Hero New Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F36A25A29BC636E0054676F /* Hero New Medium.ttf */; };
@@ -277,6 +279,8 @@
 		7F0A231D2A3CF96F00C8346C /* ChidoriMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChidoriMenuTableViewCell.swift; sourceTree = "<group>"; };
 		7F0A231E2A3CF96F00C8346C /* ChidoriAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChidoriAnimationController.swift; sourceTree = "<group>"; };
 		7F0A23232A3CF9B700C8346C /* CancelMeetingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelMeetingViewController.swift; sourceTree = "<group>"; };
+		7F35B85D2A463B8900BB3B89 /* BaseErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseErrorResponse.swift; sourceTree = "<group>"; };
+		7F35B85F2A463BBF00BB3B89 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		7F36A25129BC57B90054676F /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		7F36A25729BC62750054676F /* Hero New Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Regular.ttf"; sourceTree = "<group>"; };
 		7F36A25A29BC636E0054676F /* Hero New Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hero New Medium.ttf"; sourceTree = "<group>"; };
@@ -418,10 +422,10 @@
 		632558762A3C7D3E00E4B21B /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				7F35B85D2A463B8900BB3B89 /* BaseErrorResponse.swift */,
 				7F0A23192A3CF96F00C8346C /* Custom Views */,
 				638FEDF92A448F3200D77368 /* Extensions */,
 				632558782A3C7D3E00E4B21B /* URLBuilder.swift */,
-				63884BA52A45E2830033716E /* BaseErrorResponse.swift */,
 				7FC0EACD2A462C7900195757 /* UserDefaults.swift */,
 			);
 			path = Utility;
@@ -493,11 +497,11 @@
 		638FEDF92A448F3200D77368 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				7F35B85F2A463BBF00BB3B89 /* UIView+Extensions.swift */,
 				638FEDFA2A448F5500D77368 /* UIImageViewExtension.swift */,
 				638FEDFC2A448F6700D77368 /* UITextViewExtension.swift */,
 				638FEDFE2A448F7500D77368 /* StringExtension.swift */,
 				638FEE002A448FC500D77368 /* UIViewControllerExtension.swift */,
-				63884BA32A45CCA00033716E /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1173,7 +1177,7 @@
 				63CD094029D4672C00CCD6C8 /* DatePickerViewController.swift in Sources */,
 				63ADDDA129C2D49800A07725 /* UITextFieldViewController.swift in Sources */,
 				7FB4DC1E29D3660D00CAE8A3 /* RootViewController.swift in Sources */,
-				63884BA62A45E2830033716E /* BaseErrorResponse.swift in Sources */,
+				7F35B85E2A463B8900BB3B89 /* BaseErrorResponse.swift in Sources */,
 				632558482A3C780700E4B21B /* PopularCollectionViewCell.swift in Sources */,
 				632558AD2A3C836500E4B21B /* DeleteRequestViewModel.swift in Sources */,
 				63CBBC6029DC2D2A006E681B /* RootNavViewController.swift in Sources */,
@@ -1209,6 +1213,7 @@
 				7F5DC99B29D953190039382D /* headerCell.swift in Sources */,
 				7FA58B3D29E2C2F3006DBFFF /* LoginVC.swift in Sources */,
 				633B5D042A43188E00BBF0FE /* OnboardingViewController.swift in Sources */,
+				7F35B8602A463BBF00BB3B89 /* UIView+Extensions.swift in Sources */,
 				631F442729CC7B1100A84AE9 /* FooterView.swift in Sources */,
 				63D05BCA2A382EA50002EC26 /* MeetingDateTableViewCell.swift in Sources */,
 				63D05BCE2A3834440002EC26 /* Meetings.swift in Sources */,
@@ -1249,7 +1254,6 @@
 				7F5DC99D29D953240039382D /* playerCell.swift in Sources */,
 				638FEDFB2A448F5600D77368 /* UIImageViewExtension.swift in Sources */,
 				63D05BC72A382E9A0002EC26 /* UpcomingMeetingsViewController.swift in Sources */,
-				63884BA42A45CCA00033716E /* UIView+Extensions.swift in Sources */,
 				631F30E229DAB23000875565 /* GroupViewController.swift in Sources */,
 				7F0A23222A3CF96F00C8346C /* ChidoriAnimationController.swift in Sources */,
 				7F36A25229BC57B90054676F /* GradientView.swift in Sources */,
