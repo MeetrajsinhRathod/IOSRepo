@@ -18,7 +18,7 @@ class AuthenticationCoordinator: Coordinator {
     }
     
     func start() {
-        if UserDefaults.standard.bool(forKey: "userIsLoggedIn") {
+        if UserDefaultHelper.isUserLoggedIn {
             navController.viewControllers.forEach { viewController in
                 if viewController is OneCloudLoginViewController {
                     navController.popViewController(animated: false)

@@ -10,6 +10,7 @@ pod 'Alamofire', '~>  5.7.1' # For Api call
 pod 'SkeletonView'
 pod 'SwiftMessages'
 pod 'SSSpinnerButton' 
+pod 'IQKeyboardManagerSwift'
   target 'demoTests' do
     inherit! :search_paths
     # Pods for testing

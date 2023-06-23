@@ -24,7 +24,6 @@ class UpcomingMeetingsViewController: UIViewController {
     //MARK: - Variables
     private let upcomingMeetingsViewModel = UpcomingMeetingsViewModel()
     private let pullToRefresh = UIRefreshControl()
-    private let userToken = UserDefaults.standard.string(forKey: "userToken")
     private let limit = 7
     private var totalPage = 1
     private var currentPage = 1
@@ -34,7 +33,6 @@ class UpcomingMeetingsViewController: UIViewController {
     //MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        upcomingMeetingsViewModel.upcomingMeetingsVC = self
         setUpView()
         loadData()
     }
@@ -64,21 +62,30 @@ class UpcomingMeetingsViewController: UIViewController {
 
     /// Call Api to get upcoming meetings detail
     func loadData() {
-        upcomingMeetingsViewModel.getUpcomingMeetings(userToken: userToken ?? "", page: currentPage, limit: limit)
+        upcomingMeetingsViewModel.getUpcomingMeetings(page: currentPage, limit: limit) { [weak self] response, meetingPair in
+            switch response.result {
+            case .success(let meetingResponse):
+                self?.upcomingMeetingsResponse(
+                    response: meetingPair,
+                    pages: meetingResponse.data.totalPages ?? 1
+                )
+            case .failure(let error):
+                AlertHelper.showErrorMsg(message: error.underlyingError?.localizedDescription ?? "Error occurred. Please try again")
+            }
+        }
     }
 
     /// Load more data from paginated api
     func loadMoreData() {
         meetingTableView.tableFooterView = footerView
         currentPage += 1
-        upcomingMeetingsViewModel.getUpcomingMeetings(userToken: userToken ?? "", page: currentPage, limit: limit)
+        loadData()
     }
 
     /// sort meeting list in ascending order
     func sortMeetingList() {
         meetingList = meetingList.sorted(by: { $0.key.convertToDate().compare($1.key.convertToDate()) == .orderedAscending })
     }
-
 
     /// Get upcoming meetigns response from api call and made required changes to ui
     /// - Parameters:
@@ -174,7 +181,6 @@ extension UpcomingMeetingsViewController: SkeletonTableViewDataSource, SkeletonT
 //MARK: Presentable protocol conform
 extension UpcomingMeetingsViewController: Presentable {
 
-    
     /// Present options of copy link, edit and cancel for meeting
     /// - Parameter chidoriMenu: Custom Menu
     func presentMenu(chidoriMenu: ChidoriMenu) {

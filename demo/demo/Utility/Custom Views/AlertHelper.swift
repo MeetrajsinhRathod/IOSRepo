@@ -1,4 +1,5 @@
 import SwiftMessages
+import Alamofire
 
 class AlertHelper {
     
@@ -21,6 +22,18 @@ class AlertHelper {
     /// - Parameter message: Information Message
     class func showSuccessMsg(title: String = "", message: String) {
         prepareAndShowAlert(title: title, message: message, type: .success)
+    }
+    
+    
+    /// Get error from http response and present it
+    /// - Parameter response: http response
+    class func getErrorResponse<T:Codable>(response: DataResponse<T, AFError>) {
+        do {
+            let dataList = try JSONDecoder().decode(BaseErrorResponse.self, from: response.data ?? Data())
+            AlertHelper.showErrorMsg(message: dataList.data.error ?? "Error occurred. Please try again")
+        } catch let parsingError {
+            debugPrint("Parsing Error", parsingError)
+        }
     }
     
     /// This function will show alert message

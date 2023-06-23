@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.7.1)
+  - IQKeyboardManagerSwift (6.5.12)
   - SkeletonView (1.30.4)
   - SSSpinnerButton (3.2.0)
   - SwiftMessages (9.0.6):
@@ -8,6 +9,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.7.1)
+  - IQKeyboardManagerSwift
   - SkeletonView
   - SSSpinnerButton
   - SwiftMessages
@@ -15,16 +17,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - IQKeyboardManagerSwift
     - SkeletonView
     - SSSpinnerButton
     - SwiftMessages
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
+  IQKeyboardManagerSwift: 371b08cb39664fb56030f5345c815a4ffc74bbc0
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SSSpinnerButton: 18386219b5fa73c23d96668042fe5da03b407f68
   SwiftMessages: f0c7ef4705a570ad6c5e208b611f4333e660ed92
 
-PODFILE CHECKSUM: 95211b60098e1074219d1b983f8bce052e7f56c5
+PODFILE CHECKSUM: 52fb5d77b75e3db3225462958893418676e6195d
 
 COCOAPODS: 1.12.1

@@ -20,10 +20,10 @@ class MeetingDetailsTableViewCell: UITableViewCell {
     @IBOutlet private weak var joinMeetingButton: UIButton!
     
     //MARK: - Variables
+    private var actionMappings: [UIAction.Identifier: UIActionHandler] = [:]
+    private var meetingId = 0
     static let identifier = "detailCell"
     var presentDialogDelegate: Presentable?
-    var actionMappings: [UIAction.Identifier: UIActionHandler] = [:]
-    var meetingId = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,7 +41,6 @@ class MeetingDetailsTableViewCell: UITableViewCell {
         tappedPoint.x = self.frame.width - 50
         setUpMenu(tappedPoint: tappedPoint)
     }
-    
     
     /// Set up views of cell
     /// - Parameters:
@@ -61,7 +60,6 @@ extension MeetingDetailsTableViewCell: ChidoriDelegate {
     func didSelectAction(_ action: UIAction) {
         actionMappings[action.identifier]?(action)
     }
-    
     
     /// pop up menu to copy link, edit and cancel meeting
     /// - Parameter tappedPoint: origin position for menu

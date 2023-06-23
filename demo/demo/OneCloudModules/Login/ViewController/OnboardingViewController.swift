@@ -10,9 +10,9 @@ import UIKit
 class OnboardingViewController: UIViewController, StoryBoarded {
 
     //MARK: - IBOutlet
-    @IBOutlet weak var btnStartNewMeeting: UIButton!
-    @IBOutlet weak var btnJoinMeeting: UIButton!
-    @IBOutlet weak var btnScheduleMeeting: UIButton!
+    @IBOutlet private weak var btnStartNewMeeting: UIButton!
+    @IBOutlet private weak var btnJoinMeeting: UIButton!
+    @IBOutlet private weak var btnScheduleMeeting: UIButton!
     
     //MARK: - Variables
     var onboardingCoordinator: OnboardingCoordinator?
