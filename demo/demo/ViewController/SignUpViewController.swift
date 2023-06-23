@@ -25,6 +25,10 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         addKeyboardObserver()
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.touch))
+        recognizer.numberOfTapsRequired = 1
+        recognizer.numberOfTouchesRequired = 1
+        scrollView.addGestureRecognizer(recognizer)
     }
     
     //MARK: - Configure UI
@@ -110,4 +114,8 @@ extension SignUpViewController {
             tappedImage.image = UIImage(systemName: "checkmark.square")
         }
     }
+    
+    @objc func touch() {
+            self.view.endEditing(true)
+        }
 }

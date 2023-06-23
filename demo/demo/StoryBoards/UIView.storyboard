@@ -237,6 +237,7 @@ multiple lines</string>
                             <constraint firstItem="zjF-Pb-Wht" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="u4Z-Uh-AGM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="jYX-4D-kds"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -298,6 +299,7 @@ multiple lines</string>
                             <constraint firstItem="Nvc-p2-hoW" firstAttribute="centerX" secondItem="xcr-2q-Sys" secondAttribute="centerX" id="vNp-AI-qyx"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="KDf-RV-YRY"/>
                     <connections>
                         <outlet property="countLabel" destination="XlH-Uz-072" id="iBF-Dg-gx0"/>
                         <outlet property="progressBar" destination="Nvc-p2-hoW" id="ewO-bK-f8p"/>
@@ -349,6 +351,7 @@ multiple lines</string>
                             <constraint firstItem="Ehv-sn-zR7" firstAttribute="centerX" secondItem="4TS-79-58u" secondAttribute="centerX" id="nXu-1S-A6X"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="uUq-MA-ezB"/>
                     <connections>
                         <outlet property="imageView" destination="Ehv-sn-zR7" id="m5E-vm-XxC"/>
                         <outlet property="selectImgBtn" destination="NBo-cP-kBm" id="XXL-Gr-dAU"/>
@@ -440,6 +443,7 @@ multiple lines</string>
                             <constraint firstItem="IYv-7b-Aip" firstAttribute="top" secondItem="4TQ-Gc-FVW" secondAttribute="bottom" constant="10" id="wLy-22-DLN"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="SIA-KO-0sT"/>
                     <connections>
                         <outlet property="circleImage" destination="qzv-SJ-aIK" id="NbX-Gv-zd0"/>
                     </connections>
@@ -498,6 +502,7 @@ multiple lines</string>
                             <constraint firstItem="sW2-A4-uoo" firstAttribute="trailing" secondItem="Kny-7u-Q0Z" secondAttribute="trailing" id="zaO-FS-Uyw"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="iKK-ku-R6U"/>
                     <connections>
                         <outlet property="songToolbar" destination="sW2-A4-uoo" id="xgt-P7-ISj"/>
                         <outlet property="statusLabel" destination="fKi-ZC-zmI" id="vBZ-7U-iRW"/>
@@ -538,6 +543,7 @@ multiple lines</string>
                             <outlet property="delegate" destination="yhx-5a-J4n" id="j1b-NY-OsW"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Ie0-qq-mmE"/>
                     <connections>
                         <outlet property="searchBar" destination="hEd-Ha-83f" id="yqH-mt-Aaz"/>
                     </connections>
@@ -593,6 +599,7 @@ multiple lines</string>
                             <constraint firstItem="ih0-we-pnB" firstAttribute="trailing" secondItem="xaI-0y-LTt" secondAttribute="trailing" constant="20" id="lqH-In-qIP"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="PTH-Fw-7c6"/>
                     <connections>
                         <outlet property="searchBtn" destination="xaI-0y-LTt" id="Vae-O3-oXC"/>
                         <outlet property="urlTextField" destination="b3J-iT-MA4" id="WvO-w3-LkU"/>
@@ -661,6 +668,7 @@ multiple lines</string>
                             <constraint firstItem="I8m-h0-erW" firstAttribute="trailing" secondItem="QBs-o2-5Yx" secondAttribute="trailing" id="iu5-Qs-9Fk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="d7y-cZ-fi7"/>
                     <connections>
                         <outlet property="map" destination="QBs-o2-5Yx" id="Rew-6X-WlX"/>
                     </connections>

@@ -171,6 +171,7 @@
                             <constraint firstItem="b9u-2B-KGh" firstAttribute="centerX" secondItem="psd-os-Odn" secondAttribute="centerX" id="zAM-np-Bu6"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="Zk4-6j-vHt"/>
                     <connections>
                         <outlet property="option" destination="4y3-zz-27G" id="k1I-Ga-zDX"/>
                         <outlet property="popUpBtn" destination="Vcu-r3-o0i" id="BIa-y0-C5y"/>
@@ -250,6 +251,7 @@
                             <constraint firstItem="zaJ-Qr-6RQ" firstAttribute="top" secondItem="e92-eO-L1S" secondAttribute="bottom" constant="20" id="uBl-TH-R96"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="yfO-Gp-Jif"/>
                     <connections>
                         <outlet property="coloredField" destination="e92-eO-L1S" id="7og-Jd-vUd"/>
                         <outlet property="cornerRadiusField" destination="8uJ-uD-Rnx" id="GjA-Gj-4u5"/>
@@ -302,6 +304,7 @@
                             <constraint firstItem="Yr5-cv-F6Y" firstAttribute="top" secondItem="mqI-xh-dhj" secondAttribute="bottom" constant="50" id="wBg-t7-N1e"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="TGj-5e-6Uc"/>
                     <connections>
                         <outlet property="customSwitch" destination="Yr5-cv-F6Y" id="a27-Je-C9M"/>
                         <outlet property="switchToggle" destination="YXp-o9-1Nb" id="48s-Ch-hSS"/>
@@ -384,6 +387,7 @@
                             <constraint firstItem="1Ww-o0-c7g" firstAttribute="centerX" secondItem="WPy-4b-bUK" secondAttribute="centerX" id="wBl-vx-fEj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="S2O-0G-nTX"/>
                     <connections>
                         <outlet property="customSlider" destination="1Ww-o0-c7g" id="2QF-4g-T8E"/>
                         <outlet property="imageView" destination="E1R-sk-VKy" id="2JA-Gw-xef"/>
@@ -455,6 +459,7 @@
                             <constraint firstItem="AsQ-38-rtB" firstAttribute="top" secondItem="D0R-wj-rop" secondAttribute="bottom" constant="60" id="wT7-ef-dUv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="wCT-ml-gIx"/>
                     <connections>
                         <outlet property="customPageControl" destination="AsQ-38-rtB" id="bNa-uB-MUN"/>
                         <outlet property="imageView" destination="rMg-nJ-d9g" id="0El-Cm-bgf"/>
@@ -489,6 +494,7 @@
                             <outlet property="delegate" destination="zZl-nm-jHa" id="rUg-1e-3zh"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="SRf-lS-N4c"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="M7a-BG-uZX">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -531,6 +537,7 @@
                             <constraint firstItem="UYH-0x-VJi" firstAttribute="centerX" secondItem="IJQ-kh-sow" secondAttribute="centerX" id="hHB-c0-K3H"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="VMN-en-C9f"/>
                     <connections>
                         <outlet property="colorPicker" destination="UYH-0x-VJi" id="Ot2-0u-DJm"/>
                     </connections>
@@ -591,6 +598,7 @@
                             <constraint firstItem="cpF-QQ-1WV" firstAttribute="centerY" secondItem="JfO-bt-dbJ" secondAttribute="centerY" id="ubv-wd-1oZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="tLs-Si-6GM"/>
                     <connections>
                         <outlet property="dateField" destination="cpF-QQ-1WV" id="ifK-aa-oh6"/>
                         <outlet property="dateLabel" destination="wul-DV-y4P" id="x3g-NK-5ui"/>

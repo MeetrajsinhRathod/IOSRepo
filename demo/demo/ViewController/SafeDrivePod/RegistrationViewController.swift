@@ -16,7 +16,6 @@ class RegistrationViewController: UIViewController {
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        firstName.becomeFirstResponder()
         firstName.addTarget(self, action: #selector(returned), for: .primaryActionTriggered)
     }
     

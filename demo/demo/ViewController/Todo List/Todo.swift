@@ -9,5 +9,5 @@ import Foundation
 
 struct Todo {
     let title: String
-    let isDone = false
+    var isDone = false
 }

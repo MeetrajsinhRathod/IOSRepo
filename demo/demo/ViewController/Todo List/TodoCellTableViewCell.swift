@@ -15,6 +15,8 @@ class TodoCellTableViewCell: UITableViewCell {
     
     //MARK: - Variables
     var isDone = false
+    var position = 0
+    weak var todoTableViewVC: TodoListViewController?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +25,23 @@ class TodoCellTableViewCell: UITableViewCell {
         checkBox.addGestureRecognizer(tapGesture)
     }
     
-    func set(title: String, isDone: Bool) {
+    func set(title: String, isDone: Bool, position: Int) {
         self.title.text = title
         self.isDone = isDone
+        self.position = position
+        setTask()
+    }
+    
+    func setTask() {
+        let attributedText = NSMutableAttributedString(string: title.text ?? "")
+        if isDone {
+            checkBox.image = UIImage(systemName: "checkmark.circle")
+            attributedText.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedText.length - 1))
+        } else {
+            checkBox.image = UIImage(systemName: "circle")
+            attributedText.addAttribute(.strikethroughStyle, value: 0, range: NSMakeRange(0, attributedText.length - 1))
+        }
+        title.attributedText = attributedText
     }
 }
 
@@ -34,18 +50,13 @@ extension TodoCellTableViewCell {
     
     @objc
     func toggleCheckBox(tapGesture: UITapGestureRecognizer) {
-        guard let tappedImage = tapGesture.view as? UIImageView
-        else { return }
-        let attributedText = NSMutableAttributedString(string: title.text ?? "")
         if isDone {
             isDone = false
-            tappedImage.image = UIImage(systemName: "checkmark.circle")
-            attributedText.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributedText.length - 1))
+            setTask()
         } else {
             isDone = true
-            tappedImage.image = UIImage(systemName: "circle")
-            attributedText.addAttribute(.strikethroughStyle, value: 0, range: NSMakeRange(0, attributedText.length - 1))
+            setTask()
         }
-        title.attributedText = attributedText
+        todoTableViewVC?.todoIsDone(position: position, isDone: isDone)
     }
 }
