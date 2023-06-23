@@ -78,15 +78,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5h-R2-KCT">
-                                            <rect key="frame" x="258" y="101" width="75" height="35"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                            <connections>
-                                                <segue destination="fbh-4T-3dA" kind="presentation" modalPresentationStyle="currentContext" id="PnW-aT-FPt"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="xyl-E1-qKK" firstAttribute="leading" secondItem="HTP-5M-rUH" secondAttribute="trailing" constant="40" id="2kz-rs-DAn"/>
@@ -108,7 +99,7 @@
                             <outlet property="delegate" destination="fDo-i1-RA9" id="hMw-Vf-nKL"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="gN5-OS-9G6"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="gN5-OS-9G6"/>
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ijp-VR-dF1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,6 +137,7 @@
                             <constraint firstItem="8qj-hL-xNu" firstAttribute="centerX" secondItem="gFY-1q-sRh" secondAttribute="centerX" id="hfb-wH-iYj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="UOv-mP-GSr"/>
                     <connections>
                         <outlet property="movieImage" destination="ZH8-Bj-mul" id="zrp-C0-KKu"/>
                         <outlet property="movieName" destination="8qj-hL-xNu" id="7lA-LR-DbU"/>
@@ -238,33 +230,11 @@
                             <outlet property="delegate" destination="Bgw-rQ-FJ5" id="L0h-EM-eBM"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="iWp-g9-Oh7"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fph-cZ-Ypg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2851" y="1670"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="rs7-Y8-WxF">
-            <objects>
-                <viewController id="fbh-4T-3dA" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Z4E-56-rJD">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDR-O5-3dj">
-                                <rect key="frame" x="159" y="409" width="75" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="X4v-ac-auU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XGw-dW-rZZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1198" y="1670"/>
         </scene>
         <!--Scroll View-->
         <scene sceneID="BY5-jp-8ry">
@@ -440,6 +410,7 @@
                             <constraint firstItem="Rxz-Ks-zK3" firstAttribute="top" secondItem="JMO-me-Qy3" secondAttribute="bottom" constant="20" id="tuj-44-ijl"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="IeJ-Sp-SNH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dmC-cM-rVI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -501,6 +472,7 @@
                             <constraint firstItem="Pkk-Pp-54Z" firstAttribute="leading" secondItem="XkC-Ig-Kdp" secondAttribute="leading" id="ggl-aN-xy4"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="xfe-2c-J1Q"/>
                     <connections>
                         <outlet property="mapImage" destination="jBZ-g4-wpR" id="Auk-ZE-Zj6"/>
                         <outlet property="scroll" destination="Pkk-Pp-54Z" id="pda-B7-GVb"/>
@@ -673,6 +645,7 @@ www.google.com</string>
                             <constraint firstItem="PKw-6c-Q91" firstAttribute="top" secondItem="QaW-P9-iYW" secondAttribute="top" constant="20" id="zs4-ja-rLI"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ZBb-QM-ABa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omK-dr-Szs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

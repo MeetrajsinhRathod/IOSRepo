@@ -44,6 +44,7 @@
 		6369343029C81F4600560F7B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369342F29C81F4600560F7B /* TableViewController.swift */; };
 		6369343429C84E4600560F7B /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343329C84E4600560F7B /* ScrollViewController.swift */; };
 		6369343629C8676900560F7B /* ZoomingScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369343529C8676900560F7B /* ZoomingScrollViewController.swift */; };
+		63884BA22A455DFF0033716E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63884BA12A455DFF0033716E /* Launch Screen.storyboard */; };
 		638BE31F29D6CF320007984B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638BE31E29D6CF320007984B /* Player.swift */; };
 		638FEDEE2A442BEB00D77368 /* AlertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638FEDED2A442BEB00D77368 /* AlertHelper.swift */; };
 		638FEDF42A44743A00D77368 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 638FEDEF2A44743900D77368 /* Roboto-Light.ttf */; };
@@ -202,6 +203,7 @@
 		6369342F29C81F4600560F7B /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		6369343329C84E4600560F7B /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		6369343529C8676900560F7B /* ZoomingScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomingScrollViewController.swift; sourceTree = "<group>"; };
+		63884BA12A455DFF0033716E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		638BE31E29D6CF320007984B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		638FEDED2A442BEB00D77368 /* AlertHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHelper.swift; sourceTree = "<group>"; };
 		638FEDEF2A44743900D77368 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
@@ -641,6 +643,7 @@
 				63E17A4429C9635800FE3036 /* SignUpPage.storyboard */,
 				63BD052129D6AEAD00107007 /* Golf.storyboard */,
 				63CBBC5C29DBFD92006E681B /* UINavigation.storyboard */,
+				63884BA12A455DFF0033716E /* Launch Screen.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1026,6 +1029,7 @@
 				63EE93DF29D2A796003BD880 /* UIControl.storyboard in Resources */,
 				638FEDF72A44743A00D77368 /* Roboto-Bold.ttf in Resources */,
 				6325584C2A3C795A00E4B21B /* UIComponentsKT.storyboard in Resources */,
+				63884BA22A455DFF0033716E /* Launch Screen.storyboard in Resources */,
 				638FEDF52A44743A00D77368 /* Roboto-Black.ttf in Resources */,
 				63BD052229D6AEAD00107007 /* Golf.storyboard in Resources */,
 				7F36A25F29BC636E0054676F /* Hero New SemiBold.ttf in Resources */,
@@ -1439,7 +1443,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs access to your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs access to your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -1469,7 +1473,7 @@
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App needs access to your location";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App needs access to your location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

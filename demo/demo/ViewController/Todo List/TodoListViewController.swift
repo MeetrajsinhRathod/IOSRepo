@@ -17,7 +17,11 @@ class TodoListViewController: UIViewController {
         Todo(title: "task-1"),
         Todo(title: "task-2"),
         Todo(title: "task-3"),
-        Todo(title: "task-4")
+        Todo(title: "task-4"),
+        Todo(title: "task-5"),
+        Todo(title: "task-6"),
+        Todo(title: "task-7"),
+        Todo(title: "task-8")
     ]
     
     //MARK: - View LifeCycle
@@ -47,6 +51,10 @@ class TodoListViewController: UIViewController {
         self.present(alert, animated: true)
     }
     
+    func todoIsDone(position: Int, isDone: Bool) {
+        todos[position].isDone = isDone
+    }
+    
 }
 
 //MARK: - TableView Data Source
@@ -60,7 +68,8 @@ extension TodoListViewController: UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TodoCellTableViewCell
         else { return UITableViewCell()}
-        cell.set(title: todos[indexPath.row].title , isDone: todos[indexPath.row].isDone)
+        cell.set(title: todos[indexPath.row].title , isDone: todos[indexPath.row].isDone, position: indexPath.row)
+        cell.todoTableViewVC = self
         return cell
     }
     
