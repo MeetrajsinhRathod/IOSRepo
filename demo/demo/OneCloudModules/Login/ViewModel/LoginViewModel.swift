@@ -10,23 +10,15 @@ import Alamofire
 
 class LoginViewModel: NSObject {
 
-    //MARK: - Variables
-    weak var oneCloudLoginVC: OneCloudLoginViewController?
-    
     //MARK: - Functions
     
     /// function for http request to log user in
     /// - Parameter user: user credentials
-    func loginUser(user: OneCloudUserLogin) {
-        AF.request(HttpRequestEnum.oneCloudLogin.getTargetURL(), method: .post, parameters: user).responseDecodable { [weak self]
+    func loginUser(user: OneCloudUserLogin, completionHandler: @escaping (DataResponse<OneCloudLoginResponse, AFError>) -> ()) {
+        
+        AF.request(HttpRequestEnum.oneCloudLogin.getTargetURL(), method: .post, parameters: user).responseDecodable {
             (response: DataResponse<OneCloudLoginResponse, AFError>) in
-            switch response.result {
-            case .success(let loginResponse):
-                self?.oneCloudLoginVC?.loginSuccess(response: loginResponse)
-            case .failure(let error):
-                AlertHelper.showErrorMsg(message: error.underlyingError?.localizedDescription ?? "Error occurred. Please try again")
-                self?.oneCloudLoginVC?.loginFail()
-            }
+            completionHandler(response)
         }
     }
 }

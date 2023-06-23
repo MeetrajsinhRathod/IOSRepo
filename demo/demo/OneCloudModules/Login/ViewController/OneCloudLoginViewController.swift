@@ -13,19 +13,17 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
     //MARK: - IBOutlet
     @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var passwordTextField: UITextField!
-    @IBOutlet weak var registrationView: UIView!
-    @IBOutlet weak var signInButton: SSSpinnerButton!
+    @IBOutlet private weak var registrationView: UIView!
+    @IBOutlet private weak var signInButton: SSSpinnerButton!
     
     //MARK: - Variables
-    var passwordToggle = false
-    var oneCloudViewModel = LoginViewModel()
-    let defaults = UserDefaults.standard
+    private var passwordToggle = true
+    private let oneCloudViewModel = LoginViewModel()
     var authenticationCoordinator: AuthenticationCoordinator?
     
     //MARK: - View LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        oneCloudViewModel.oneCloudLoginVC = self
         setUpView()
     }
 
@@ -41,7 +39,6 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
     @IBAction func onBackClick(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
-
     
     /// function to animate progressBar and call login api
     /// - Parameter sender: Custom spinner button
@@ -53,18 +50,25 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
         guard let password = passwordTextField.text else { return }
         if (!email.isEmpty && !password.isEmpty) {
             let user = OneCloudUserLogin(email: email, password: password)
-            oneCloudViewModel.loginUser(user: user)
+            oneCloudViewModel.loginUser(user: user) { [weak self] response in
+                switch response.result {
+                case .success(let loginResponse):
+                    self?.loginSuccess(response: loginResponse)
+                case .failure(_):
+                    self?.loginFail()
+                    AlertHelper.getErrorResponse(response: response)
+                }
+            }
         }
     }
 
-    
     /// set up views
     func setUpView() {
         registrationView.clipsToBounds = true
         registrationView.layer.cornerRadius = 20
         registrationView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
         let eyeImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        eyeImageView.image = UIImage(systemName: "eye")
+        eyeImageView.image = UIImage(systemName: "eye.slash.fill")
         eyeImageView.tintColor = .black
         passwordTextField.rightView = eyeImageView
         passwordTextField.rightViewMode = .always
@@ -79,13 +83,12 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
 
     /// function to call on success of login request
     func loginSuccess(response: OneCloudLoginResponse) {
-        //loginButton.isEnabled = true
         signInButton.stopAnimate(complete: nil)
         emailTextField.isEnabled = true
         passwordTextField.isEnabled = true
-        defaults.set(true, forKey: "userIsLoggedIn")
-        defaults.set(response.data[0].token, forKey: "userToken")
-        defaults.set(response.data[0].user, forKey: "userId")
+        UserDefaultHelper.isUserLoggedIn = true
+        UserDefaultHelper.userToken = response.data[0].token
+        UserDefaultHelper.userId = response.data[0].user
         authenticationCoordinator?.start()
     }
 
@@ -101,7 +104,6 @@ class OneCloudLoginViewController: UIViewController, StoryBoarded {
 extension OneCloudLoginViewController {
 
     @objc
-    
     /// Function to toggle password visiblity
     /// - Parameter tapGesture: tap gesture
     func togglePassword(tapGesture: UITapGestureRecognizer) {

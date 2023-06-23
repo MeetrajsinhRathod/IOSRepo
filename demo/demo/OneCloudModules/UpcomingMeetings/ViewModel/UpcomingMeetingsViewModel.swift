@@ -10,34 +10,27 @@ import Alamofire
 
 class UpcomingMeetingsViewModel: NSObject {
 
-    //MARK: - Variables
-    weak var upcomingMeetingsVC: UpcomingMeetingsViewController?
-    weak var cancelMeetingVC: CancelMeetingViewController?
-    var baseViewModel = BaseViewModel()
-
     //MARK: - Functions
     
     /// Send http request to get
     /// - Parameters:
-    ///   - userToken: user token for authorization
     ///   - page: page to request data from
     ///   - limit: limit for number of responses
-    func getUpcomingMeetings(userToken: String, page: Int, limit: Int) {
-        let authorization: HTTPHeaders = [.authorization(bearerToken: userToken)]
+    func getUpcomingMeetings(page: Int, limit: Int, completionHandler: @escaping (DataResponse<UpcomingMeetingsResponse, AFError>, [(key: String, values: [UpcomingMeetingsResult])] ) -> ())  {
+        
+        let authorization: HTTPHeaders = [.authorization(bearerToken: UserDefaultHelper.userToken)]
         AF.request(HttpRequestEnum.getUpcomingMeeting(page, limit).getTargetURL(), method: .get, headers: authorization).responseDecodable { [weak self] (response: DataResponse<UpcomingMeetingsResponse, AFError>) in
+            
+            var meetingList: [(key: String, values: [UpcomingMeetingsResult])] = []
             switch response.result {
             case .success(let meetingResponse):
-                self?.upcomingMeetingsVC?.upcomingMeetingsResponse(
-                    response: self?.generateDateScheduleDictionary(meetingResult: meetingResponse.data.results) ?? [],
-                    pages: meetingResponse.data.totalPages ?? 1
-                )
-            case .failure(let error):
-                AlertHelper.showErrorMsg(message: error.underlyingError?.localizedDescription ?? "Error occurred. Please try again")
+                meetingList = self?.generateDateScheduleDictionary(meetingResult: meetingResponse.data.results) ?? []
+            case .failure(_): meetingList = []
             }
+            completionHandler(response, meetingList)
         }
     }
 
-    
     /// function to group meetings according to their date
     /// - Parameter meetingResult: response from api
     /// - Returns: key value pair where key - date, value - scheduled meetings
@@ -59,21 +52,14 @@ class UpcomingMeetingsViewModel: NSObject {
         return dictionary.compactMap({ (key: $0, values: $1) })
     }
 
-    
     /// function to cancel meeting
     /// - Parameters:
-    ///   - userToken: user token for authorization
     ///   - id: meeting id
-    func cancelMeeting(userToken: String, id: Int) {
-        let authorization: HTTPHeaders = [.authorization(bearerToken: userToken)]
-        AF.request(HttpRequestEnum.cancelMeeting(id).getTargetURL(), method: .post, headers: authorization).responseDecodable { [weak self]
+    func cancelMeeting(id: Int, completionHandler: @escaping (DataResponse<CancelMeetingResponse, AFError>) -> ()) {
+        let authorization: HTTPHeaders = [.authorization(bearerToken: UserDefaultHelper.userToken)]
+        AF.request(HttpRequestEnum.cancelMeeting(id).getTargetURL(), method: .post, headers: authorization).responseDecodable {
             (response: DataResponse<CancelMeetingResponse, AFError>) in
-            switch response.result {
-            case .success(let cancelMeetingResponse):
-                self?.cancelMeetingVC?.cancelMeetingResponse(response: cancelMeetingResponse)
-            case .failure(let error):
-                AlertHelper.showErrorMsg(message: error.underlyingError?.localizedDescription ?? "Error occurred. Please try again")
-            }
+            completionHandler(response)
         }
     }
 }
